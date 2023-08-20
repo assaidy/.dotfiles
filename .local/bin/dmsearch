@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# Defining web browser
+BROWSER="firefox"
+
+# Defining menu
+DMENU="dmenu -i -l 20"
+# DMENU="rofi -dmenu -i"
+
+
+# Declare search engines
+declare -a options=(
+"google - https://www.google.com/search?q="
+"googleImages - https://www.google.com/search?tbm=isch&q="
+"googleTranslate - https://translate.google.com/#view=home&op=translate&sl=auto&tl=ar&text="
+"youtube - https://www.youtube.com/search?q="
+"URL - https://"
+)
+
+# Picking a search engine
+while [ -z "$engine" ]; do
+enginelist=$(printf '%s\n' "${options[@]}" | $DMENU -p 'Choose search engine:') || exit
+engineurl=$(echo "$enginelist" | awk '{print $NF}')
+engine=$(echo "$enginelist" | awk '{print $1}')
+done
+
+# Searching the chosen engine
+while [ -z "$query" ]; do
+query=$(echo "" | $DMENU -p "Searching $engine:") || exit
+done
+
+# Display the result in web browser
+$BROWSER "$engineurl""$query"

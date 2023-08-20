@@ -1,0 +1,6 @@
+#!/bin/sh
+
+WORD=$(echo "" | dmenu -p "Add Word: ")
+DEFINITION=$(echo "" | dmenu -p "Add Definition: ")
+
+echo "$WORD -> $DEFINITION" >> ~/.local/share/new-word
