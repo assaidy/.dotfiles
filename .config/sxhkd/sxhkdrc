@@ -1,0 +1,44 @@
+super + b
+	firefox
+
+super + n
+	nautilus
+
+super + v
+	kitty -e nvim
+
+super + m
+	dm-search
+
+# Volume Control
+XF86AudioLowerVolume
+	amixer set Master 5%-
+XF86AudioRaiseVolume
+	amixer set Master 5%+
+XF86AudioMute
+        amixer set Master toggle
+
+# Backlight
+XF86MonBrightnessDown
+	xbacklight -dec 10%
+XF86MonBrightnessUp
+	xbacklight -inc 10%
+
+# Screenshot
+Print
+	maim --select | xclip -selection clipboard -t image/png
+shift + Print
+	maim --select >> ~/Pictures/Screenshots/$(date +%s).png 
+ctrl + Print
+	maim | xclip -selection clipboard -t image/png
+shift + ctrl + Print
+	maim >> ~/Pictures/Screenshots/$(date +%s).png 
+
+# Switch Keyboard languages
+#Shift_L + Alt_L
+#    setxkbmap -layout us,ara -option "grp:alt_shift_toggle"
+#Shift_R + Alt_R
+#    setxkbmap -layout us,ara -option "grp:alt_shift_toggle"
+
+super + Escape
+	dm-power
