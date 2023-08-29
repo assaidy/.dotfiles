@@ -12,6 +12,15 @@ wireless wlp0s20f3 {
     format_down = "WiFi: Disconnected"
 }
 
+// volume
+order += "volume master"
+volume master {
+    format = "♪: %volume"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
 // battery
 order += "battery all"
 battery all {
