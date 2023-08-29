@@ -8,9 +8,6 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to doom emacs
-export PATH="$HOME/.config/emacs/bin:$PATH"
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -168,7 +165,6 @@ alias mf='touch'
 alias mx='chmod +x'
 alias v='nvim'
 alias vf='nvim $(fzf)'
-alias emacscl="emacsclient -c -a 'emacs'"
 alias code='code --profile C++'
 alias rm='trash'
 alias cp='cp -i'
