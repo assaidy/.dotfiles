@@ -4,6 +4,9 @@ require("ahmad")
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- global statusline
+vim.cmd("set statusline=3")
+
 -- current line highlighting
 vim.opt.cursorline = true
 
