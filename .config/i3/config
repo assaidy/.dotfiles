@@ -267,7 +267,7 @@ client.urgent           $red $red $white $red $red
 # finds out, if available)
 #start of bar section
 bar {
-    position top
+    position bottom
     status_command i3status
     colors {
         # bar background color
