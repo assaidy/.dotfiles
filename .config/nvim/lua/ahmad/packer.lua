@@ -50,4 +50,7 @@ return require('packer').startup(function(use)
       config = function() require("nvim-autopairs").setup {} end
   }
 
+  -- git
+  use { "lewis6991/gitsigns.nvim" }
+
 end)
