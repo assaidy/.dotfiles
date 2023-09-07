@@ -13,6 +13,7 @@ return require('packer').startup(function(use)
 
   -- colors
   use { "ellisonleao/gruvbox.nvim" }
+  use { "navarasu/onedark.nvim" }
 
   -- treesitter
   use {

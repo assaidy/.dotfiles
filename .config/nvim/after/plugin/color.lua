@@ -2,7 +2,7 @@ require('gruvbox').setup({
     disable_background = true
 })
 
-function ColorMyPencils(color) 
+function ColorMyPencils(color)
 	color = color or "gruvbox"
 	vim.cmd.colorscheme(color)
 
