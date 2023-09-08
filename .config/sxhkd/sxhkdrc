@@ -4,9 +4,6 @@ super + b
 super + n
 	nautilus
 
-super + v
-	kitty -e nvim
-
 super + m
 	dm-search
 

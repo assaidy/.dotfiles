@@ -290,4 +290,3 @@ bar {
 
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id newlook
-exec_always --no-startup-id "emacs --daemon"

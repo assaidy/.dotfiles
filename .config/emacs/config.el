@@ -517,7 +517,7 @@
   :hook org-mode prog-mode)
 
 (delete-selection-mode 1)    ;; You can select text and delete it by typing.
-(electric-indent-mode -1)    ;; Turn off the weird indenting that Emacs does by default.
+(electric-indent-mode 1)    ;; Turn off the weird indenting that Emacs does by default.
 (electric-pair-mode 1)       ;; Turns on automatic parens pairing
 ;; The following prevents <> from auto-pairing when electric-pair-mode is on.
 ;; Otherwise, org-tempo is broken when you try to <s TAB...
@@ -527,6 +527,7 @@
                   (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c))))))
 (global-auto-revert-mode t)  ;; Automatically show changes if the file has changed
 (global-display-line-numbers-mode 1) ;; Display line numbers
+(setq display-line-numbers-type 'relative)
 (global-visual-line-mode t)  ;; Enable truncated lines
 (menu-bar-mode -1)           ;; Disable the menu bar 
 (scroll-bar-mode -1)         ;; Disable the scroll bar
