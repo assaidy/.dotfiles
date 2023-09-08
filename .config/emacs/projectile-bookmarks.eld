@@ -1,1 +1,1 @@
-("~/Documents/CS-Roadmap/" "~/.dotfiles/")
+("~/.dotfiles/" "~/Documents/CS-Roadmap/")

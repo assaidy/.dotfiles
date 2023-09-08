@@ -260,7 +260,7 @@ Defining the various fonts that Emacs will use.
 ** Setting the Font Face
 #+begin_src emacs-lisp
 (set-face-attribute 'default nil
-  :font "Victor Mono"
+  :font "JetBrains Mono"
   :height 110
   :weight 'medium)
 (set-face-attribute 'variable-pitch nil
@@ -776,7 +776,7 @@ The following settings are simple modes that are enabled (or disabled) so that E
                    `(lambda (c)
                   (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c))))))
 (global-auto-revert-mode t)  ;; Automatically show changes if the file has changed
-(global-display-line-numbers-mode 1) ;; Display line numbers
+(global-display-line-numbers-mode-relative 1) ;; Display line numbers
 (global-visual-line-mode t)  ;; Enable truncated lines
 (menu-bar-mode -1)           ;; Disable the menu bar 
 (scroll-bar-mode -1)         ;; Disable the scroll bar
