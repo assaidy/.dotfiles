@@ -1,0 +1,1 @@
+/home/ahmad/.config/emacs/elpaca/repos/powerline/powerline-themes.el
