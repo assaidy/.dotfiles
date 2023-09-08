@@ -126,7 +126,6 @@ ex ()
   fi
 }
 
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -164,6 +163,7 @@ alias md='mkdir -p'
 alias mf='touch'
 alias mx='chmod +x'
 alias v='nvim'
+alias em='emacsclient -a -c "emacs"'
 alias vf='nvim $(fzf)'
 alias code='code --profile C++'
 alias rm='trash'
