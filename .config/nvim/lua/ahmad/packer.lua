@@ -54,4 +54,10 @@ return require('packer').startup(function(use)
   -- git
   use { "lewis6991/gitsigns.nvim" }
 
+  -- tabs
+  -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
+  use {'romgrk/barbar.nvim'}
+  use {'nvim-tree/nvim-web-devicons'} -- OPTIONAL: for file icons
+  use {'lewis6991/gitsigns.nvim'} -- OPTIONAL: for git status
+
 end)
