@@ -456,7 +456,8 @@
         (add-hook 'neo-after-create-hook
            #'(lambda (_)
                (with-current-buffer (get-buffer neo-buffer-name)
-                 (setq truncate-lines t)
+                 (setq truncate-lines nil)
+                 (setq visual-line-mode nil)
                  (setq word-wrap nil)
                  (make-local-variable 'auto-hscroll-mode)
                  (setq auto-hscroll-mode nil)))))
