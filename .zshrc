@@ -214,4 +214,4 @@ shuf -n 1 ~/.local/share/new-word | lolcat
 
 # starship prompt
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"
