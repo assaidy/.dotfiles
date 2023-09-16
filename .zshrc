@@ -14,12 +14,13 @@ export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes ZSH_THEME="powerlevel10k/powerlevel10k" Set list of themes to pick from when loading at random
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes 
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+# Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="gozilla"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -145,10 +146,16 @@ alias R='sudo pacman -Rn'
 alias Q='sudo pacman -Q'
 
 # exa 
-alias ls='exa -a --group-directories-first --icons'
-alias ll='exa -al --group-directories-first --icons'
-alias lt='exa -aT --group-directories-first --icons'
-alias l.='exa -a | grep "^\."'
+# alias ls='exa -a --group-directories-first --icons'
+# alias ll='exa -al --group-directories-first --icons'
+# alias lt='exa -aT --group-directories-first --icons'
+# alias l.='exa -a | grep "^\."'
+
+# ls
+alias ls='ls -a --color --group-directories-first'
+alias ll='ls -al --group-directories-first'
+alias lt='ls -aT --group-directories-first'
+alias l.='ls -a | grep "^\."'
 
 # kitty 
 alias kittyicat='kitty +kitten icat'
@@ -208,5 +215,4 @@ shuf -n 1 ~/.local/share/new-word | lolcat
 
 # starship prompt
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
-eval "$(starship init zsh)"
-
+# eval "$(starship init zsh)"

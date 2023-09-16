@@ -15,9 +15,17 @@ return require('packer').startup(function(use)
   use { "ellisonleao/gruvbox.nvim" }
   use { "navarasu/onedark.nvim" }
 
+  -- highlight TODO
+  use {
+      "folke/todo-comments.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      opts = {
+      }
+  }
+
   -- treesitter
   use {
-	  'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'
+      'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'
   }
 
   -- lsp-zero
@@ -59,5 +67,6 @@ return require('packer').startup(function(use)
   use {'romgrk/barbar.nvim'}
   use {'nvim-tree/nvim-web-devicons'} -- OPTIONAL: for file icons
   use {'lewis6991/gitsigns.nvim'} -- OPTIONAL: for git status
+
 
 end)

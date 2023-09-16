@@ -181,8 +181,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Rules & Scratchpads
 
-for_window [class="TelegramDesktop"] floating enable
-for_window [class="mpv"] floating enable
+# for_window [class="mpv"] floating enable
+# for_window [class="TelegramDesktop"] floating enable
 
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 1000 700
