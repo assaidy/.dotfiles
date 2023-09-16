@@ -9,21 +9,22 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "JetBrains Mono:size=11", "JoyPixels:pixelsize=11:antialias=true:autohint=true"};
 static const char dmenufont[]       = "JetBrains Mono:size=11";
-// static char normbgcolor[]           = "#222222";
-// static char normbordercolor[]       = "#444444";
-// static char normfgcolor[]           = "#bbbbbb";
-// static char selfgcolor[]            = "#eeeeee";
-// static char selbordercolor[]        = "#005577";
-// static char selbgcolor[]            = "#005577";
+static char normbgcolor[]           = "#222222";
+static char normbordercolor[]       = "#444444";
+static char normfgcolor[]           = "#bbbbbb";
+static char selfgcolor[]            = "#eeeeee";
+static char selbordercolor[]        = "#005577";
+static char selbgcolor[]            = "#005577";
 //
 
-static char normbgcolor[]           = "#1d2021";
-static char normbordercolor[]       = "#282828";
-// static char normbordercolor[]       = "#665c54";
-static char normfgcolor[]           = "#D5C4A1";
-static char selfgcolor[]            = "#1d2021";
-static char selbordercolor[]        = "#a89984";
-static char selbgcolor[]            = "#a89984";
+// gruvbox
+// static char normbgcolor[]           = "#1d2021";
+// static char normbordercolor[]       = "#282828";
+// // static char normbordercolor[]       = "#665c54";
+// static char normfgcolor[]           = "#D5C4A1";
+// static char selfgcolor[]            = "#1d2021";
+// static char selbordercolor[]        = "#a89984";
+// static char selbgcolor[]            = "#a89984";
 
 static char *colors[][3] = {
        /*               fg           bg           border   */
@@ -61,9 +62,9 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "[M]",      monocle }, /* first entry is default */
+	{ "[]=",      tile },   
+    { "><>",      NULL },    /* no layout function means floating behavior */
 };
 
 /* key definitions */
