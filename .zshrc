@@ -154,7 +154,6 @@ alias Q='sudo pacman -Q'
 # ls
 alias ls='ls -a --color --group-directories-first'
 alias ll='ls -al --group-directories-first'
-alias lt='ls -aT --group-directories-first'
 alias l.='ls -a | grep "^\."'
 
 # kitty 
