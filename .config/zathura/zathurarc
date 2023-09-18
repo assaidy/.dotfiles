@@ -8,6 +8,9 @@ map r rotate
 map c recolor
 map p print
 
+#############
+## gruvbox ##
+#############
 # Colors -> gruvbox-hard
 set notification-error-bg       "#1d2021" # bg
 set notification-error-fg       "#fb4934" # bright:red
@@ -47,5 +50,5 @@ set render-loading-fg           "#ebdbb2" # fg
 # Recolor book content's color
 set recolor-lightcolor          "#1d2021" # bg
 set recolor-darkcolor           "#ebdbb2" # fg
-set recolor                     "true"
-# set recolor-keephue             true      # keep original color
+#set recolor                     "true"
+set recolor-keephue             true      # keep original color
