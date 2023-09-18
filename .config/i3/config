@@ -52,9 +52,9 @@ tiling_drag modifier titlebar
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Titlebar
 
 # hide titlebar
-default_border pixel 1
-default_floating_border pixel 1
-for_window [class="^.*"] border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
+for_window [class="^.*"] border pixel 2
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start & Kill
 
@@ -225,7 +225,6 @@ bindsym Control+$mod+l resize shrink width 10 px or 10 ppt
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Gaps & Borders
 
-default_border pixel 2
 gaps inner 4
 gaps outer 4
 # smart_gaps 1
@@ -233,6 +232,9 @@ gaps outer 4
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Colors
 
+#############
+## gruvbox ##
+#############
 # set primary gruvbox colorscheme colors
 # set $bg #282828
 # set $red #cc241d
@@ -262,6 +264,9 @@ gaps outer 4
 
 #end of window title bars & borders section
 
+##################
+## one dark pro ##
+##################
 set $base00 #282c34
 set $base01 #353b45
 set $base02 #3e4451
@@ -297,6 +302,7 @@ bar {
     font pango:JetBrains Mono 10
     status_command i3status
     colors {
+        ## gruvbox
         # bar background color
         # background #1d2021
         # text color used for blocks that do not have a color specified.
@@ -308,9 +314,10 @@ bar {
         # active_workspace     $darkgray $darkgray $yellow
         # urgent_workspace     $red $red $bg
 
+        # one dark pro
         background $base00
         separator  $base01
-        statusline $base04
+        statusline $base08
 
         # State             Border  BG      Text
         focused_workspace   $base05 $base0D $base00
