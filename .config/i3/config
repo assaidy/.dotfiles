@@ -228,8 +228,8 @@ bindsym Control+$mod+l resize shrink width 10 px or 10 ppt
 default_border pixel 2
 gaps inner 4
 gaps outer 4
-smart_gaps 1
-smart_borders 1
+# smart_gaps 1
+# smart_borders 1
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Colors
 

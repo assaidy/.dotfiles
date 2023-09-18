@@ -153,7 +153,7 @@ alias Q='sudo pacman -Q'
 
 # ls
 alias ls='ls -a --color --group-directories-first'
-alias ll='ls -al --group-directories-first'
+alias ll='ls -alh --group-directories-first'
 alias l.='ls -a | grep "^\."'
 
 # kitty 
@@ -215,3 +215,6 @@ shuf -n 1 ~/.local/share/new-word | lolcat
 # starship prompt
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
+
+# vim mode
+set -o vi
