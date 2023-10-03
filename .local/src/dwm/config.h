@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int gappx     = 5;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
@@ -100,7 +100,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_w,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_e,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY|ShiftMask,             XK_r,  	   togglefloating, {0} },
+	{ MODKEY,                       XK_y,  	   togglefloating, {0} },
 	{ MODKEY,                       XK_t,  	   setlayout,      {0} },
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
 	{ MODKEY,			            XK_Return, spawn,          {.v = termcmd } },

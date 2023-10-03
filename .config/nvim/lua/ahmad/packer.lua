@@ -64,9 +64,14 @@ return require('packer').startup(function(use)
 
   -- tabs
   -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
-  use {'romgrk/barbar.nvim'}
-  use {'nvim-tree/nvim-web-devicons'} -- OPTIONAL: for file icons
-  use {'lewis6991/gitsigns.nvim'} -- OPTIONAL: for git status
+  -- use {'romgrk/barbar.nvim'}
+  -- use {'nvim-tree/nvim-web-devicons'} -- OPTIONAL: for file icons
+  -- use {'lewis6991/gitsigns.nvim'} -- OPTIONAL: for git status
 
+  -- lualine
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
 
 end)

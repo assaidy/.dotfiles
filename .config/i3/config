@@ -68,7 +68,7 @@ bindsym $mod+u  [instance="dropdown"] scratchpad show; [instance="dropdown"] mov
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+space exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -89,10 +89,11 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+# bindsym $mod+Shift+space floating toggle
+bindsym $mod+y floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -103,17 +104,17 @@ bindsym $mod+a focus parent
 # back and forth between two workspaces
 bindsym $mod+Tab workspace back_and_forth
 
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -227,8 +228,8 @@ bindsym Control+$mod+l resize shrink width 10 px or 10 ppt
 
 gaps inner 4
 gaps outer 4
-# smart_gaps 1
-# smart_borders 1
+smart_gaps 1
+smart_borders 1
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Colors
 

@@ -8,7 +8,7 @@ vim.opt.relativenumber = true
 vim.cmd("set statusline=3")
 
 -- current line highlighting
-vim.opt.cursorline = true
+-- vim.opt.cursorline = true
 
 -- tab indenting width
 vim.opt.tabstop=4
@@ -23,15 +23,14 @@ vim.opt.ignorecase = true
 vim.opt.wrap = false
 
 vim.opt.termguicolors = true
--- vim.opt.guicursor = ""
+vim.opt.guicursor = ""
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
-
 vim.opt.colorcolumn = "80"
 
--- vim.cmd("colorscheme gruvbox")
+vim.opt.makeprg = './build.sh'
 

@@ -1,7 +1,7 @@
 -- Lua
 require('onedark').setup  {
     -- Main options --
-    style = 'dark', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    style = 'warmer', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
     transparent = true,  -- Show/hide background
     term_colors = true, -- Change terminal color as per the selected theme style
     ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -15,7 +15,7 @@ require('onedark').setup  {
     -- Options are italic, bold, underline, none
     -- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
     code_style = {
-        comments = 'italic',
+        comments = 'none',
         keywords = 'none',
         functions = 'none',
         strings = 'none',
@@ -24,7 +24,7 @@ require('onedark').setup  {
 
     -- Lualine options --
     lualine = {
-        transparent = false, -- lualine center bar transparency
+        transparent = true, -- lualine center bar transparency
     },
 
     -- Custom Highlights --

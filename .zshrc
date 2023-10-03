@@ -2,7 +2,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # If you come from bash you might have to change your $PATH.
@@ -165,15 +165,16 @@ alias tvb='mpv --ytdl-format=22 $1'
 alias tvm='mpv --ytdl-format=18 $1' 
 
 # making/editing files and direcotries
+alias fzf='fd --type f --hidden --exclude .git | fzf'
 alias md='mkdir -p'
 alias mf='touch'
 alias mx='chmod +x'
 alias v='nvim'
-alias em='emacsclient -c -a "emacs"'
-alias vf='nvim $(fzf)'
+alias vf='fzf | xargs -r nvim'
 alias code='code --profile C++'
 alias rm='trash'
 alias cp='cp -i'
+alias build='./build.sh'
 
 # git 
 alias gclone='git clone'
@@ -210,7 +211,7 @@ export PATH="$PATH":~/.local/bin
 export HYPRSHOT_DIR=~/Pictures/Screenshots
 
 # vocab script
-shuf -n 1 ~/.local/share/new-word | lolcat
+# shuf -n 1 ~/.local/share/new-word | lolcat
 
 # starship prompt
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
@@ -218,3 +219,5 @@ eval "$(starship init zsh)"
 
 # vim mode
 set -o vi
+
+clear; figlet -f ~/.local/share/fonts/ansi_regular.flf "Hi, Ahmad" | lolcat

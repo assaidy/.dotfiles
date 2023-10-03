@@ -6,7 +6,7 @@
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
-font_family      JetBrains Mono 
+font_family      JetBrains Mono
 bold_font        JetBrains Mono Bold
 italic_font      JetBrains Mono Italic
 bold_italic_font JetBrains Mono Bold Italic
@@ -1111,3 +1111,4 @@ macos_thicken_font 0.3
 # Doom Vibrant
 include current-theme.conf
 # END_KITTY_THEME
+
