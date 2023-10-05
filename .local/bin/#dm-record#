@@ -1,0 +1,11 @@
+#!/bin/sh
+
+option=$(printf "Start recording\nStop recording\n" | dmenu -i -l 5 -p "Record screen: ")
+
+if [ "$option" == "Start recording" ]
+then
+    obs-cli record start
+elif [ "$option" == "Stop recording" ]
+then
+    obs-cli record stop
+fi
