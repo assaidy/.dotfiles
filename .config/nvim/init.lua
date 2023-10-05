@@ -23,7 +23,7 @@ vim.opt.ignorecase = true
 vim.opt.wrap = false
 
 vim.opt.termguicolors = true
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
