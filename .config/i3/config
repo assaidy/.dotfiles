@@ -316,7 +316,8 @@ bar {
         # urgent_workspace     $red $red $bg
 
         # one dark pro
-        background $base00
+        # background $base00
+        background #000000
         separator  $base01
         statusline $base08
 

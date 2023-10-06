@@ -2,7 +2,7 @@ super + b
 	firefox
 
 super + n
-	nautilus
+	thunar
 
 super + m
 	dm-search
