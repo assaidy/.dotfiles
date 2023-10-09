@@ -9,5 +9,5 @@ tmux rename-window -t hope:0 code
 tmux new-window -n comp -t hope:
 
 # Attach to the new session
-#tmux attach-session -t hope
+tmux attach-session -t hope
 
