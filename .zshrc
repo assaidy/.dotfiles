@@ -11,6 +11,8 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+export HYPRSHOT_DIR=$HOME/Pictures/Screenshots
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -208,7 +210,6 @@ alias yt-dlp-audo-list="yt-dlp -x -o '%(playlist_index)s-%(title)s.%(ext)s'"
 
 export PATH="$PATH":~/.local/bin
 
-export HYPRSHOT_DIR=~/Pictures/Screenshots
 
 # vocab script
 # shuf -n 1 ~/.local/share/new-word | lolcat
@@ -220,4 +221,3 @@ eval "$(starship init zsh)"
 # vim mode
 set -o vi
 
-clear; figlet -f ~/.local/share/fonts/ansi_regular.flf "Hi, Ahmad" | lolcat

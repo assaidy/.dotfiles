@@ -68,7 +68,8 @@ bindsym $mod+u  [instance="dropdown"] scratchpad show; [instance="dropdown"] mov
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec --no-startup-id dmenu_run
+# bindsym $mod+space exec --no-startup-id dmenu_run
+bindsym $mod+space exec --no-startup-id rofi -show run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -226,9 +227,9 @@ bindsym Control+$mod+l resize shrink width 10 px or 10 ppt
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Gaps & Borders
 
-gaps inner 4
-gaps outer 4
-smart_gaps 1
+# gaps inner 4
+# gaps outer 4
+# smart_gaps 1
 smart_borders 1
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Colors

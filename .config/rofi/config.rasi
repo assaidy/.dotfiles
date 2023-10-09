@@ -1,0 +1,9 @@
+@import "~/.cache/wal/colors-rofi-dark"
+
+configuration {
+    font: "JetBrains Mono 14";
+}
+
+window {
+    border: 1;
+}

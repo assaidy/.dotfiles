@@ -3,3 +3,4 @@
 wall=$(find ~/Pictures/walls/ -type f \( -name "*.jpeg" -o -name "*.jpg" -o -name "*.png" \) | shuf -n 1)
 
 swww img $wall
+wal -i $wall
