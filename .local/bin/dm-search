@@ -1,8 +1,8 @@
 #!/bin/sh
 
 BROWSER=firefox
-# DMENU="dmenu -i -l 20"
-DMENU="rofi -dmenu -i"
+DMENU="dmenu -i -l 20"
+# DMENU="rofi -dmenu -i"
 
 
 declare -a options=(
