@@ -478,7 +478,7 @@ window_padding_width 3.0
 
 #: The foreground and background colors
 
-# background_opacity 0.9
+background_opacity 0.9
 
 #: The opacity of the background. A number between 0 and 1, where 1 is
 #: opaque and 0 is fully transparent.  This will only work if
@@ -1108,7 +1108,7 @@ macos_thicken_font 0.3
 
 
 # BEGIN_KITTY_THEME
-# Doom Vibrant
+# Adwaita darker
 include current-theme.conf
 # END_KITTY_THEME
 

@@ -80,5 +80,13 @@ return require('packer').startup(function(use)
       requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   }
 
+  -- renameing
+  use {
+      "smjonas/inc-rename.nvim",
+      config = function()
+          require("inc_rename").setup()
+      end,
+  }
+
 end)
 
