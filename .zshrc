@@ -148,15 +148,15 @@ alias R='sudo pacman -Rn'
 alias Q='sudo pacman -Q'
 
 # exa 
-# alias ls='exa -a --group-directories-first --icons'
-# alias ll='exa -al --group-directories-first --icons'
-# alias lt='exa -aT --group-directories-first --icons'
-# alias l.='exa -a | grep "^\."'
+alias ls='exa -a --group-directories-first --icons'
+alias ll='exa -al --group-directories-first --icons'
+alias lt='exa -aT --group-directories-first --icons'
+alias l.='exa -a | grep "^\."'
 
 # ls
-alias ls='ls -a --color --group-directories-first'
-alias ll='ls -alh --group-directories-first'
-alias l.='ls -a | grep "^\."'
+# alias ls='ls -a --color --group-directories-first'
+# alias ll='ls -alh --group-directories-first'
+# alias l.='ls -a | grep "^\."'
 
 # kitty 
 alias kittyicat='kitty +kitten icat'

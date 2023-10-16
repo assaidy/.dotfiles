@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/scratchpad", "custom/media"],
     // "modules-center": ["hyprland/window"],
-    "modules-right": ["mpd", "idle_inhibitor", "tray", "pulseaudio", "cpu", "memory", "temperature", "backlight", "keyboard-state", "battery", "battery#bat2", "clock"],
+    "modules-right": ["mpd", "idle_inhibitor", "tray", "custom/dmyt", "pulseaudio", "cpu", "memory", "temperature", "backlight", "keyboard-state", "battery", "battery#bat2", "clock"],
     // Modules configuration
     "hyprland/workspaces": {
     //   "disable-scroll": false,
@@ -35,10 +35,10 @@
             "unlocked": ""
         }
     },
-    "sway/mode": {
+    "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    "sway/scratchpad": {
+    "hyprland/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
         "format-icons": ["", ""],
@@ -164,6 +164,11 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/dmyt": {
+        "format": " ",
+        "on-click": "dm-yt",
+        "tooltip-format": "play with mpv",
     }
 }
 

@@ -45,21 +45,9 @@ tooltip label{
     border-radius: 10px;
 }
 
-#custom-launch_wofi,
-#custom-launch_firefox,
-#custom-launch_thunderbird,
-#custom-launch_thunar,
-#custom-launch_kitty,
-#custom-lock_screen,
-#custom-light_dark,
-#custom-power_btn,
-#custom-power_profile,
-#custom-weather,
-#custom-myhyprv,
 #window,
 #cpu,
 #disk,
-#custom-updates,
 #memory,
 #clock,
 #battery,
@@ -93,19 +81,3 @@ tooltip label{
     margin-right: 20px;
 }
 
-#custom-launch_firefox, 
-#custom-launch_thunderbird,
-#custom-launch_thunar,
-#custom-launch_wofi,
-#custom-launch_kitty,
-#custom-weather {
-    margin-left: 0px;
-    border-right: 0px;
-    font-size: 24px;
-    margin-right: 20px;
-}
-
-#custom-launch_firefox, 
-#custom-launch_kitty {
-    font-size: 20px;
-}

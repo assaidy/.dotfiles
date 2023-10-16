@@ -4,7 +4,7 @@ set cleaner ~/.config/lf/lf_kitty_clean
 # Basic Settings
 set hidden true
 set ignorecase true
-set icons true
+set icons false
 set info size:time
 set drawbox true
 

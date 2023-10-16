@@ -23,7 +23,7 @@ bold_italic_font JetBrains Mono Bold Italic
 #:     italic_font      Operator Mono Book Italic
 #:     bold_italic_font Operator Mono Medium Italic
 
-font_size 12.0
+font_size 14.0
 
 #: Font size (in pts)
 
@@ -1108,7 +1108,11 @@ macos_thicken_font 0.3
 
 
 # BEGIN_KITTY_THEME
-# Adwaita darker
+# Adwaita dark
 include current-theme.conf
 # END_KITTY_THEME
+
+# BEGIN_PYWAL
+# include ~/.cache/wal/colors-kitty.conf
+# END_PYWAL
 
