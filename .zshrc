@@ -141,11 +141,18 @@ alias cls='clear'
 alias e='exit'
 
 # pacman 
-alias I='sudo pacman -S' 
-alias U='sudo pacman -Sy archlinux-keyring;sudo pacman -Syu'
-alias S='sudo pacman -Ss'
-alias R='sudo pacman -Rn'
-alias Q='sudo pacman -Q'
+alias pI='sudo pacman -S' 
+alias pU='sudo pacman -Sy archlinux-keyring;sudo pacman -Syu'
+alias pS='sudo pacman -Ss'
+alias pR='sudo pacman -Rn'
+alias pQ='sudo pacman -Q'
+
+# yay
+alias yI='sudo pacman -S' 
+alias yU='sudo pacman -Sy archlinux-keyring;sudo pacman -Syu'
+alias yS='sudo pacman -Ss'
+alias yR='sudo pacman -Rn'
+alias yQ='sudo pacman -Q'
 
 # exa 
 alias ls='exa -a --group-directories-first --icons'
