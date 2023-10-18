@@ -148,11 +148,11 @@ alias pR='sudo pacman -Rn'
 alias pQ='sudo pacman -Q'
 
 # yay
-alias yI='sudo pacman -S' 
-alias yU='sudo pacman -Sy archlinux-keyring;sudo pacman -Syu'
-alias yS='sudo pacman -Ss'
-alias yR='sudo pacman -Rn'
-alias yQ='sudo pacman -Q'
+alias yI='yay -S' 
+alias yU='yay -Syu'
+alias yS='yay -Ss'
+alias yR='yay -R'
+alias yQ='yay -Q'
 
 # exa 
 alias ls='exa -a --group-directories-first --icons'
