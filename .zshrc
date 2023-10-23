@@ -199,15 +199,23 @@ alias wifi='nmcli device wifi'
 
 # yt-dlp
 # --- video
-alias yt-dlp-vid-1080="yt-dlp -f 140+137 -o '%(title)s.%(ext)s'"
-alias yt-dlp-vid-720="yt-dlp -f 140+136 -o '%(title)s.%(ext)s'"
-alias yt-dlp-vid-420="yt-dlp -f 140+135 -o '%(title)s.%(ext)s'"
-alias yt-dlp-vid-360="yt-dlp -f 140+134 -o '%(title)s.%(ext)s'"
+alias yt-dlp-vid-1080="yt-dlp --format='bestvideo[height<=?1080]+bestaudio/best' -o '%(title)s.%(ext)s'"
+alias yt-dlp-vid-720="yt-dlp --format='bestvideo[height<=?720]+bestaudio/best' -o '%(title)s.%(ext)s'"
+alias yt-dlp-vid-480="yt-dlp --format='bestvideo[height<=?480]+bestaudio/best' -o '%(title)s.%(ext)s'"
+alias yt-dlp-vid-360="yt-dlp --format='bestvideo[height<=?360]+bestaudio/best' -o '%(title)s.%(ext)s'"
+# alias yt-dlp-vid-1080="yt-dlp -f 140+137 -o '%(title)s.%(ext)s'"
+# alias yt-dlp-vid-720="yt-dlp -f 140+136 -o '%(title)s.%(ext)s'"
+# alias yt-dlp-vid-420="yt-dlp -f 140+135 -o '%(title)s.%(ext)s'"
+# alias yt-dlp-vid-360="yt-dlp -f 140+134 -o '%(title)s.%(ext)s'"
 # --- playlist video
-alias yt-dlp-vid-list-1080="yt-dlp -f 140+137 -o '%(playlist_index)s-%(title)s.%(ext)s'"
-alias yt-dlp-vid-list-720="yt-dlp -f 140+136 -o '%(playlist_index)s-%(title)s.%(ext)s'"
-alias yt-dlp-vid-list-420="yt-dlp -f 140+135 -o '%(playlist_index)s-%(title)s.%(ext)s'"
-alias yt-dlp-vid-list-360="yt-dlp -f 140+134 -o '%(playlist_index)s-%(title)s.%(ext)s'"
+alias yt-dlp-vid-list-1080="yt-dlp --format='bestvideo[height<=?1080]+bestaudio/best'  -o '%(playlist_index)s-%(title)s.%(ext)s'"
+alias yt-dlp-vid-list-720="yt-dlp --format='bestvideo[height<=?720]+bestaudio/best'  -o '%(playlist_index)s-%(title)s.%(ext)s'"
+alias yt-dlp-vid-list-480="yt-dlp --format='bestvideo[height<=?480]+bestaudio/best'  -o '%(playlist_index)s-%(title)s.%(ext)s'"
+alias yt-dlp-vid-list-360="yt-dlp --format='bestvideo[height<=?360]+bestaudio/best'  -o '%(playlist_index)s-%(title)s.%(ext)s'"
+# alias yt-dlp-vid-list-1080="yt-dlp -f 140+137 -o '%(playlist_index)s-%(title)s.%(ext)s'"
+# alias yt-dlp-vid-list-720="yt-dlp -f 140+136 -o '%(playlist_index)s-%(title)s.%(ext)s'"
+# alias yt-dlp-vid-list-420="yt-dlp -f 140+135 -o '%(playlist_index)s-%(title)s.%(ext)s'"
+# alias yt-dlp-vid-list-360="yt-dlp -f 140+134 -o '%(playlist_index)s-%(title)s.%(ext)s'"
 # --- audio
 alias yt-dlp-aud="yt-dlp -x -o '%(title)s.%(ext)s'"
 # --- playlist audio

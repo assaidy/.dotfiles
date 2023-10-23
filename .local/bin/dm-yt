@@ -7,7 +7,8 @@ DMENU="rofi -dmenu -i"
 
 # Get the link from the clipboard.
 # you can change to xclip for xorg
-LINK=$(wl-paste)
+# LINK=$(wl-paste)
+LINK=$(xclip -o)
 
 # Define the available resolutions.
 RESOLUTIONS="1080\n720\n480\n360\n240\n144\nAudio-only"
