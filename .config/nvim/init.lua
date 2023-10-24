@@ -32,5 +32,3 @@ vim.opt.isfname:append("@-@")
 vim.opt.colorcolumn = "80"
 
 vim.opt.makeprg = './build.sh'
-
-vim.cmd("color gruvbox")
