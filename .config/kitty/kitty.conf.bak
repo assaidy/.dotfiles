@@ -1108,7 +1108,7 @@ macos_thicken_font 0.3
 
 
 # BEGIN_KITTY_THEME
-# Tango Dark
+# Gruvbox Dark Hard
 include current-theme.conf
 # END_KITTY_THEME
 

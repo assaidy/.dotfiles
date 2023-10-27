@@ -7,6 +7,9 @@ super + n
 super + m
 	dm-search
 
+super + p
+    dm-yt
+
 # Volume Control
 XF86AudioLowerVolume
 	amixer set Master 5%-
