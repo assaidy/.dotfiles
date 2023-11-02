@@ -14,6 +14,7 @@ static const int topbar             = 0;        /* 0 means bottom bar */
 static const char *fonts[]          = { "JetBrains Mono:size=11", "JoyPixels:pixelsize=11:antialias=true:autohint=true"};
 static const char dmenufont[]       = "monospace:size=10";
 
+// Original Colors
 // static const char col_gray1[]       = "#222222";
 // static const char col_gray2[]       = "#444444";
 // static const char col_gray3[]       = "#bbbbbb";
@@ -21,11 +22,21 @@ static const char dmenufont[]       = "monospace:size=10";
 // static const char col_cyan[]        = "#005577";
 
 /* Gruvbox color definitions from https://github.com/morhetz/gruvbox */
-static const char col_gray1[]       = "#282828"; /* hard contrast: #1d2021 / soft contrast: #32302f */
+// static const char col_gray1[]       = "#282828"; /* hard contrast: #1d2021 / soft contrast: #32302f */
+// static const char col_gray2[]       = "#3c3836";
+// static const char col_gray3[]       = "#d5c4a1"; /* or #ebdbb2 for a brighter text color */
+// static const char col_gray4[]       = "#fbf1c7";
+// static const char col_cyan[]        = "#458588"; /* or #83a598 for a lighter cyan color */
+
+// OneDark Pro
+static const char col_gray1[]       = "#282c34"; 
 static const char col_gray2[]       = "#3c3836";
-static const char col_gray3[]       = "#d5c4a1"; /* or #ebdbb2 for a brighter text color */
-static const char col_gray4[]       = "#fbf1c7";
-static const char col_cyan[]        = "#458588"; /* or #83a598 for a lighter cyan color */
+static const char col_gray3[]       = "#abb2bf"; 
+// static const char col_gray3[]       = "#E06C75"; 
+// static const char col_gray4[]       = "#c8ccd4";
+static const char col_gray4[]       = "#282C34";
+static const char col_cyan[]        = "#56b6c2"; 
+
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
