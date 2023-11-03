@@ -35,7 +35,8 @@ static const char col_gray3[]       = "#abb2bf";
 // static const char col_gray3[]       = "#E06C75"; 
 // static const char col_gray4[]       = "#c8ccd4";
 static const char col_gray4[]       = "#282C34";
-static const char col_cyan[]        = "#56b6c2"; 
+// static const char col_cyan[]        = "#56b6c2"; 
+static const char col_cyan[]        = "#61AFEF"; 
 
 
 static const char *colors[][3]      = {

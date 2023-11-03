@@ -236,4 +236,3 @@ eval "$(starship init zsh)"
 
 # vim mode
 set -o vi
-
