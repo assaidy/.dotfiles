@@ -1,12 +1,13 @@
 * {
     font-family: JetBrains Mono;
     font-size: 20px;
-    color: #abb2bf; /* Foreground color */
+    color: #e5e9f0;
 }
 
 window {
-    background-color: #282c34; /* Background color */
-    border: 2px solid #56b6c2; /* Function color */
+    /* background-color: #2e3440; */
+    background-color: black;
+    border: 2px solid #88c0d0;
     border-radius: 15px;
 }
 
@@ -16,13 +17,15 @@ window {
 
 #input {
     border: none;
-    background-color: #282c34; /* Background color */
+    /* background-color: #2e3440; */
+    background-color: black;
     margin: 7px;
     box-shadow: none; /* Remove blue "border" */
 }
 
 #inner-box {
-    background-color: #282c34; /* Background color */
+    /* background-color: #2e3440; */
+    background-color: black;
     margin: 7px;
     margin-top: 0;
 }
@@ -36,7 +39,8 @@ window {
 }
 
 #entry:selected {
-    background-color: #56b6c2; /* Function color */
+    /* background-color: #44475a; */
+    background-color: #88c0d0;
     font-weight: 700;
     border-radius: 0;
 }
@@ -46,10 +50,10 @@ window {
 }
 
 #text:selected {
-    color: #282c34; /* Background color */
+    color: black;
 }
 
+/* Hide backspace icon */
 .right {
     color: transparent;
 }
-
