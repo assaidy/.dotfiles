@@ -2,8 +2,8 @@
 
 BROWSER=thorium-browser
 # DMENU="dmenu -i -l 20"
-# DMENU="rofi -dmenu -i"
-DMENU="wofi --dmenu -i"
+DMENU="rofi -dmenu -i"
+# DMENU="wofi --dmenu -i"
 
 
 declare -a options=(
