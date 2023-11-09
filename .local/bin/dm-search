@@ -28,7 +28,7 @@ done
 
 #search the choosen engine.
 while [ -z "$query" ]; do
-    query=$(printf "" | $DMENU -p 'Searching $engine') || exit
+    query=$(printf "" | $DMENU -p "Searching $engine") || exit
 done
 
 # display search result

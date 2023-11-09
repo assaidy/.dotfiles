@@ -28,7 +28,6 @@ fi
 # If the user selected "Audio-only", use "bestaudio/best". 
 # Otherwise, use "bestvideo[height<=?$RESOLUTION]+bestaudio/best"
 if [ "$RESOLUTION" = "Audio-only" ]; then
-    FORMAT='%(title)s.%(ext)s'
     COMMAND="yt-dlp -x -o '%(title)s.%(ext)s' $LINK"
 else
     FORMAT="bestvideo[height<=?$RESOLUTION]+bestaudio/best"
