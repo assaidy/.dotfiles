@@ -2,8 +2,8 @@
 
 # Get the link from the clipboard.
 # you can change to xclip for xorg
-# LINK=$(wl-paste)
-LINK=$(xclip -o)
+LINK=$(wl-paste)
+# LINK=$(xclip -o)
 
 # Ask the user if they want to download a single video or a playlist.
 OPTIONS="Single\nPlaylist"
