@@ -1,35 +1,17 @@
-# Enabl Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 export HYPRSHOT_DIR=$HOME/Pictures/Screenshots
+export PATH="$PATH":~/.local/bin
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes 
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
 ZSH_THEME="gozilla"
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
@@ -49,7 +31,7 @@ ZSH_THEME="gozilla"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -129,13 +111,7 @@ ex ()
   fi
 }
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+### Aliases
 alias zshconfig="nvim ~/.zshrc"
 alias cls='clear'
 alias e='exit'
@@ -169,13 +145,8 @@ alias l.='exa -a | grep "^\."'
 alias kittyicat='kitty +kitten icat'
 alias kittythemes='kitty +kitten themes'
 
-# mpv
-alias tvb='mpv --ytdl-format=22 $1'
-alias tvm='mpv --ytdl-format=18 $1' 
-
 # making/editing files and direcotries
 alias j='cd $(find . -type d | fzf --preview="tree -C {}")'
-# alias fzl='find . -type f | fzf'
 alias md='mkdir -p'
 alias mf='touch'
 alias mx='chmod +x'
@@ -220,12 +191,6 @@ alias yt-dlp-vid-list-360="yt-dlp --format='bestvideo[height<=?360]+bestaudio/be
 alias yt-dlp-aud="yt-dlp -x -o '%(title)s.%(ext)s'"
 # --- playlist audio
 alias yt-dlp-audo-list="yt-dlp -x -o '%(playlist_index)s-%(title)s.%(ext)s'"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export PATH="$PATH":~/.local/bin
-
 
 # vocab script
 # shuf -n 1 ~/.local/share/new-word | lolcat
