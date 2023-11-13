@@ -1,4 +1,4 @@
 #!/bin/sh
 
 killall waybar
-waybar &
+waybar -c ~/.config/waybar/config.json &
