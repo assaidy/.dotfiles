@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/scratchpad", "custom/media"],
     // "modules-center": ["hyprland/window"],
-    "modules-right": ["mpd", "idle_inhibitor", "tray", "custom/dmyt", "pulseaudio", "cpu", "memory", "temperature", "backlight", "keyboard-state", "battery", "battery#bat2", "clock"],
+    "modules-right": ["mpd", "idle_inhibitor", "tray", "custom/dmyt", "pulseaudio", "cpu", "memory", "temperature", "backlight", "keyboard-state", "battery", "battery#bat2", "hyprland/language", "clock"],
     // Modules configuration
     "hyprland/workspaces": {
     //   "disable-scroll": false,
