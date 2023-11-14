@@ -22,7 +22,7 @@ window#waybar {
 #workspaces button:hover {
     color: black;
     background: #a6e3a1;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 #window,
@@ -51,7 +51,15 @@ window#waybar {
     background: #303030;
 }
 
+#tray {
+    border-radius: 10px;
+    background: #303030;
+    padding-left: 0;
+    padding-right: 0;
+}
+
 #window {
     border-radius: 10px;
     background: #303030;
 }
+

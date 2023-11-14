@@ -2,11 +2,10 @@
     "layer": "top", // Waybar at top layer
     "position": "top",
     "output": "",
-    "spacing": 4, // Gaps between modules (4px)
+    "spacing": 4, // Gaps between modules (px)
     "modules-left": ["hyprland/workspaces", "hyprland/window", "hyprland/mode", "hyprland/scratchpad"],
     "modules-center": ["clock", "idle_inhibitor"],
-    "modules-right": [ "battery", "network", "cpu", "memory", "temperature", "pulseaudio", "backlight", "hyprland/language", "custom/dmyt", "tray"],
-    // Modules configuration
+    "modules-right": [ "battery", "cpu", "memory", "temperature", "pulseaudio", "backlight", "hyprland/language", "custom/dmyt", "tray"],
     "hyprland/workspaces": {
         "disable-scroll": false,
         "all-outputs": false,
@@ -27,11 +26,11 @@
     "separate-outputs": true,
     },
     "hyprland/language": {  
-    "format": "{short}",
+    "format": "{}",
     },
     "tray": {
         "icon-size": 24,
-        "spacing": 10
+        "spacing": 2
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -113,7 +112,7 @@
     },
     "custom/dmyt": {
         "format": "{icon}",
-        "format-icons": [" "],
+        "format-icons": ["▶️"],
         "on-click": "dm-yt",
         "tooltip-format": "play with mpv",
     }
