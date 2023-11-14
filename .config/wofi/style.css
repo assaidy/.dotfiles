@@ -5,8 +5,10 @@
 }
 
 window {
-    /* background-color: #282c34; /* Background color */ */
-    background-color: #000000; /* Background color */
+    /* background-color: #282c34; /* Background color */
+    background: rgba(21, 18, 27, 0);
+    color: #f6f7fc;
+    background: black;
     border: 2px solid #56b6c2; /* Function color */
     border-radius: 15px;
 }
@@ -16,16 +18,12 @@ window {
 }
 
 #input {
-    border: none;
-    /* background-color: #282c34; /* Background color */ */
-    background-color: #000000; /* Background color */
     margin: 7px;
     box-shadow: none; /* Remove blue "border" */
 }
 
 #inner-box {
-    /* background-color: #282c34; /* Background color */ */
-    background-color: #000000; /* Background color */
+    /* background-color: #282c34; /* Background color */
     margin: 7px;
     margin-top: 0;
 }
