@@ -5,7 +5,7 @@
     "spacing": 4, // Gaps between modules (px)
     "modules-left": ["hyprland/workspaces", "hyprland/window", "hyprland/mode", "hyprland/scratchpad"],
     "modules-center": ["clock", "idle_inhibitor"],
-    "modules-right": [ "battery", "cpu", "memory", "temperature", "pulseaudio", "backlight", "hyprland/language", "custom/dmyt", "tray"],
+    "modules-right": [ "battery", "memory", "cpu", "temperature", "pulseaudio", "backlight", "hyprland/language", "tray"],
     "hyprland/workspaces": {
         "disable-scroll": false,
         "all-outputs": false,
@@ -26,7 +26,7 @@
     "separate-outputs": true,
     },
     "hyprland/language": {  
-    "format": "{}",
+    "format": "{short}",
     },
     "tray": {
         "icon-size": 24,
@@ -41,7 +41,7 @@
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:📅 %a-%d-%m 🕛️ %H:%M}",
+        "format": "{:📅 %a-%d-%m 🕛️ %I:%M}",
         //"format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {

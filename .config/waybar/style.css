@@ -39,28 +39,19 @@ window#waybar {
 #temperature,
 #workspaces,
 #idle_inhibitor,
-#custom.dmyt
 #idle_inhibitor,
 #backlight {
+    border-radius: 10px;
     padding: 0px 5px;
     margin: 0px 1px;
+    margin-bottom: 5px;
     border: 0px;
-}
-
-#idle_inhibitor {
-    border-radius: 10px;
     background: #303030;
 }
 
-#tray {
-    border-radius: 10px;
-    background: #303030;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-#window {
-    border-radius: 10px;
-    background: #303030;
+#battery,
+#backlight {
+    padding-right: 8px;
+    padding-right: 10px;
 }
 

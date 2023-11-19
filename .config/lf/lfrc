@@ -39,6 +39,11 @@ cmd unarchive ${{
   esac
 }}
 
+# Drag & Drop
+cmd drop ${{
+    ripdrag "$fx"
+}}
+
 # Trash bindings
 cmd trash ${{
   files=$(printf "$fx" | tr '\n' ';')
@@ -66,6 +71,7 @@ map c $nvim "$f"
 
 map au unarchive
 map ae $wine "$f"
+map ad drop
 
 # Basic Functions
 map . set hidden!
