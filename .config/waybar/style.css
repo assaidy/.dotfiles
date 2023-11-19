@@ -7,9 +7,8 @@
 }
 
 window#waybar {
-    background: rgba(21, 18, 27, 0);
     color: #f6f7fc;
-    background: black;
+    background: rgba(0, 0, 0, 0.8);
 }
 
 #workspaces button {
