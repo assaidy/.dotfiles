@@ -157,10 +157,6 @@ alias rm='trash'
 alias cp='cp -i'
 alias build='./build.sh'
 
-# git 
-alias gclone='git clone'
-alias gitdo='git add .; git commit; git push'
-
 # switch between shells
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
