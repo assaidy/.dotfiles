@@ -42,8 +42,7 @@ window#waybar {
 #backlight {
     border-radius: 10px;
     padding: 0px 5px;
-    margin: 0px 1px;
-    margin-bottom: 5px;
+    margin: 3px 1px;
     border: 0px;
     background: #303030;
 }
@@ -51,6 +50,5 @@ window#waybar {
 #battery,
 #backlight {
     padding-right: 8px;
-    padding-right: 10px;
 }
 
