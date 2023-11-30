@@ -41,15 +41,15 @@
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:📅 %a-%d-%m 🕛️ %I:%M}",
+        "format": "{: %a-%d-%m   %I:%M}",
         //"format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "🖥️ {usage}%",
+        "format": "{usage}%  ",
         "tooltip": false
     },
     "memory": {
-        "format": "🧠 {used} ({percentage}%)"
+        "format": "{used} ({percentage}%) "
     },
     "disk": {
     "path": "/",
@@ -68,7 +68,7 @@
         "interval": 5,
         "critical-threshold": 80,
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["🌡️", "🌡️", "🌡️"]
+        "format-icons": ["️", "️", ""]
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
