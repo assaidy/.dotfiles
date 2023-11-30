@@ -1,15 +1,15 @@
 * {
     font-family: IosevkaTerm Nerd Font;
     font-size: 20px;
-    color: #abb2bf; /* Foreground color */
+    color: #ABB2BF; /* Foreground color */
 }
 
 window {
-    /* background-color: #282c34; /* Background color */
-    background: rgba(21, 18, 27, 0);
     color: #f6f7fc;
-    background: black;
-    border: 2px solid #56b6c2; /* Function color */
+    /* background: black; */
+    /* border: 2px solid #56b6c2; */
+    background-color: #282c34; 
+    border: 2px solid #5EA6E2;
     border-radius: 15px;
 }
 
@@ -23,7 +23,6 @@ window {
 }
 
 #inner-box {
-    /* background-color: #282c34; /* Background color */
     margin: 7px;
     margin-top: 0;
 }
@@ -37,7 +36,7 @@ window {
 }
 
 #entry:selected {
-    background-color: #56b6c2; /* Function color */
+    background-color: #5EA6E2;
     font-weight: 700;
     border-radius: 0;
 }
