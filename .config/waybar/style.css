@@ -1,14 +1,15 @@
 * {
     border: none;
     font-family: "Cantarell Regular";
-    /* font-weight: 600; */
+    /* font-weight: 400; */
     font-size: 12px;
     min-height: 0;
 }
 
 window#waybar {
-    color: #f6f7fc;
-    background: rgba(0, 0, 0, 0.6);
+    color: #ABB2BF;
+    background: rgba(40, 44, 51, 1.0);
+    
 }
 
 #workspaces button {
@@ -16,12 +17,15 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: red;
+    color: #E06C34;
+    font-weight: 600;
+    font-style: italic;
 }
 
 #workspaces button:hover {
-    color: black;
-    background: #a6e3a1;
+    color: #282C34;
+    /* background: #C678DD; */
+    background: #56B6C2;
     border-radius: 10px;
 }
 
@@ -40,15 +44,16 @@ window#waybar {
 #idle_inhibitor,
 #idle_inhibitor,
 #backlight {
-    border-radius: 10px;
     padding: 0px 5px;
     margin: 3px 1px;
     border: 0px;
-    background: #303030;
+    background: rgba(40, 44, 51, 1.0);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
 #battery,
 #backlight {
-    padding-right: 8px;
+    padding-right: 10px;
 }
 

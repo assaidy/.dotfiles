@@ -2,13 +2,10 @@ super + b
 	thorium-browser
 
 super + n
-	thunar
+	pcmanfm
 
 super + m
 	dm-search
-
-super + p
-    dm-yt
 
 # Volume Control
 XF86AudioLowerVolume
