@@ -13,7 +13,7 @@ window#waybar {
 }
 
 #workspaces button {
-    padding: 3px;
+    padding: 1px;
 }
 
 #workspaces button.active {
@@ -27,6 +27,7 @@ window#waybar {
     /* background: #C678DD; */
     background: #56B6C2;
     border-radius: 10px;
+    padding: 4px;
 }
 
 #window,
