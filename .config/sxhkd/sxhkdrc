@@ -1,5 +1,5 @@
 super + b
-	thorium-browser
+	firefox
 
 super + n
 	pcmanfm

@@ -9,7 +9,6 @@
 window#waybar {
     color: #ABB2BF;
     background: rgba(40, 44, 51, 1.0);
-    
 }
 
 #workspaces button {
@@ -60,4 +59,3 @@ window#waybar {
 #backlight {
     padding-right: 10px;
 }
-

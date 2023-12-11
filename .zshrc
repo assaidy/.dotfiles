@@ -3,6 +3,8 @@ export ZSH="$HOME/.oh-my-zsh"
 
 export HYPRSHOT_DIR=$HOME/Pictures/Screenshots
 export PATH="$PATH":~/.local/bin
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 
 ZSH_THEME="gozilla"
 
