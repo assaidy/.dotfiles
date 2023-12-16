@@ -1,8 +1,8 @@
 super + b
-	firefox
+	google-chrome-stable
 
 super + n
-	pcmanfm
+	nautilus
 
 super + m
 	dm-search

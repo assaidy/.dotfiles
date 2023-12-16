@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 WORD=$(echo "" | dmenu -p "Add Word: ")
 DEFINITION=$(echo "" | dmenu -p "Add Definition: ")

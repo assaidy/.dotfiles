@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 option=$(printf "Start recording\nStop recording\n" | dmenu -i -l 5 -p "Record screen: ")
 

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Define the menu command. You can switch between dmenu, rofi, and wofi by uncommenting the desired line.
 # DMENU="dmenu -i"
@@ -7,8 +7,8 @@ DMENU="rofi -dmenu -i"
 
 # Get the link from the clipboard.
 # you can change to xclip for xorg
-LINK=$(wl-paste)
-# LINK=$(xclip -o)
+# LINK=$(wl-paste)
+LINK=$(xclip -o)
 
 # Define the available resolutions.
 RESOLUTIONS="1080\n720\n480\n360\n240\n144\nAudio-only"

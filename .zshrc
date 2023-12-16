@@ -120,11 +120,18 @@ alias cls='clear'
 alias e='exit'
 
 # pacman 
-alias pI='sudo pacman -S' 
-alias pU='sudo pacman -Sy archlinux-keyring;sudo pacman -Syu'
-alias pS='sudo pacman -Ss'
-alias pR='sudo pacman -Rn'
-alias pQ='sudo pacman -Q'
+# alias pI='sudo pacman -S' 
+# alias pU='sudo pacman -Sy archlinux-keyring;sudo pacman -Syu'
+# alias pS='sudo pacman -Ss'
+# alias pR='sudo pacman -Rn'
+# alias pQ='sudo pacman -Q'
+
+# ubuntu->nala 
+alias pI='sudo nala install' 
+alias pU='sudo nala update && sudo nala upgrade'
+alias pS='sudo nala search'
+alias pR='sudo nala uninstall'
+alias pQ='nala list'
 
 # yay
 alias yI='yay -S' 
@@ -200,3 +207,4 @@ eval "$(starship init zsh)"
 
 # vim mode
 set -o vi
+source /home/assaidy/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
