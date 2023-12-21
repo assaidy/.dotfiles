@@ -2,7 +2,7 @@ super + b
 	google-chrome-stable
 
 super + n
-	nautilus
+	pcmanfm
 
 super + m
 	dm-search

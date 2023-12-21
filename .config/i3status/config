@@ -6,11 +6,11 @@ ethernet eth0 {
 } */
 
 // wifi
-order += "wireless wlp0s20f3"
+/* order += "wireless wlp0s20f3"
 wireless wlp0s20f3 {
     format_up = "WiFi: %essid%quality"
     format_down = "WiFi: Disconnected"
-}
+} */ 
 
 // volume
 order += "volume master"

@@ -1,10 +1,11 @@
 #  Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-export HYPRSHOT_DIR=$HOME/Pictures/Screenshots
 export PATH="$PATH":~/.local/bin
+export HYPRSHOT_DIR=$HOME/Pictures/Screenshots
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+export PATH=$PATH:/usr/local/go/bin
+export PATH="$PATH":~/go/bin
 
 ZSH_THEME="gozilla"
 
@@ -119,7 +120,7 @@ alias todo="nvim ~/Documents/todo.md"
 alias cls='clear'
 alias e='exit'
 
-# pacman 
+# arch->pacman 
 # alias pI='sudo pacman -S' 
 # alias pU='sudo pacman -Sy archlinux-keyring;sudo pacman -Syu'
 # alias pS='sudo pacman -Ss'
@@ -130,7 +131,7 @@ alias e='exit'
 alias pI='sudo nala install' 
 alias pU='sudo nala update && sudo nala upgrade'
 alias pS='sudo nala search'
-alias pR='sudo nala uninstall'
+alias pR='sudo nala remove'
 alias pQ='nala list'
 
 # yay
@@ -202,8 +203,8 @@ alias yt-dlp-audo-list="yt-dlp -x -o '%(playlist_index)s-%(title)s.%(ext)s'"
 # shuf -n 1 ~/.local/share/new-word | lolcat
 
 # starship prompt
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-eval "$(starship init zsh)"
+# export STARSHIP_CONFIG=~/.config/starship/starship.toml
+# eval "$(starship init zsh)"
 
 # vim mode
 set -o vi
