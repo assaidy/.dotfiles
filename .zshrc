@@ -208,4 +208,3 @@ alias yt-dlp-audo-list="yt-dlp -x -o '%(playlist_index)s-%(title)s.%(ext)s'"
 
 # vim mode
 set -o vi
-source /home/assaidy/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

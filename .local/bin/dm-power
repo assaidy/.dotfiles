@@ -9,7 +9,8 @@ chosen=$(echo -e "$options" | ${DMENU} -p "Power Menu")
 
 case "$chosen" in
   logout) kill -9 -1 ;;
-  lockscreen) swaylock ;;
+  # lockscreen) swaylock ;;
+  lockscreen) i3lock ;;
   suspend) systemctl suspend ;;
   poweroff) systemctl poweroff ;;
   reboot) systemctl reboot ;;

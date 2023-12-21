@@ -1,5 +1,5 @@
 super + b
-	google-chrome-stable
+	firefox
 
 super + n
 	pcmanfm
