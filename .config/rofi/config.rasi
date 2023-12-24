@@ -1,7 +1,7 @@
 @import "~/.cache/wal/colors-rofi-dark"
 
 configuration {
-    font: "IosevkaTerm Nerd Font 16";
+    font: "JetBrains Mono 16";
 }
 
 window {
