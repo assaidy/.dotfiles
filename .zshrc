@@ -1,6 +1,7 @@
 #  Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$PATH":~/.local/bin
+export PATH="$PATH":~/.local/bin/scripts
 export HYPRSHOT_DIR=$HOME/Pictures/Screenshots
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
@@ -198,9 +199,6 @@ alias yt-dlp-vid-list-360="yt-dlp --format='bestvideo[height<=?360]+bestaudio/be
 alias yt-dlp-aud="yt-dlp -x -o '%(title)s.%(ext)s'"
 # --- playlist audio
 alias yt-dlp-audo-list="yt-dlp -x -o '%(playlist_index)s-%(title)s.%(ext)s'"
-
-# vocab script
-# shuf -n 1 ~/.local/share/new-word | lolcat
 
 # starship prompt
 # export STARSHIP_CONFIG=~/.config/starship/starship.toml

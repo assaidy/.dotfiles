@@ -1,1 +1,0 @@
-/home/ahmad/.config/emacs/elpaca/repos/nerd-icons/nerd-icons.el

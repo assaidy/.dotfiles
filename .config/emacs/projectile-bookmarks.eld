@@ -1,1 +1,0 @@
-("~/Documents/DEV/CS-Roadmap/" "~/.dotfiles/")

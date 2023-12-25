@@ -1,1 +1,0 @@
-/home/ahmad/.config/emacs/elpaca/repos/company-box/company-box-icons.el
