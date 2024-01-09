@@ -1,0 +1,54 @@
+# Define the custom separator in global properties for boilerplate
+full_text=|
+align=center
+color=#666666
+separator=false
+separator_block_width=5
+
+
+[battery]
+command=echo "BAT: $(/home/assaidy/.local/bin/scripts/sb_battery)"
+interval=30
+
+[separator]
+
+[volume]
+command=echo "VOL: $(/home/assaidy/.local/bin/scripts/volume)"
+interval=once
+signal=10
+#STEP=5%
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]
+#NATURAL_MAPPING=0
+
+[separator]
+
+[backlight]
+command=echo "BL: $(/home/assaidy/.local/bin/scripts/backlight)"
+interval=once
+signal=10
+
+[separator]
+
+[cpu_usage]
+command=echo "CPU: $(/home/assaidy/.local/bin/scripts/sb_cpu)"
+interval=10
+
+[separator]
+
+[memory_usage]
+command=echo "RAM: $(free -h | awk '/^Mem:/ {print $3}')"
+interval=10
+
+[separator]
+
+[kb_layout]
+command=echo "$(/home/assaidy/.local/bin/scripts/layout)"
+interval=3
+
+[separator]
+
+[time]
+command=date +"%a %d-%m * %I:%M %p"
+interval=10
+
