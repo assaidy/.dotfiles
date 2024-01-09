@@ -1,4 +1,6 @@
 # vim:fileencoding=utf-8:ft=conf:foldmethod=marker
+map ctrl+shift+k increase_font_size
+map ctrl+shift+j decrease_font_size
 
 #: Fonts {{{
 
@@ -478,7 +480,7 @@ window_padding_width 3.0
 
 #: The foreground and background colors
 
-background_opacity 0.9
+# background_opacity 0.9
 
 #: The opacity of the background. A number between 0 and 1, where 1 is
 #: opaque and 0 is fully transparent.  This will only work if
@@ -1108,11 +1110,11 @@ linux_display_server x11
 
 
 # BEGIN_KITTY_THEME
-# Gruvbox Dark Hard
+# VSCode_Dark
 include current-theme.conf
 # END_KITTY_THEME
 
 # BEGIN_PYWAL
-include ~/.cache/wal/colors-kitty.conf
+# include ~/.cache/wal/colors-kitty.conf
 # END_PYWAL
 

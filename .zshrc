@@ -117,7 +117,6 @@ ex ()
 
 ### Aliases
 alias zshconfig="nvim ~/.zshrc"
-alias todo="nvim ~/Documents/todo.md"
 alias cls='clear'
 alias e='exit'
 

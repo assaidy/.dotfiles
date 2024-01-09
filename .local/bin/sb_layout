@@ -1,12 +1,5 @@
 #!/bin/sh
 
-# Check if xkblayout-state is installed
-if ! command -v xkblayout-state &> /dev/null
-then
-    echo "xkblayout-state could not be found. Please install it first."
-    exit
-fi
-
 # Print the current keyboard layout
 xkblayout-state print "%s"
 

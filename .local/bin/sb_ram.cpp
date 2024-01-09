@@ -1,4 +1,6 @@
+#include <ios>
 #include <iostream>
+#include <iomanip>
 #include <sys/sysinfo.h>
 
 int main() {
@@ -16,7 +18,7 @@ int main() {
     // double memoryPercentage = (double)usedMemory * 100 / totalMemory;
     double usedMemoryGB = static_cast<double>(usedMemory) / (1024 * 1024 * 1024);
 
-    std::cout << usedMemoryGB << " GB" << std::endl;
+    std::cout << std::fixed << std::setprecision(2) << usedMemoryGB << " GB" << std::endl;
 
     return 0;
 }

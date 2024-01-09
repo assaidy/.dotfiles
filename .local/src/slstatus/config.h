@@ -68,11 +68,11 @@ static const struct arg args[] = {
 	/* function format          argument */
 	// { wifi_essid, "  %s ", "wlp0s20f3" },
 	// { wifi_perc, "[%s%] ", "wlp0s20f3" },
-	{ run_command, "[%s] ", "sb_battery" },
+	{ run_command, "[%s] ", "/home/assaidy/.local/bin/scripts/sb_battery" },
 //	{ battery_perc, "[ %s%%] ", "BAT0" },
 	{ run_command, "[ %s%%] ", "xbacklight | cut -c1-2" },
 	// { run_command, "[ %s] ", "awk -F\"[][]\" '/Left:/ { print $2 }' <(amixer sget Master)" },
-	{ run_command, "[ %s] ", "sb_volume" },
+	{ vol_perc, "[ %s] ", "/dev/mixer" },
 	//{ run_command, "[%s] ", "sensors | awk '/Core 0/ {print $3}' | cut -c2-" },
 	{ temp, "[%s C] ",       "/sys/devices/virtual/thermal/thermal_zone6/temp" },
 	{ cpu_perc, "[ %s%%] ",       NULL },

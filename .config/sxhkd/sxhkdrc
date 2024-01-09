@@ -1,5 +1,5 @@
 super + b
-	firefox
+    firefox
 
 super + n
 	pcmanfm
@@ -8,18 +8,18 @@ super + m
 	dm-search
 
 # Volume Control
-XF86AudioLowerVolume
-	amixer set Master 5%-
-XF86AudioRaiseVolume
-	amixer set Master 5%+
-XF86AudioMute
-        amixer set Master toggle
+#XF86AudioLowerVolume
+#	amixer set Master 5%-
+#XF86AudioRaiseVolume
+#	amixer set Master 5%+
+#XF86AudioMute
+#        amixer set Master toggle
 
 # Backlight
-XF86MonBrightnessDown
-	xbacklight -dec 10%
-XF86MonBrightnessUp
-	xbacklight -inc 10%
+#XF86MonBrightnessDown
+#	xbacklight -dec 10%
+#XF86MonBrightnessUp
+#	xbacklight -inc 10%
 
 # Screenshot
 Print

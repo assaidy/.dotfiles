@@ -22,7 +22,7 @@ int main()
 	// Print battery status and capacity
 	//cout << "Battery status: " << status << endl;
 	//cout << "Battery percentage: " << capacity << "%" << endl;
-	cout << " " << capacity << "% " << status << "" << endl;
+	cout << capacity << "% " << status << "" << endl;
 
 	return 0;
 }

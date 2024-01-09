@@ -5,6 +5,7 @@
 #include <string>
 #include <unistd.h>
 #include <cmath>
+#include <iomanip>
 
 double get_cpu_percentage() {
 	double user, nice, system, idle;
@@ -30,8 +31,11 @@ double get_cpu_temperature() {
 int main() {
 	double cpu_percentage = get_cpu_percentage();
 	double cpu_temperature = get_cpu_temperature();
-    std::cout << std::round(cpu_percentage) << "%" << std::endl;
-	// std::cout << "CPU: " << std::round(cpu_percentage) << "% " << std::round(cpu_temperature) << "C" << std::endl;
-	//std::cout << "Temperature: " << std::round(cpu_temperature) << "C" << std::endl;
+    // std::cout << std::round(cpu_percentage) << "%" << std::endl;
+	// std::cout << "CPU: " << cpu_percentage << "% " << std::round(cpu_temperature) << "C" << std::endl;
+    std::cout << std::fixed << std::setprecision(2) << cpu_percentage << "% "
+        << std::setprecision(2) << std::round(cpu_temperature) << "°C" << std::endl;
+
+	// std::cout << "Temperature: " << std::round(cpu_temperature) << "C" << std::endl;
 	return 0;
 }
