@@ -49,7 +49,7 @@
         "tooltip": false
     },
     "memory": {
-        "format": "{used} ({percentage}%) "
+        "format": "{used} ({percentage}%) "
     },
     "disk": {
     "path": "/",
@@ -68,7 +68,7 @@
         "interval": 5,
         "critical-threshold": 80,
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["️", "️", ""]
+        "format-icons": [""]
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
