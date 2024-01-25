@@ -29,7 +29,7 @@
     "format": "{short}",
     },
     "tray": {
-        "icon-size": 24,
+        "icon-size": 20,
         "spacing": 2
     },
     "idle_inhibitor": {
