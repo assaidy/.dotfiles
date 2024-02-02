@@ -45,6 +45,6 @@ cpu_usage {
 // time
 order += "tztime local"
 tztime local {
-    format = "%I:%M %p"
+    format = "%a %d-%m-%Y | %I:%M %p"
     timezone = "Africa/Cairo"
 }
