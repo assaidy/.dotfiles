@@ -1,8 +1,8 @@
 super + b
-    chromium
+    firefox
 
 super + n
-	pcmanfm
+	thunar
 
 super + m
 	dm-search

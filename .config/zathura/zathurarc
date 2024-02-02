@@ -1,9 +1,7 @@
 # window frame configurations
-set window-height 3000
-set window-width 1000
-set statusbar-h-padding 0
-set statusbar-v-padding 0
-set page-padding 10
+set statusbar-h-padding 5
+set statusbar-v-padding 5
+set page-padding 2
 set window-title-page true
 set guioptions vc
 
@@ -11,7 +9,7 @@ set guioptions vc
 set scroll-step 40
 
 # font size
-set font "Fira Code 15"
+set font "Ubuntu Mono 12"
 
 # clipboard configurations
 set selection-clipboard clipboard

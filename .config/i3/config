@@ -355,5 +355,5 @@ exec_always --no-startup-id xcompmgr
 exec_always --no-startup-id sxhkd
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet
-exec_always --no-startup-id wally ~/Pictures/walls
+exec_always --no-startup-id newlook
 exec_always --no-startup-id "setxkbmap -option grp:alt_shift_toggle us,ara"
