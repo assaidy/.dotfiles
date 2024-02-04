@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Directory containing wallpapers
+DIR="$HOME/Pictures/walls"
+
+# Select a random file from the directory
+WALLPAPER=$(ls $DIR | shuf -n 1)
+
+# Set the selected file as the wallpaper
+feh --bg-scale $DIR/$WALLPAPER
+
