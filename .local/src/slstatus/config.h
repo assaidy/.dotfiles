@@ -68,8 +68,8 @@ static const struct arg args[] = {
 	/* function format          argument */
 	// { wifi_essid, "  %s ", "wlp0s20f3" },
 	// { wifi_perc, "[%s%] ", "wlp0s20f3" },
-	{ run_command, "[%s] ", "/home/assaidy/.local/bin/scripts/sb_battery" },
-//	{ battery_perc, "[ %s%%] ", "BAT0" },
+	{ run_command, "[%s] ", "/home/ahmad/.local/bin/sb_battery" },
+	// { battery_perc, "[ %s%%] ", "BAT0" },
 	{ run_command, "[ %s%%] ", "xbacklight | cut -c1-2" },
 	// { run_command, "[ %s] ", "awk -F\"[][]\" '/Left:/ { print $2 }' <(amixer sget Master)" },
 	{ vol_perc, "[ %s] ", "/dev/mixer" },

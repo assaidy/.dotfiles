@@ -127,19 +127,19 @@ alias e='exit'
 # alias pR='sudo pacman -Rn'
 # alias pQ='sudo pacman -Q'
 
+# yay
+# alias yI='yay -S' 
+# alias yU='yay -Syu'
+# alias yS='yay -Ss'
+# alias yR='yay -R'
+# alias yQ='yay -Q'
+
 # ubuntu->nala 
 alias pI='sudo nala install' 
 alias pU='sudo nala update && sudo nala upgrade'
 alias pS='sudo nala search'
 alias pR='sudo nala remove'
 alias pQ='nala list'
-
-# yay
-alias yI='yay -S' 
-alias yU='yay -Syu'
-alias yS='yay -Ss'
-alias yR='yay -R'
-alias yQ='yay -Q'
 
 # exa 
 alias ls='exa -a --group-directories-first --icons'
@@ -163,7 +163,7 @@ alias mf='touch'
 alias mx='chmod +x'
 alias v='nvim'
 alias vf='find . -type f | fzf --preview="bat --color always {}" | xargs -r nvim'
-alias code='code --profile C++'
+alias code='code --profile Minimal'
 alias rm='trash'
 alias cp='cp -i'
 alias build='./build.sh'
@@ -205,3 +205,8 @@ alias yt-dlp-audo-list="yt-dlp -x -o '%(playlist_index)s-%(title)s.%(ext)s'"
 
 # vim mode
 set -o vi
+
+# pywal
+# (cat ~/.cache/wal/sequences &)
+# source ~/.cache/wal/colors-tty.sh
+
