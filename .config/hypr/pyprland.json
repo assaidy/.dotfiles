@@ -1,0 +1,13 @@
+{
+    "pyprland": { 
+        "plugins": [ "scratchpads" ] 
+    },
+    "scratchpads": {
+        "term": {
+            "command": "foot -a scratchpad",
+            "margin": 50,
+            "lazy": true,
+            "animation": "fromtop"
+        }
+    }
+}

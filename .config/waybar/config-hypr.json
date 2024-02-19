@@ -49,7 +49,7 @@
         "tooltip": false
     },
     "memory": {
-        "format": "{used} ({percentage}%) "
+        "format": "{used} ({percentage}%)  "
     },
     "disk": {
     "path": "/",

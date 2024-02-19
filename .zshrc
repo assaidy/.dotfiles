@@ -121,25 +121,25 @@ alias cls='clear'
 alias e='exit'
 
 # arch->pacman 
-# alias pI='sudo pacman -S' 
-# alias pU='sudo pacman -Sy archlinux-keyring;sudo pacman -Syu'
-# alias pS='sudo pacman -Ss'
-# alias pR='sudo pacman -Rn'
-# alias pQ='sudo pacman -Q'
+alias pI='sudo pacman -S' 
+alias pU='sudo pacman -Sy archlinux-keyring;sudo pacman -Syu'
+alias pS='sudo pacman -Ss'
+alias pR='sudo pacman -Rn'
+alias pQ='sudo pacman -Q'
 
 # yay
-# alias yI='yay -S' 
-# alias yU='yay -Syu'
-# alias yS='yay -Ss'
-# alias yR='yay -R'
-# alias yQ='yay -Q'
+alias yI='yay -S' 
+alias yU='yay -Syu'
+alias yS='yay -Ss'
+alias yR='yay -R'
+alias yQ='yay -Q'
 
 # ubuntu->nala 
-alias pI='sudo nala install' 
-alias pU='sudo nala update && sudo nala upgrade'
-alias pS='sudo nala search'
-alias pR='sudo nala remove'
-alias pQ='nala list'
+# alias pI='sudo nala install' 
+# alias pU='sudo nala update && sudo nala upgrade'
+# alias pS='sudo nala search'
+# alias pR='sudo nala remove'
+# alias pQ='nala list'
 
 # exa 
 alias ls='exa -a --group-directories-first --icons'
@@ -181,19 +181,11 @@ alias yt-dlp-vid-1080="yt-dlp --format='bestvideo[height<=?1080]+bestaudio/best'
 alias yt-dlp-vid-720="yt-dlp --format='bestvideo[height<=?720]+bestaudio/best' -o '%(title)s.%(ext)s'"
 alias yt-dlp-vid-480="yt-dlp --format='bestvideo[height<=?480]+bestaudio/best' -o '%(title)s.%(ext)s'"
 alias yt-dlp-vid-360="yt-dlp --format='bestvideo[height<=?360]+bestaudio/best' -o '%(title)s.%(ext)s'"
-# alias yt-dlp-vid-1080="yt-dlp -f 140+137 -o '%(title)s.%(ext)s'"
-# alias yt-dlp-vid-720="yt-dlp -f 140+136 -o '%(title)s.%(ext)s'"
-# alias yt-dlp-vid-420="yt-dlp -f 140+135 -o '%(title)s.%(ext)s'"
-# alias yt-dlp-vid-360="yt-dlp -f 140+134 -o '%(title)s.%(ext)s'"
 # --- playlist video
 alias yt-dlp-vid-list-1080="yt-dlp --format='bestvideo[height<=?1080]+bestaudio/best'  -o '%(playlist_index)s-%(title)s.%(ext)s'"
 alias yt-dlp-vid-list-720="yt-dlp --format='bestvideo[height<=?720]+bestaudio/best'  -o '%(playlist_index)s-%(title)s.%(ext)s'"
 alias yt-dlp-vid-list-480="yt-dlp --format='bestvideo[height<=?480]+bestaudio/best'  -o '%(playlist_index)s-%(title)s.%(ext)s'"
 alias yt-dlp-vid-list-360="yt-dlp --format='bestvideo[height<=?360]+bestaudio/best'  -o '%(playlist_index)s-%(title)s.%(ext)s'"
-# alias yt-dlp-vid-list-1080="yt-dlp -f 140+137 -o '%(playlist_index)s-%(title)s.%(ext)s'"
-# alias yt-dlp-vid-list-720="yt-dlp -f 140+136 -o '%(playlist_index)s-%(title)s.%(ext)s'"
-# alias yt-dlp-vid-list-420="yt-dlp -f 140+135 -o '%(playlist_index)s-%(title)s.%(ext)s'"
-# alias yt-dlp-vid-list-360="yt-dlp -f 140+134 -o '%(playlist_index)s-%(title)s.%(ext)s'"
 # --- audio
 alias yt-dlp-aud="yt-dlp -x -o '%(title)s.%(ext)s'"
 # --- playlist audio

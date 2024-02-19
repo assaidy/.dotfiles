@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # DMENU="dmenu -i"
-DMENU="rofi -dmenu -i"
-# DMENU="wofi --dmenu -i"
+# DMENU="rofi -dmenu -i"
+DMENU="wofi --dmenu -i"
 
 options="logout\nsuspend\nlockscreen\npoweroff\nreboot"
 chosen=$(echo -e "$options" | ${DMENU} -p "Power Menu")
