@@ -1,54 +1,54 @@
-# window frame configurations
+set selection-clipboard clipboard
 set statusbar-h-padding 5
 set statusbar-v-padding 5
 set page-padding 2
-set window-title-page true
-set guioptions vc
-
-# set scrolling options
-set scroll-step 40
-
-# font size
-set font "Ubuntu Mono 12"
-
-# clipboard configurations
-set selection-clipboard clipboard
-
-# mappings
-unmap f
-map f toggle_fullscreen
-map [fullscreen] f toggle_fullscreen
 map d toggle_page_mode
 map R reload
 map r rotate
 map c recolor
 map p print
 
-# ----- colour config ----- 
-set notification-error-bg "#3e4452"
-set notification-error-fg "#c678dd"
-set notification-warning-bg "#3e4452"
-set notification-warning-fg "#c678dd"
-set notification-bg "#3e4452"
-set notification-fg "#c678dd"
-set completion-group-bg "#3e4452"
-set completion-group-fg "#e5c07b"
-set completion-bg "#282c34"
-set completion-fg "#abb2bf"
-set completion-highlight-bg "#e5c07b"
-set completion-highlight-fg "#3e4452"
-set inputbar-bg "#282c34"
-set inputbar-fg "#abb2bf"
-set statusbar-bg "#3e4452"
-set statusbar-fg "#abb2bf"
-set highlight-color "#e5c07b"
-set highlight-active-color "#e06c75"
-set default-bg "#3e4452"
-set default-fg "#abb2bf"
-set recolor-lightcolor "#282c34"
-set recolor-darkcolor "#abb2bf"
-set index-bg "#282c34"
-set index-fg "#abb2bf"
-set index-active-bg "#e5c07b"
-set index-active-fg "#3e4452"
-set recolor true
+#############
+## gruvbox ##
+#############
+# Colors -> gruvbox-hard
+# set notification-error-bg       "#1d2021" # bg
+# set notification-error-fg       "#fb4934" # bright:red
+# set notification-warning-bg     "#1d2021" # bg
+# set notification-warning-fg     "#fabd2f" # bright:yellow
+# set notification-bg             "#1d2021" # bg
+# set notification-fg             "#b8bb26" # bright:green
+# 
+# set completion-bg               "#504945" # bg2
+# set completion-fg               "#ebdbb2" # fg
+# set completion-group-bg         "#3c3836" # bg1
+# set completion-group-fg         "#928374" # gray
+# set completion-highlight-bg     "#83a598" # bright:blue
+# set completion-highlight-fg     "#504945" # bg2
+# 
+# # Define the color in index mode
+# set index-bg                    "#504945" # bg2
+# set index-fg                    "#ebdbb2" # fg
+# set index-active-bg             "#83a598" # bright:blue
+# set index-active-fg             "#504945" # bg2
+# 
+# set inputbar-bg                 "#1d2021" # bg
+# set inputbar-fg                 "#ebdbb2" # fg
+# 
+# set statusbar-bg                "#504945" # bg2
+# set statusbar-fg                "#ebdbb2" # fg
+# 
+# set highlight-color             "#fabd2f" # bright:yellow
+# set highlight-active-color      "#fe8019" # bright:orange
+# 
+# set default-bg                  "#1d2021" # bg
+# set default-fg                  "#ebdbb2" # fg
+# set render-loading              true
+# set render-loading-bg           "#1d2021" # bg
+# set render-loading-fg           "#ebdbb2" # fg
+# 
+# # Recolor book content's color
+# set recolor-lightcolor          "#1d2021" # bg
+# set recolor-darkcolor           "#ebdbb2" # fg
+# #set recolor                     "true"
+# set recolor-keephue             true      # keep original color
