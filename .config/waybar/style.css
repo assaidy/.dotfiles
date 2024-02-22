@@ -52,6 +52,7 @@ window#waybar {
     font-style: italic;
 }
 
+#idle_inhibitor,
 #battery,
 #backlight {
     padding-right: 10px;
