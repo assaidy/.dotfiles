@@ -1,8 +1,8 @@
 super + b
-    brave-browser
+    firefox
 
 super + n
-	thunar
+	nautilus
 
 super + m
 	dm-search
