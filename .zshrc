@@ -1,9 +1,10 @@
-#  Path to your oh-my-zsh installation.
+# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$PATH":~/.local/bin
 export PATH="$PATH":~/.local/bin/scripts
 export HYPRSHOT_DIR=$HOME/Pictures/Screenshots
-export DOTNET_ROOT=$HOME/.dotnet
+# export DOTNET_ROOT=$HOME/.dotnet
+export DOTNET_ROOT=/usr/lib/dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 export PATH=$PATH:/usr/local/go/bin
 export PATH="$PATH":~/go/bin

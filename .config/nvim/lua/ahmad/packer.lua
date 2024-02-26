@@ -35,7 +35,7 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'
     }
 
-    -- lsp-zero
+        -- lsp-zero
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
@@ -69,13 +69,7 @@ return require('packer').startup(function(use)
     -- git
     use { "lewis6991/gitsigns.nvim" }
 
-    -- tabs
-    -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
-    -- use {'romgrk/barbar.nvim'}
-    -- use {'nvim-tree/nvim-web-devicons'} -- OPTIONAL: for file icons
-    -- use {'lewis6991/gitsigns.nvim'} -- OPTIONAL: for git status
-
-    -- lualine
+        -- lualine
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -89,5 +83,7 @@ return require('packer').startup(function(use)
         end,
     }
 
-end)
+    -- tmux
+    use { 'alexghergh/nvim-tmux-navigation' }
 
+end)

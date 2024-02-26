@@ -7,7 +7,7 @@
    ========================================================================== */
 
 window {
-    background-color: #282c34;
+    background-color: @background;
     border:           2;
     padding:          2;
 }
@@ -19,21 +19,21 @@ mainbox {
 
 message {
     border:       2px 0 0;
-    border-color: #61afef;
+    border-color: @separatorcolor;
     padding:      1px;
 }
 
 textbox {
-    highlight:  #61afef;
-    text-color: #abb2bf;
+    highlight:  @highlight;
+    text-color: @foreground;
 }
 
 listview {
     border:       2px solid 0 0;
     padding:      2px 0 0;
-    border-color: #61afef;
+    border-color: @separatorcolor;
     spacing:      2px;
-    scrollbar:    #282c34;
+    scrollbar:    @scrollbar;
 }
 
 element {
@@ -42,66 +42,66 @@ element {
 }
 
 element.normal.normal {
-    background-color: #282c34;
-    text-color:       #abb2bf;
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
 }
 
 element.normal.urgent {
-    background-color: #e06c75;
-    text-color:       #abb2bf;
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
 }
 
 element.normal.active {
-    background-color: #61afef;
-    text-color:       #abb2bf;
+    background-color: @active-background;
+    text-color:       @active-foreground;
 }
 
 element.selected.normal {
-    background-color: #61afef;
-    text-color:       #282c34;
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
 }
 
 element.selected.urgent {
-    background-color: #e06c75;
-    text-color:       #282c34;
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
 }
 
 element.selected.active {
-    background-color: #61afef;
-    text-color:       #282c34;
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
 }
 
 element.alternate.normal {
-    background-color: #282c34;
-    text-color:       #abb2bf;
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
 }
 
 element.alternate.urgent {
-    background-color: #e06c75;
-    text-color:       #abb2bf;
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
 }
 
 element.alternate.active {
-    background-color: #61afef;
-    text-color:       #abb2bf;
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
 }
 
 scrollbar {
     width:        4px;
     border:       0;
-    handle-color: #61afef;
+    handle-color: @scrollbar-handle;
     handle-width: 8px;
     padding:      0;
 }
 
 sidebar {
     border:       2px 0 0;
-    border-color: #61afef;
+    border-color: @separatorcolor;
 }
 
 inputbar {
     spacing:    0;
-    text-color: #abb2bf;
+    text-color: @normal-foreground;
     padding:    2px;
     children:   [ prompt, textbox-prompt-sep, entry, case-indicator ];
 }
@@ -111,18 +111,17 @@ entry,
 prompt,
 button {
     spacing:    0;
-    text-color: #abb2bf;
+    text-color: @normal-foreground;
 }
 
 button.selected {
-    background-color: #61afef;
-    text-color:       #282c34;
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
 }
 
 textbox-prompt-sep {
     expand:     false;
     str:        ":";
-    text-color: #abb2bf;
+    text-color: @normal-foreground;
     margin:     0 0.3em 0 0;
 }
-

@@ -8,10 +8,10 @@ map ctrl+shift+j decrease_font_size
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
-font_family        IosevkaTerm Nerd Font
-# bold_font        IosevkaTerm Nerd Font Bold
-# italic_font      IosevkaTerm Nerd Font Italic
-# bold_italic_font IosevkaTerm Nerd Font Bold Italic
+font_family        CaskaydiaCove Nerd Font
+# bold_font        JetBrains Mono Bold
+# italic_font      JetBrains Mono Italic
+# bold_italic_font JetBrains Mono Bold Italic
 
 #: You can specify different fonts for the bold/italic/bold-italic
 #: variants. To get a full list of supported fonts use the `kitty
@@ -25,7 +25,7 @@ font_family        IosevkaTerm Nerd Font
 #:     italic_font      Operator Mono Book Italic
 #:     bold_italic_font Operator Mono Medium Italic
 
-font_size 16.0
+font_size 14.0
 
 #: Font size (in pts)
 
@@ -1110,7 +1110,7 @@ linux_display_server x11
 
 
 # BEGIN_KITTY_THEME
-# VSCode_Dark
+# Gruvbox Dark
 include current-theme.conf
 # END_KITTY_THEME
 

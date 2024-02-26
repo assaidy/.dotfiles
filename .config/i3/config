@@ -64,8 +64,8 @@ tiling_drag modifier titlebar
 
 # hide titlebar
 default_border pixel 2
-default_floating_border pixel 2
 for_window [class="^.*"] border pixel 2
+default_floating_border pixel 2
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start & Kill
 
@@ -205,7 +205,7 @@ for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 1000 700
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] border pexil 3
-bindsym $mod+Control+Return exec --no-startup-id st -n dropdown
+bindsym $mod+Control+Return exec --no-startup-id kitty --name dropdown
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Resize
 
@@ -253,15 +253,15 @@ smart_borders 1
 ## gruvbox ##
 #############
 # set primary gruvbox colorscheme colors
-# set $bg #282828
-# set $red #cc241d
-# set $green #98971a
-# set $yellow #d79921
-# set $blue #458588
-# set $purple #b16286
-# set $aqua #689d68
-# set $gray #a89984
-# set $darkgray #1d2021
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
 
 #start of window title bars & borders section
 
@@ -274,10 +274,10 @@ smart_borders 1
 
 # blue gruvbox
 # class                 border|backgr|text|indicator|child_border
-# client.focused          $blue $blue $darkgray $purple $yellow
-# client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
-# client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
-# client.urgent           $red $red $white $red $red
+client.focused          $blue $blue $darkgray $purple $yellow
+client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+client.urgent           $red $red $white $red $red
 
 #end of window title bars & borders section
 
@@ -302,12 +302,12 @@ set $base0E #c678dd
 set $base0F #be5046
 
 # Property Name         Border  BG      Text    Indicator Child Border
-client.focused          $base05 $base0D $base00 $base0D $base0C
-client.focused_inactive $base01 $base01 $base05 $base03 $base01
-client.unfocused        $base01 $base00 $base05 $base01 $base01
-client.urgent           $base08 $base08 $base00 $base08 $base08
-client.placeholder      $base00 $base00 $base05 $base00 $base00
-client.background       $base07
+#client.focused          $base05 $base0D $base00 $base0D $base0C
+#client.focused_inactive $base01 $base01 $base05 $base03 $base01
+#client.unfocused        $base01 $base00 $base05 $base01 $base01
+#client.urgent           $base08 $base08 $base00 $base08 $base08
+#client.placeholder      $base00 $base00 $base05 $base00 $base00
+#client.background       $base07
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Bar
 
@@ -323,28 +323,28 @@ bar {
     colors {
         ## gruvbox
         # bar background color
-        # background #1d2021
+        background #1d2021
         # text color used for blocks that do not have a color specified.
-        # statusline $aqua
+        statusline $aqua
         # workspaces section            
         #                    border  backgr. text
-        # focused_workspace    $aqua $aqua $darkgray
-        # inactive_workspace   $darkgray $darkgray $yellow
-        # active_workspace     $darkgray $darkgray $yellow
-        # urgent_workspace     $red $red $bg
+        focused_workspace    $aqua $aqua $darkgray
+        inactive_workspace   $darkgray $darkgray $yellow
+        active_workspace     $darkgray $darkgray $yellow
+        urgent_workspace     $red $red $bg
 
-        # one dark pro
-        background $base00
-        # background #000000
-        separator  $base01
-        statusline $base08
+        ## one dark pro
+        #background $base00
+        ## background #000000
+        #separator  $base01
+        # statusline $base08
 
-        # State             Border  BG      Text
-        focused_workspace   $base05 $base0D $base00
-        active_workspace    $base05 $base03 $base00
-        inactive_workspace  $base03 $base01 $base05
-        urgent_workspace    $base08 $base08 $base00
-        binding_mode        $base00 $base0A $base00
+        ## State             Border  BG      Text
+        #focused_workspace   $base05 $base0D $base00
+        #active_workspace    $base05 $base03 $base00
+        #inactive_workspace  $base03 $base01 $base05
+        #urgent_workspace    $base08 $base08 $base00
+        #binding_mode        $base00 $base0A $base00
     }
 }
 
