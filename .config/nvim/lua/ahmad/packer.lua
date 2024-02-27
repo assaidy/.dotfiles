@@ -75,14 +75,6 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
 
-    -- renameing
-    use {
-        "smjonas/inc-rename.nvim",
-        config = function()
-            require("inc_rename").setup()
-        end,
-    }
-
     -- tmux
     use { 'alexghergh/nvim-tmux-navigation' }
 
