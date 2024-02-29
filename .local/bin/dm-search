@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BROWSER=firefox
+BROWSER=chromium
 # DMENU="dmenu -i -l 20"
 DMENU="rofi -dmenu -i"
 # DMENU="wofi --dmenu -i"

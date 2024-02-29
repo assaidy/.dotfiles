@@ -122,25 +122,25 @@ alias cls='clear'
 alias e='exit'
 
 # arch->pacman 
-alias pI='sudo pacman -S' 
-alias pU='sudo pacman -Sy archlinux-keyring;sudo pacman -Syu'
-alias pS='sudo pacman -Ss'
-alias pR='sudo pacman -Rn'
-alias pQ='sudo pacman -Q'
+# alias pI='sudo pacman -S' 
+# alias pU='sudo pacman -Sy archlinux-keyring;sudo pacman -Syu'
+# alias pS='sudo pacman -Ss'
+# alias pR='sudo pacman -Rn'
+# alias pQ='sudo pacman -Q'
 
 # yay
-alias yI='yay -S' 
-alias yU='yay -Syu'
-alias yS='yay -Ss'
-alias yR='yay -R'
-alias yQ='yay -Q'
+# alias yI='yay -S' 
+# alias yU='yay -Syu'
+# alias yS='yay -Ss'
+# alias yR='yay -R'
+# alias yQ='yay -Q'
 
 # ubuntu->nala 
-# alias pI='sudo nala install' 
-# alias pU='sudo nala update && sudo nala upgrade'
-# alias pS='sudo nala search'
-# alias pR='sudo nala remove'
-# alias pQ='nala list'
+alias pI='sudo nala install' 
+alias pU='sudo nala sudo nala upgrade'
+alias pS='sudo nala search'
+alias pR='sudo nala remove'
+alias pQ='nala list'
 
 # exa 
 alias ls='exa -a --group-directories-first --icons'
