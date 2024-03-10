@@ -5,7 +5,7 @@ include ./autostart
 #############
 set $mod Mod4
 set $term foot
-set $web_browser firefox
+set $web_browser brave
 set $menu wofi --show run
 
 set $left h
@@ -16,7 +16,7 @@ set $right l
 #############
 ## Font
 #############
-font pango: JetBrains Mono 10
+font pango: CaskaydiaCove Nerd Font 10
 
 ### Idle configuration
 #
@@ -124,7 +124,7 @@ for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 1000 700
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] border pexil 3
-bindsym $mod+Control+Return exec --no-startup-id st -n dropdown
+bindsym $mod+Control+Return exec --no-startup-id foot -a dropdown
 
 #############
 ## Resize

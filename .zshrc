@@ -9,7 +9,9 @@ export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 export PATH=$PATH:/usr/local/go/bin
 export PATH="$PATH":~/go/bin
 
-ZSH_THEME="gozilla"
+# ZSH_THEME="gozilla"
+PROMPT="[%n@%m %~]$ "
+PROMPT="[%F{10}%n%f%F{11}@%f%F{red}%m%f %F{cyan}%~%f]$ "
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -143,15 +145,15 @@ alias yQ='yay -Q'
 # alias pQ='nala list'
 
 # exa 
-alias ls='exa -a --group-directories-first --icons'
-alias ll='exa -al --group-directories-first --icons'
-alias lt='exa -aT --group-directories-first --icons'
-alias l.='exa -a | grep "^\."'
+# alias ls='exa -a --group-directories-first --icons'
+# alias ll='exa -al --group-directories-first --icons'
+# alias lt='exa -aT --group-directories-first --icons'
+# alias l.='exa -a | grep "^\."'
 
 # ls
-# alias ls='ls -a --color --group-directories-first'
-# alias ll='ls -alh --group-directories-first'
-# alias l.='ls -a | grep "^\."'
+alias ls='ls -a --color --group-directories-first'
+alias ll='ls -alh --group-directories-first'
+alias l.='ls -a | grep "^\."'
 
 # kitty 
 alias kittyicat='kitty +kitten icat'
@@ -202,4 +204,4 @@ set -o vi
 # pywal
 # (cat ~/.cache/wal/sequences &)
 # source ~/.cache/wal/colors-tty.sh
-
+# eval "$(oh-my-posh init zsh)"

@@ -7,5 +7,6 @@ DIR="$HOME/Pictures/walls"
 WALLPAPER=$(ls $DIR | shuf -n 1)
 
 # Set the selected file as the wallpaper
-feh --bg-scale $DIR/$WALLPAPER
+# feh --bg-scale $DIR/$WALLPAPER
+swww img $DIR/$WALLPAPER
 
