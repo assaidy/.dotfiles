@@ -4,14 +4,13 @@ export PATH="$PATH":~/.local/bin
 export PATH="$PATH":~/.local/bin/scripts
 export HYPRSHOT_DIR=$HOME/Pictures/Screenshots
 export DOTNET_ROOT=$HOME/.dotnet
-# export DOTNET_ROOT=/usr/lib/dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 export PATH=$PATH:/usr/local/go/bin
 export PATH="$PATH":~/go/bin
 
 # ZSH_THEME="gozilla"
-PROMPT="[%n@%m %~]$ "
-PROMPT="[%F{10}%n%f%F{11}@%f%F{red}%m%f %F{cyan}%~%f]$ "
+# PROMPT="[%n@%m %~]$ "
+PROMPT="[%F{10}%n%f%F{11}@%f%F{red}%m%f][%F{cyan}%~%f]$ "
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -128,7 +127,7 @@ alias pI='sudo pacman -S'
 alias pU='sudo pacman -Sy archlinux-keyring;sudo pacman -Syu'
 alias pS='sudo pacman -Ss'
 alias pR='sudo pacman -Rn'
-alias pQ='sudo pacman -Q'
+alias pQ='pacman -Q'
 
 # yay
 alias yI='yay -S' 
@@ -145,15 +144,15 @@ alias yQ='yay -Q'
 # alias pQ='nala list'
 
 # exa 
-# alias ls='exa -a --group-directories-first --icons'
-# alias ll='exa -al --group-directories-first --icons'
-# alias lt='exa -aT --group-directories-first --icons'
-# alias l.='exa -a | grep "^\."'
+alias ls='exa -a --group-directories-first'
+alias ll='exa -al --group-directories-first'
+alias lt='exa -aT --group-directories-first'
+alias l.='exa -a | grep "^\."'
 
 # ls
-alias ls='ls -a --color --group-directories-first'
-alias ll='ls -alh --group-directories-first'
-alias l.='ls -a | grep "^\."'
+# alias ls='ls -a --color --group-directories-first'
+# alias ll='ls -alh --group-directories-first'
+# alias l.='ls -a | grep "^\."'
 
 # kitty 
 alias kittyicat='kitty +kitten icat'
