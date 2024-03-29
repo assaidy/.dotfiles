@@ -8,9 +8,9 @@ export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 export PATH=$PATH:/usr/local/go/bin
 export PATH="$PATH":~/go/bin
 
-# ZSH_THEME="gozilla"
-# PROMPT="[%n@%m %~]$ "
-PROMPT="[%F{10}%n%f%F{11}@%f%F{red}%m%f][%F{cyan}%~%f]$ "
+ZSH_THEME="af-magic"
+# PROMPT="%F{cyan}%~ >%f "
+# PROMPT="[%F{10}%n%f%F{11}@%f%F{red}%m%f][%F{cyan}%~%f]$ "
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
