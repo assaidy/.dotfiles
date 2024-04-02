@@ -9,27 +9,28 @@ super + m
 
 # Volume Control
 #XF86AudioLowerVolume
-#	amixer set Master 5%-
+	#amixer set Master 5%-
 #XF86AudioRaiseVolume
-#	amixer set Master 5%+
+	#amixer set Master 5%+
 #XF86AudioMute
-#        amixer set Master toggle
+        #amixer set Master toggle
 
 # Backlight
 #XF86MonBrightnessDown
-#	xbacklight -dec 10%
+	#light -U 10%
 #XF86MonBrightnessUp
-#	xbacklight -inc 10%
+	#light -A 10%
 
 # Screenshot
-Print
-	maim --select | xclip -selection clipboard -t image/png
-shift + Print
-	maim --select >> ~/Pictures/Screenshots/$(date +%s).png 
-ctrl + Print
+super + p
+    maim --select | xclip -selection clipboard -t image/png
+#	maim --select >> ~/Pictures/Screenshots/$(date +%s).png 
+super + shift + p
 	maim | xclip -selection clipboard -t image/png
-shift + ctrl + Print
-	maim >> ~/Pictures/Screenshots/$(date +%s).png 
+#ctrl + Print
+#   maim >> ~/Pictures/Screenshots/$(date +%s).png 
+#shift + ctrl + Print
+#	maim >> ~/Pictures/Screenshots/$(date +%s).png 
 
 # Switch Keyboard languages
 #Shift_L + Alt_L

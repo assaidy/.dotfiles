@@ -10,3 +10,6 @@ WALLPAPER=$(ls $DIR | shuf -n 1)
 feh --bg-scale $DIR/$WALLPAPER
 # swww img $DIR/$WALLPAPER
 
+# set pywal
+wal -i $DIR/$WALLPAPER
+xdotool key super+F5
