@@ -35,17 +35,17 @@ static char *colors[][3] = {
 // static const char col_gray4[]       = "#fbf1c7";
 // static const char col_cyan[]        = "#458588"; /* or #83a598 for a lighter cyan color */
 
-// OneDark Pro
+// // OneDark Pro
 // static const char col_gray1[]       = "#282c34"; 
 // static const char col_gray2[]       = "#3c3836";
 // static const char col_gray3[]       = "#abb2bf"; 
 // static const char col_gray4[]       = "#282C34";
 // static const char col_cyan[]        = "#61AFEF"; 
-
+//
 // static const char *colors[][3]      = {
-	// /*               fg         bg         border   */
-	// [SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	// [SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+// 	/*               fg         bg         border   */
+// 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+// 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 // };
 
 /* tagging */
@@ -91,7 +91,7 @@ static const Layout layouts[] = {
 
 /* commands */
 // static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL }; 
 static const char *roficmd[] = {"rofi", "-show", "run"};
 static const char *termcmd[]  = { "kitty", NULL };
 
@@ -157,13 +157,15 @@ void
 autostart(void)
 {
     /* Add your autostart commands here */
-    system("newlook");
-    system("xcompmgr");
-    system("sxhkd");
-    system("nm-applet");
-    system("blueman-applet");
-    system("setxkbmap -option grp:alt_shift_toggle us,ara");
-    system("slstatus");
+    system("newlook &");
+    system("picom &");
+    system("dunst &");
+    system("sxhkd &");
+    system("nm-applet &");
+    system("blueman-applet &");
+    system("setxkbmap -option grp:alt_shift_toggle us,ara &");
+    system("slstatus &");
+    system("sct 5000 &");
     /* Add more commands as needed */
 }
 

@@ -5,6 +5,7 @@ export PATH="$PATH":~/.local/bin/scripts
 export HYPRSHOT_DIR=$HOME/Pictures/Screenshots
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+export PATH=$PATH:/path/to/java/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH="$PATH":~/go/bin
 
@@ -131,10 +132,10 @@ alias pQ='pacman -Q'
 
 # yay
 alias yI='yay -S' 
-alias yU='yay -Syu'
+alias yU='yay -Syu --aur'
 alias yS='yay -Ss'
 alias yR='yay -R'
-alias yQ='yay -Q'
+alias yQ='yay -Qm'
 
 # ubuntu->nala 
 # alias pI='sudo nala install' 
@@ -165,7 +166,7 @@ alias mf='touch'
 alias mx='chmod +x'
 alias v='nvim'
 alias vf='find . -type f | fzf --preview="bat --color always {}" | xargs -r nvim'
-alias code='code --profile Minimal'
+alias code='code --profile main'
 alias rm='trash'
 alias cp='cp -i'
 alias build='./build.sh'
@@ -201,6 +202,6 @@ alias yt-dlp-audo-list="yt-dlp -x -o '%(playlist_index)s-%(title)s.%(ext)s'"
 set -o vi
 
 # pywal
-# (cat ~/.cache/wal/sequences &)
-# source ~/.cache/wal/colors-tty.sh
-# eval "$(oh-my-posh init zsh)"
+(cat ~/.cache/wal/sequences &)
+source ~/.cache/wal/colors-tty.sh
+# eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/1_shell.omp.json)"

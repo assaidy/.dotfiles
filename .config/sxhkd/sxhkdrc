@@ -1,32 +1,32 @@
 super + b
-    brave
+    chromium
 
 super + n
-	nautilus
+	thunar
 
 super + m
 	dm-search
 
 # Volume Control
-#XF86AudioLowerVolume
-	#amixer set Master 5%-
-#XF86AudioRaiseVolume
-	#amixer set Master 5%+
-#XF86AudioMute
-        #amixer set Master toggle
+XF86AudioLowerVolume
+	amixer set Master 5%-
+XF86AudioRaiseVolume
+	amixer set Master 5%+
+XF86AudioMute
+    amixer set Master toggle
 
 # Backlight
-#XF86MonBrightnessDown
-	#light -U 10%
-#XF86MonBrightnessUp
-	#light -A 10%
+XF86MonBrightnessDown
+	light -U 10%
+XF86MonBrightnessUp
+	light -A 10%
 
 # Screenshot
 super + p
-    maim --select | xclip -selection clipboard -t image/png
+    maim --select | xclip -selection clipboard -t image/png && xclip -selection clipboard -o >> ~/Pictures/Screenshots/$(date +%s).png 
 #	maim --select >> ~/Pictures/Screenshots/$(date +%s).png 
 super + shift + p
-	maim | xclip -selection clipboard -t image/png
+	maim | xclip -selection clipboard -t image/png && xclip -selection clipboard -o >> ~/Pictures/Screenshots/$(date +%s).png 
 #ctrl + Print
 #   maim >> ~/Pictures/Screenshots/$(date +%s).png 
 #shift + ctrl + Print

@@ -2,7 +2,6 @@ exec_always --no-startup-id systemctl --user import-environment
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet
-exec_always --no-startup-id foot --server
 exec_always --no-startup-id swww-daemon
 exec_always --no-startup-id "swww query || swww init && swww img $(find ~/Pictures/walls/ -type f -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" | shuf -n 1)"
 exec_always --no-startup-id "wl-paste -t text --watch clipman store --no-persist"

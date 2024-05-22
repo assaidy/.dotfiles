@@ -1,0 +1,19 @@
+max-visible=1
+anchor=top-right
+font=JetBrains Mono 10
+
+icons=1
+markup=1
+default-timeout=3000
+
+padding=5
+
+background-color=#1D2021
+progress-color=#A89984
+text-color=#9C9179
+
+border-color=#ebdbb2
+border-size=2
+border-radius=2
+
+

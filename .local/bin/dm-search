@@ -1,9 +1,9 @@
 #!/bin/bash
 
-BROWSER=brave
-# DMENU="dmenu -i -l 20"
+BROWSER=chromium
+DMENU="dmenu -i -l 20"
 # DMENU="rofi -dmenu -i"
-DMENU="wofi --dmenu -i"
+# DMENU="wofi --dmenu -i"
 
 
 declare -a options=(
@@ -17,6 +17,7 @@ declare -a options=(
 "YouTube_Search - https://www.youtube.com/search?q="
 "phind - https://phind.com/search?q="
 "merriam_webster - https://www.merriam-webster.com/dictionary/"
+"leetcode - https://leetcode.com/problemset/?search="
 )
 
 # pick a search engine

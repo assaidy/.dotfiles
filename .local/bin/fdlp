@@ -2,8 +2,8 @@
 
 # Get the link from the clipboard.
 # you can change to xclip for xorg
-LINK=$(wl-paste)
-# LINK=$(xclip -o)
+LINK=$(xclip -o)
+# LINK=$(wl-paste)
 
 # Ask the user if they want to download a single video or a playlist.
 OPTIONS="Single\nPlaylist"
@@ -11,7 +11,7 @@ CHOICE=$(printf "$OPTIONS" | fzf --prompt "What do you want to download? -> ")
 
 # Check if a choice was made.
 if [ -z "$CHOICE" ]; then
-  exit 1
+    exit 1
 fi
 
 # Define the available resolutions.
@@ -22,7 +22,7 @@ RESOLUTION=$(printf "$RESOLUTIONS" | fzf --prompt "Select resolution for: $LINK 
 
 # Check if a resolution was selected.
 if [ -z "$RESOLUTION" ]; then
-  exit 1
+    exit 1
 fi
 
 # If the user selected "Audio-only", use "bestaudio/best". 
