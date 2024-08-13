@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 local keymap = vim.keymap -- for conciseness
 
 ---------------------
--- General Keymaps -------------------
+-- General Keymaps --
 ---------------------
 --
 -- run a command inside a terminal split
@@ -22,6 +22,9 @@ end, { desc = "Run system command in a split term" })
 
 -- exit terminal mode
 keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+-- open explore
+keymap.set("n", "<leader>pv", "Ex", { desc = "Exit terminal mode" })
 
 -- go to end/start of line
 keymap.set({ "n", "v" }, "gs", "0", { desc = "Goto start of the line" })

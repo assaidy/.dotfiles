@@ -11,5 +11,5 @@ feh --bg-scale $DIR/$WALLPAPER
 # swww img $DIR/$WALLPAPER
 
 # set pywal
-wal -i $DIR/$WALLPAPER
-xdotool key super+F5
+# wal -i $DIR/$WALLPAPER
+# xdotool key super+F5

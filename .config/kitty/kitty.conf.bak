@@ -7,12 +7,7 @@ map ctrl+shift+j decrease_font_size
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
 #: characters.
-
-font_family        JetBrains Mono
-# bold_font        JetBrains Mono Bold
-# italic_font      JetBrains Mono Italic
-# bold_italic_font JetBrains Mono Bold Italic
-
+#
 #: You can specify different fonts for the bold/italic/bold-italic
 #: variants. To get a full list of supported fonts use the `kitty
 #: list-fonts` command. By default they are derived automatically, by
@@ -20,10 +15,10 @@ font_family        JetBrains Mono
 #: families that have many weight variants like Book, Medium, Thick,
 #: etc. For example::
 
-#:     font_family      Operator Mono Book
-#:     bold_font        Operator Mono Medium
-#:     italic_font      Operator Mono Book Italic
-#:     bold_italic_font Operator Mono Medium Italic
+font_family      JetBrains Mono
+# bold_font        JetBrains Mono Bold
+# italic_font      JetBrains Mono Italic
+# bold_italic_font JetBrains Mono Bold Italic
 
 font_size 14.0
 
@@ -475,12 +470,12 @@ window_padding_width 3.0
 #: }}}
 
 #: Color scheme {{{
-# foreground #f0fdff
-# background #2a2e38
+foreground #ffffff
+background #181818
 
 #: The foreground and background colors
 
-# background_opacity 0.8
+# background_opacity 0.90
 
 #: The opacity of the background. A number between 0 and 1, where 1 is
 #: opaque and 0 is fully transparent.  This will only work if
@@ -1110,8 +1105,8 @@ macos_thicken_font 0.3
 
 
 # BEGIN_KITTY_THEME
-# Doom Vibrant
-include current-theme.conf
+# Tango Dark
+# include current-theme.conf
 # END_KITTY_THEME
 
 # BEGIN_PYWAL

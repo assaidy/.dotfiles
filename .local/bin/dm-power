@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DMENU="dmenu -i"
-# DMENU="rofi -dmenu -i"
+# DMENU="dmenu -i"
+DMENU="rofi -dmenu -i"
 # DMENU="wofi --dmenu -i"
 
 options="logout\nsuspend\nlockscreen\npoweroff\nreboot"
@@ -9,8 +9,8 @@ chosen=$(echo -e "$options" | ${DMENU} -p "Power Menu")
 
 case "$chosen" in
     logout) kill -9 -1 ;;
-    # lockscreen) swaylock-fancy ;;
-    lockscreen) i3lock ;;
+    lockscreen) swaylock-fancy ;;
+    # lockscreen) i3lock ;;
     suspend) systemctl suspend ;;
     poweroff) systemctl poweroff ;;
     reboot) systemctl reboot ;;

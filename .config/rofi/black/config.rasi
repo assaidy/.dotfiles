@@ -1,0 +1,36 @@
+/* Dark Theme for Rofi */
+
+* {
+    /* Theme settings */
+    font: "JetBrains Mono 14";
+    highlight: bold italic;
+    scrollbar: true;
+
+    /* Dark theme colors */
+    background:          #000000; /* Black background */
+    foreground:          #FFFFFF; /* White foreground */
+    border-color:        #444444; /* Dark gray border */
+    separatorcolor:      #444444; /* Dark gray separator */
+    scrollbar-handle:    #444444; /* Dark gray scrollbar handle */
+
+    normal-background:           @background;
+    normal-foreground:           @foreground;
+    alternate-normal-background: #111111; /* Slightly lighter black */
+    alternate-normal-foreground: @foreground;
+    selected-normal-background:  #222222; /* Dark gray */
+    selected-normal-foreground:  @foreground;
+
+    active-background:           #333333; /* Medium gray */
+    active-foreground:           @foreground;
+    alternate-active-background: @active-background;
+    alternate-active-foreground: @active-foreground;
+    selected-active-background:  #444444; /* Light gray */
+    selected-active-foreground:  @foreground;
+
+    urgent-background:           #550000; /* Dark red */
+    urgent-foreground:           @foreground;
+    alternate-urgent-background: @urgent-background;
+    alternate-urgent-foreground: @urgent-foreground;
+    selected-urgent-background:  #770000; /* Lighter dark red */
+    selected-urgent-foreground:  @foreground;
+}

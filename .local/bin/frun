@@ -1,0 +1,12 @@
+#!/usr/bin/sh
+
+# select excutable
+cmd=$(compgen -c | fzf --layout=reverse)
+
+# run it in the background
+if [ -n "$cmd" ]; then
+    setsid $cmd > /dev/null 2>&1 &
+else
+    exit
+fi
+

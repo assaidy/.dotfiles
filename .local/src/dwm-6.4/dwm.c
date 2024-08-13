@@ -2808,12 +2808,12 @@ main(int argc, char *argv[])
         XrmInitialize();
         loadxrdb();
 	setup();
+    autostart();
 #ifdef __OpenBSD__
 	if (pledge("stdio rpath proc exec ps", NULL) == -1)
 		die("pledge");
 #endif /* __OpenBSD__ */
 	scan();
-    autostart();
 	run();
 	cleanup();
 	XCloseDisplay(dpy);

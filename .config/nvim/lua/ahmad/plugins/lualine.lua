@@ -9,10 +9,12 @@ return {
 		lualine.setup({
 			options = {
 				theme = "auto", -- lualine theme
-				component_separators = { left = "", right = "" },
-				section_separators = { left = "", right = "" },
-				-- component_separators = { left = "", right = "" },
-				-- section_separators = { left = "", right = "" },
+                component_separators = { left = "|", right = "|" },
+                section_separators = { left = "", right = "" },
+				-- component_separators = { left = "", right = "" },
+				-- section_separators = { left = "", right = "" },
+                -- section_separators = { left = '', right = '' },
+                -- component_separators = { left = '', right = '' },
 				disabled_filetypes = { -- Filetypes to disable lualine for.
 					statusline = {}, -- only ignores the ft for statusline.
 					winbar = {}, -- only ignores the ft for winbar.
@@ -29,7 +31,7 @@ return {
 				-- can't take over the entire statusline even
 				-- if neither of 'x', 'y' or 'z' are present.
 
-				globalstatus = false, -- enable global statusline (have a single statusline
+				globalstatus = true, -- enable global statusline (have a single statusline
 				-- at bottom of neovim instead of one for  every window).
 				-- This feature is only available in neovim 0.7 and higher.
 

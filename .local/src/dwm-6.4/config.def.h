@@ -16,12 +16,29 @@ static const char *fonts[]          = { "JetBrains Mono:size=10", "JoyPixels:pix
 static const char dmenufont[]       = "JetBrains Mono:size=10";
 
 // Original Colors
-static char normbgcolor[]           = "#222222";
-static char normbordercolor[]       = "#444444";
-static char normfgcolor[]           = "#bbbbbb";
-static char selfgcolor[]            = "#eeeeee";
-static char selbordercolor[]        = "#005577";
-static char selbgcolor[]            = "#005577";
+// static char normbgcolor[]           = "#222222";
+// static char normbordercolor[]       = "#444444";
+// static char normfgcolor[]           = "#bbbbbb";
+// static char selfgcolor[]            = "#eeeeee";
+// static char selbordercolor[]        = "#005577";
+// static char selbgcolor[]            = "#005577";
+
+// OneDark
+// static char normbgcolor[]           = "#282c34"; // Background color for normal scheme
+// static char normbordercolor[]       = "#3c3836"; // Border color for normal scheme
+// static char normfgcolor[]           = "#abb2bf"; // Foreground color for normal scheme
+// static char selfgcolor[]            = "#282C34"; // Foreground color for selected scheme
+// static char selbordercolor[]        = "#61AFEF"; // Border color for selected scheme
+// static char selbgcolor[]            = "#61AFEF"; // Background color for selected scheme
+
+// Gruvbox
+static char normbgcolor[]           = "#1d2021"; // Background color for normal scheme (hard contrast)
+static char normbordercolor[]       = "#3c3836"; // Border color for normal scheme
+static char normfgcolor[]           = "#d5c4a1"; // Foreground color for normal scheme (light gray text)
+static char selfgcolor[]            = "#fbf1c7"; // Foreground color for selected scheme (bright text color)
+static char selbordercolor[]        = "#458588"; // Border color for selected scheme (cyan color)
+static char selbgcolor[]            = "#458588"; // Background color for selected scheme (cyan color)
+
 static char *colors[][3] = {
     /*               fg           bg           border   */
     [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
@@ -91,7 +108,8 @@ static const Layout layouts[] = {
 
 /* commands */
 // static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL }; 
+// static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL }; 
+static const char *dmenucmd[] = { "dmenu_run" }; 
 static const char *roficmd[] = {"rofi", "-show", "run"};
 static const char *termcmd[]  = { "kitty", NULL };
 

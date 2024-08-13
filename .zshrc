@@ -145,10 +145,10 @@ alias yQ='yay -Qm'
 # alias pQ='nala list'
 
 # exa 
-alias ls='exa -a --group-directories-first'
-alias ll='exa -al --group-directories-first'
-alias lt='exa -aT --group-directories-first'
-alias l.='exa -a | grep "^\."'
+alias ls='exa -a --icons --group-directories-first'
+alias ll='exa -al --icons --group-directories-first'
+alias lt='exa -aT --icons --group-directories-first'
+alias l.='exa -a --icons | grep "^\."'
 
 # ls
 # alias ls='ls -a --color --group-directories-first'
@@ -160,16 +160,18 @@ alias kittyicat='kitty +kitten icat'
 alias kittythemes='kitty +kitten themes'
 
 # making/editing files and direcotries
-alias j='cd $(find . -type d | fzf --preview="tree -C {}")'
+# alias j='cd $(fd -t d | fzf --preview="tree -C {}")'
+alias j='selected_dir=$(fd -t d | fzf --preview="tree -C {}"); [ -n "$selected_dir" ] && cd "$selected_dir"'
 alias md='mkdir -p'
 alias mf='touch'
 alias mx='chmod +x'
 alias v='nvim'
-alias vf='find . -type f | fzf --preview="bat --color always {}" | xargs -r nvim'
+alias vf='fd -t f | fzf --preview="bat --color always {}" | xargs -r nvim'
 alias code='code --profile main'
 alias rm='trash'
 alias cp='cp -i'
 alias build='./build.sh'
+alias lg='lazygit'
 
 # switch between shells
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
@@ -178,30 +180,21 @@ alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 # nmcli
 alias wifi='nmcli device wifi'
 
-# yt-dlp
-# --- video
-alias yt-dlp-vid-1080="yt-dlp --format='bestvideo[height<=?1080]+bestaudio/best' -o '%(title)s.%(ext)s'"
-alias yt-dlp-vid-720="yt-dlp --format='bestvideo[height<=?720]+bestaudio/best' -o '%(title)s.%(ext)s'"
-alias yt-dlp-vid-480="yt-dlp --format='bestvideo[height<=?480]+bestaudio/best' -o '%(title)s.%(ext)s'"
-alias yt-dlp-vid-360="yt-dlp --format='bestvideo[height<=?360]+bestaudio/best' -o '%(title)s.%(ext)s'"
-# --- playlist video
-alias yt-dlp-vid-list-1080="yt-dlp --format='bestvideo[height<=?1080]+bestaudio/best'  -o '%(playlist_index)s-%(title)s.%(ext)s'"
-alias yt-dlp-vid-list-720="yt-dlp --format='bestvideo[height<=?720]+bestaudio/best'  -o '%(playlist_index)s-%(title)s.%(ext)s'"
-alias yt-dlp-vid-list-480="yt-dlp --format='bestvideo[height<=?480]+bestaudio/best'  -o '%(playlist_index)s-%(title)s.%(ext)s'"
-alias yt-dlp-vid-list-360="yt-dlp --format='bestvideo[height<=?360]+bestaudio/best'  -o '%(playlist_index)s-%(title)s.%(ext)s'"
-# --- audio
-alias yt-dlp-aud="yt-dlp -x -o '%(title)s.%(ext)s'"
-# --- playlist audio
-alias yt-dlp-audo-list="yt-dlp -x -o '%(playlist_index)s-%(title)s.%(ext)s'"
-
-# starship prompt
-# export STARSHIP_CONFIG=~/.config/starship/starship.toml
-# eval "$(starship init zsh)"
 
 # vim mode
 set -o vi
 
+# setup fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
+
+
 # pywal
-(cat ~/.cache/wal/sequences &)
-source ~/.cache/wal/colors-tty.sh
+# (cat ~/.cache/wal/sequences &)
+# source ~/.cache/wal/colors-tty.sh
+
+# oh-my-posh
 # eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/1_shell.omp.json)"
+
+# starship prompt
+# export STARSHIP_CONFIG=~/.config/starship/starship.toml
+# eval "$(starship init zsh)"

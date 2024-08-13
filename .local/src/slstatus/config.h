@@ -77,7 +77,7 @@ static const struct arg args[] = {
 	// { temp, "[%s C] ",       "/sys/devices/virtual/thermal/thermal_zone1/temp" },
 	{ run_command, "[%s] ",       "/home/ahmad/.local/bin/scripts/sb-cpu" },
 	{ cpu_perc, "[ %s%%] ",       NULL },
-	{ ram_perc, "[ %s%%] ",       NULL},
+	{ run_command, "[ %s] ",       "/home/ahmad/.local/bin/scripts/sb-ram"},
 	{ keymap, "[%s] ",               NULL },
 	{ datetime, "[%s]",           "%I:%M" },
 	//	{ run_command, "%s", "sb_clock" },

@@ -1,0 +1,76 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: #1d2021; /* Darker background */
+    color: #d5c4a1; /* Gruvbox foreground soft */
+}
+
+tooltip {
+    background: #282828; /* Darker background */
+    opacity: 0.8;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #3c3836; /* Darker border */
+}
+
+tooltip label{
+    color: #d5c4a1; /* Gruvbox foreground soft */
+}
+
+#workspaces button {
+    padding: 5px;
+}
+
+#workspaces button.active {
+    color: #fe8019; /* Gruvbox orange */
+}
+
+#workspaces button:hover {
+    background: #282828; /* Darker background */
+    color: #d65d0e; /* Gruvbox orange bright */
+    border-radius: 10px;
+}
+
+#window,
+#cpu,
+#disk,
+#memory,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#tray,
+#temperature,
+#workspaces,
+#idle_inhibitor,
+#backlight {
+    background: rgba(21, 18, 27, 0);
+    opacity: 0.8;
+    padding: 0px 8px;
+    margin: 0px 3px;
+    border: 0px;
+}
+
+#temperature.critical {
+    color: #fb4934; /* Gruvbox red */
+}
+
+#workspaces {
+    padding-right: 0px;
+    padding-left: 5px;
+}
+
+#window {
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+

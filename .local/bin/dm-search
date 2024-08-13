@@ -1,8 +1,8 @@
 #!/bin/bash
 
-BROWSER=chromium
-DMENU="dmenu -i -l 20"
-# DMENU="rofi -dmenu -i"
+BROWSER=brave
+# DMENU="dmenu -i -l 20"
+DMENU="rofi -dmenu -i"
 # DMENU="wofi --dmenu -i"
 
 
@@ -15,9 +15,7 @@ declare -a options=(
 "Google_images - https://google.com/search?tbm=isch&q="
 "Google_Translate - https://translate.google.com/?sl=auto&tl=ar&text="
 "YouTube_Search - https://www.youtube.com/search?q="
-"phind - https://phind.com/search?q="
 "merriam_webster - https://www.merriam-webster.com/dictionary/"
-"leetcode - https://leetcode.com/problemset/?search="
 )
 
 # pick a search engine

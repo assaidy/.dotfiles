@@ -45,11 +45,11 @@
         //"format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "{usage}%  ",
+        "format": "{usage}% ",
         "tooltip": false
     },
     "memory": {
-        "format": "{used} ({percentage}%)  "
+        "format": "{used} ({percentage}%) "
     },
     "disk": {
     "path": "/",
@@ -99,7 +99,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
+        "format": "{capacity}% {icon} ",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
@@ -110,10 +110,4 @@
     "battery#bat2": {
         "bat": "BAT2"
     },
-    "custom/dmyt": {
-        "format": "{icon}",
-        "format-icons": ["▶️"],
-        "on-click": "dm-yt",
-        "tooltip-format": "play with mpv",
-    }
 }

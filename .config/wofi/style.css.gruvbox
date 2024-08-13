@@ -1,13 +1,13 @@
 * {
     font-family: JetBrains Mono;
     font-size: 20px;
-    color: #e5e9f0;
+    color: #d5c4a1; /* Gruvbox foreground soft */
 }
 
 window {
-    /* background-color: #2e3440; */
-    background-color: black;
-    border: 2px solid #88c0d0;
+    background-color: #282828; /* Gruvbox background dark */
+    /* border: 2px solid #88c0d0; /* Gruvbox blue */ 
+    border: 2px solid #b2b426; /* Gruvbox blue */
     border-radius: 15px;
 }
 
@@ -17,15 +17,13 @@ window {
 
 #input {
     border: none;
-    /* background-color: #2e3440; */
-    background-color: black;
+    background-color: #282828; /* Gruvbox background dark */
     margin: 7px;
     box-shadow: none; /* Remove blue "border" */
 }
 
 #inner-box {
-    /* background-color: #2e3440; */
-    background-color: black;
+    background-color: #282828; /* Gruvbox background dark */
     margin: 7px;
     margin-top: 0;
 }
@@ -39,8 +37,7 @@ window {
 }
 
 #entry:selected {
-    /* background-color: #44475a; */
-    background-color: #88c0d0;
+    background-color: #3c3836; /* Gruvbox background soft */
     font-weight: 700;
     border-radius: 0;
 }
@@ -50,10 +47,11 @@ window {
 }
 
 #text:selected {
-    color: black;
+    color: #d5c4a1; /* Gruvbox foreground soft */
 }
 
 /* Hide backspace icon */
 .right {
     color: transparent;
 }
+

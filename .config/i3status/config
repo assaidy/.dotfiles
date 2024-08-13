@@ -31,10 +31,10 @@ battery all {
 }
 
 // memory
-order += "memory"
-memory {
-    format = "RAM: %used"
-}
+// order += "memory"
+// memory {
+    // format = "RAM: %used"
+// }
 
 // cpu
 order += "cpu_usage"
