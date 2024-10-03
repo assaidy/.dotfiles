@@ -8,7 +8,7 @@ return {
 
 		lualine.setup({
 			options = {
-				theme = "auto", -- lualine theme
+				theme = "codedark", -- lualine theme
                 component_separators = { left = "|", right = "|" },
                 section_separators = { left = "", right = "" },
 				-- component_separators = { left = "", right = "" },
