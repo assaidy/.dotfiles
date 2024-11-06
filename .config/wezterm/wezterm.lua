@@ -18,10 +18,11 @@ config.window_decorations = "TITLE"
 config.colors = {
 	background = "#181818",
 	foreground = "#ffffff",
+    cursor_bg = "#FFD700",
 }
 config.window_padding = {
 	left = "5px",
-	right = "5px",
+	right = "0px",
 	top = "5px",
 	bottom = "0px",
 }
