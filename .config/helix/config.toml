@@ -1,0 +1,27 @@
+theme = "gruber-darker-transparent"
+
+[editor]
+line-number = "relative"
+bufferline = "never"
+gutters = ["line-numbers", "spacer", "diff"]
+true-color = true
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.cursor-shape]
+insert = "bar"
+# insert = "block"
+
+[editor.file-picker]
+hidden = false
+ignore = false
+git-ignore = false
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]

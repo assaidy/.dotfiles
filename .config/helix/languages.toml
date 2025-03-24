@@ -1,0 +1,7 @@
+[language-server]
+omnisharp = { command = "omnisharp", args = [ "--languageserver" ] }
+vscode-html-language-server = { command = "vscode-html-languageserver", args = ["--stdio"], config = { provideFormatter = true } }
+
+[language-server.golangci-lint-lsp.config]
+command = ["golangci-lint-langserver", "run", "--out-format", "json", "--issues-exit-code=1"]
+
