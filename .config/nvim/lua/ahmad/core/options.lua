@@ -1,4 +1,5 @@
-vim.cmd("let g:netrw_liststyle = 3")
+vim.cmd("let g:netrw_liststyle = 1")
+vim.cmd("let g:netrw_sort_by = 'exten'")
 
 local opt = vim.opt -- for conciseness
 
@@ -27,8 +28,6 @@ opt.smartcase = true -- if you include mixed case in your search, assumes you wa
 -- original vim cursor shape (blink cursor)
 -- opt.guicursor = block
 
--- appearance
-
 -- turn on termguicolors for nightfly colorscheme to work
 -- (have to use iterm2 or any other true color terminal)
 opt.termguicolors = true
@@ -47,3 +46,11 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- enable autoread
+vim.opt.autoread = true
+-- auto reload files when focus is gained or window is entered
+vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained" }, {
+	pattern = "*", -- all filetypes
+	command = "checktime",
+})

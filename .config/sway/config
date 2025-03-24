@@ -1,11 +1,9 @@
-include ./autostart
-
 #############
 ## Variables
 #############
 set $mod Mod4
-set $term foot
-set $web_browser brave
+set $term footclient
+set $web_browser zen-browser
 set $menu wofi --show run
 
 set $left h
@@ -16,7 +14,7 @@ set $right l
 #############
 ## Font
 #############
-font pango: CaskaydiaCove Nerd Font 10
+font pango: JetBrains Mono 8
 
 ### Idle configuration
 #
@@ -71,24 +69,24 @@ bindsym XF86MonBrightnessDown exec $HOME/.config/sway/scripts/brightness down
 ## Screenshots
 #############
 # Screenshot a window
-bindsym $mod+PRINT exec hyprshot -m window -o ~/Pictures/Screenshots
+bindsym $mod+p exec hyprshot -m window -o ~/Pictures/Screenshots
+# Screenshot a region
+bindsym $mod+Shift+p exec hyprshot -m region -o ~/Pictures/Screenshots
 # Screenshot a monitor
 bindsym PRINT exec hyprshot -m output -o ~/Pictures/Screenshots
-# Screenshot a region
-bindsym $mod+Shift+PRINT exec hyprshot -m region -o ~/Pictures/Screenshots
 
 #############
 ## Gaps & Borders
 #############
-gaps inner 4
-gaps outer 4
+gaps inner 0
+gaps outer 0
 smart_gaps on
 smart_borders on
 
-default_border pixel 2
-default_floating_border pixel 2
+# default_border pixel 2
+# default_floating_border pixel 2
 # hide_edge_borders both
-for_window [class="^.*"] border pixel 2
+# for_window [class="^.*"] border pixel 2
 
 
 ### Key bindings
@@ -111,20 +109,20 @@ bindsym $mod+c exec hyprpicker | wl-copy
 bindsym $mod+Shift+w exec "killall waybar && waybar -c $HOME/.config/waybar/config-sway.json &"
 
 # start a terminal scratchpad
-bindsym $mod+u  [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+# bindsym $mod+u  [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 
 #############
 ## Rules & scratchpads
 #############
-for_window [class="mpv"] floating enable
-for_window [class="Sxiv"] floating enable
+# for_window [class="mpv"] floating enable
+# for_window [class="Sxiv"] floating enable
 # for_window [class="TelegramDesktop"] floating enable
 
-for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 1000 700
-for_window [instance="dropdown"] move scratchpad
-for_window [instance="dropdown"] border pexil 3
-bindsym $mod+Control+Return exec --no-startup-id foot -a dropdown
+# for_window [instance="dropdown"] floating enable
+# for_window [instance="dropdown"] resize set 1000 700
+# for_window [instance="dropdown"] move scratchpad
+# for_window [instance="dropdown"] border pexil 3
+# bindsym $mod+Control+Return exec --no-startup-id foot -a dropdown
 
 #############
 ## Resize
@@ -141,16 +139,19 @@ bindsym Control+$mod+l resize shrink width 10 px or 10 ppt
 bindgesture swipe:right workspace prev
 bindgesture swipe:left workspace next
 
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
 # toggle topbar
-bindsym $mod+i bar mode toggle
+# bindsym $mod+i bar mode toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-# bindsym $mod+s layout stacking
+bindsym $mod+e layout stacking
 bindsym $mod+t layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+e layout toggle split
 
 # default layout
 workspace_layout tabbed
@@ -166,7 +167,7 @@ bindsym $mod+Shift+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-# bindsym $mod+d focus child
+bindsym $mod+d focus child
 
 # back and forth between two workspaces
 bindsym $mod+Tab workspace back_and_forth
@@ -266,6 +267,36 @@ client.urgent           $base08 $base08 $base00 $base08 $base08
 client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
 
+# #############
+# ## gruvbox ##
+# #############
+# # set primary gruvbox colorscheme colors
+# set $bg #282828
+# set $red #cc241d
+# set $green #98971a
+# set $yellow #d79921
+# set $blue #458588
+# set $purple #b16286
+# set $aqua #689d68
+# set $gray #a89984
+# set $darkgray #1d2021
+#
+# #start of window title bars & borders section
+#
+# # green gruvbox
+# # class                 border|backgr|text|indicator|child_border
+# # client.focused          $green $aqua $darkgray $aqua $purple
+# # client.focused_inactive $darkgray $darkgray $yellow $aqua $bg
+# # client.unfocused        $darkgray $darkgray $yellow $aqua $bg
+# # client.urgent           $red $red $white $red $red
+#
+# # blue gruvbox
+# # class                 border|backgr|text|indicator|child_border
+# client.focused          $blue $blue $darkgray $purple $yellow
+# client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+# client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+# # client.urgent           $red $red $white $red $red
+
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Bar
 
 # bar {
@@ -273,3 +304,16 @@ client.background       $base07
 #    position bottom
 # }
 
+exec_always --no-startup-id "systemctl --user import-environment"
+exec_always --no-startup-id "$HOME/.config/waybar/restart-sway.sh"
+exec_always --no-startup-id "foot --server"
+exec_always --no-startup-id "autotiling"
+exec_always --no-startup-id "nm-applet"
+exec_always --no-startup-id "blueman-applet"
+exec_always --no-startup-id "wlsunset -t 5000"
+exec_always --no-startup-id "swww-daemon"
+exec_always --no-startup-id "mako"
+exec_always --no-startup-id "swww init && $HOME/.config/sway/scripts/wallpaper-switcher"
+exec_always --no-startup-id "wl-paste -t text --watch clipman store --no-persist"
+exec_always --no-startup-id "wl-paste -p -t text --watch clipman store -P --histpath=$HOME/.local/share/clipman-primary.json"
+exec_always --no-startup-id "swayidle -w timeout 1800 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on'"

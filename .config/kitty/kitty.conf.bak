@@ -1,6 +1,8 @@
 # vim:fileencoding=utf-8:ft=conf:foldmethod=marker
 map ctrl+shift+k increase_font_size
 map ctrl+shift+j decrease_font_size
+map alt+c        copy_to_clipboard
+map alt+v        paste_from_clipboard
 
 #: Fonts {{{
 
@@ -15,17 +17,19 @@ map ctrl+shift+j decrease_font_size
 #: families that have many weight variants like Book, Medium, Thick,
 #: etc. For example::
 
+# font_family      Ubuntu Mono Nerd Font
+# font_family      IosevkaTerm Nerd Font
 font_family      JetBrains Mono
 # bold_font        JetBrains Mono Bold
 # italic_font      JetBrains Mono Italic
 # bold_italic_font JetBrains Mono Bold Italic
 
-font_size 14.0
+font_size 16.0
 
 #: Font size (in pts)
 
-adjust_line_height  100%
-adjust_column_width 100%
+adjust_line_height  110%
+adjust_column_width 110%
 
 #: Change the size of each character cell kitty renders. You can use
 #: either numbers, which are interpreted as pixels or percentages
@@ -81,8 +85,8 @@ adjust_column_width 100%
 #: with the background color of the cell underneath instead, use the
 #: special keyword: background
 
-# cursor_shape block
-# shell_integration no-cursor
+cursor_shape block
+shell_integration no-cursor
 
 #: The cursor shape can be one of (block, beam, underline)
 
@@ -341,7 +345,7 @@ adjust_column_width 100%
 #: visible. Negative values will cause the value of
 #: window_margin_width to be used instead.
 
-window_padding_width 3.0
+window_padding_width 0.0
 
 #: The window padding (in pts) (blank area between the text and the
 #: window border)
@@ -470,8 +474,8 @@ window_padding_width 3.0
 #: }}}
 
 #: Color scheme {{{
-foreground #ffffff
-background #181818
+# foreground #ffffff
+# background #181818
 
 #: The foreground and background colors
 
@@ -1105,8 +1109,8 @@ macos_thicken_font 0.3
 
 
 # BEGIN_KITTY_THEME
-# Tango Dark
-# include current-theme.conf
+# Gruvbox Dark Hard
+include current-theme.conf
 # END_KITTY_THEME
 
 # BEGIN_PYWAL

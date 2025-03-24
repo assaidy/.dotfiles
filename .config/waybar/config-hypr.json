@@ -1,32 +1,25 @@
 {
-    "layer": "top", // Waybar at top layer
+    // "layer": "top", // Waybar at top layer
     "position": "top",
     "output": "",
     "spacing": 4, // Gaps between modules (px)
     "modules-left": ["hyprland/workspaces", "hyprland/window", "hyprland/mode", "hyprland/scratchpad"],
-    "modules-center": ["clock", "idle_inhibitor"],
-    "modules-right": [ "battery", "memory", "cpu", "temperature", "pulseaudio", "backlight", "hyprland/language", "tray"],
+    "modules-center": ["custom/window-count", "clock", "idle_inhibitor"],
+    "modules-right": ["battery", "memory", "cpu", "temperature", "pulseaudio", "backlight", "hyprland/language", "tray"],
     "hyprland/workspaces": {
-        "disable-scroll": false,
         "all-outputs": false,
+        "disable-scroll": false,
         "warp-on-scroll": false,
         "format": "{name}",
         "active": "",
         "default": "",
     },
     "hyprland/window": {  
-    "format": "{}",
-    "rewrite": {
-        "(.*) — Mozilla Firefox": "🌎 $1",
-        "(.*) - YouTube — Mozilla Firefox": "▶️  $1",
-        "(.*) - mpv": "▶️  $1",
-        "~(.*)": "🏠️ $1",
-        "man(.*)": "🗒️ $1",
-    },
-    "separate-outputs": true,
+        "format": "{}",
+        "separate-outputs": true,
     },
     "hyprland/language": {  
-    "format": "{short}",
+        "format": "{short}",
     },
     "tray": {
         "icon-size": 20,
@@ -52,8 +45,8 @@
         "format": "{used} ({percentage}%) "
     },
     "disk": {
-    "path": "/",
-    "format": "💾 {used} ({percentage_used}%)",
+        "path": "/",
+        "format": "💾 {used} ({percentage_used}%)",
     },
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
@@ -110,4 +103,10 @@
     "battery#bat2": {
         "bat": "BAT2"
     },
+    "custom/window-count": {
+        "format": "# {}",
+        "interval": 1,
+        "escape": true,
+        "exec": "hyprctl activeworkspace | grep 'windows:' | awk '{print $2}' | head -n 1 | tr -d '\n' | xargs echo",
+    }
 }

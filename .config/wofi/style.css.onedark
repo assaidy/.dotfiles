@@ -1,5 +1,5 @@
 * {
-    font-family: IosevkaTerm Nerd Font;
+    font-family: JetBrains Mono;
     font-size: 20px;
     color: #ABB2BF; /* Foreground color */
 }
@@ -10,7 +10,7 @@ window {
     /* border: 2px solid #56b6c2; */
     background-color: #282c34; 
     border: 2px solid #5EA6E2;
-    border-radius: 15px;
+    // border-radius: 15px;
 }
 
 #outer-box {
@@ -30,8 +30,8 @@ window {
 #entry {
     padding-left: 5px;
     border: none;
-    margin-left: -5px;
-    margin-right: -5px;
+    // margin-left: -5px;
+    // margin-right: -5px;
     outline: none;
 }
 

@@ -111,7 +111,7 @@ static const Layout layouts[] = {
 // static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL }; 
 static const char *dmenucmd[] = { "dmenu_run" }; 
 static const char *roficmd[] = {"rofi", "-show", "run"};
-static const char *termcmd[]  = { "kitty", NULL };
+static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */

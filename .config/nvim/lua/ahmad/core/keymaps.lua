@@ -3,32 +3,15 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
 
----------------------
--- General Keymaps --
----------------------
---
--- run a command inside a terminal split
-keymap.set("n", "<leader>rc", function()
-	local input = vim.fn.input("run command: ")
-	-- Check if the input string is not empty
-	if #input > 0 then
-		local command = "sp | term " .. input
-		vim.cmd(command)
-		-- vim.cmd("startinsert")
-	else
-		print("Input string is empty. No command executed.")
-	end
-end, { desc = "Run system command in a split term" })
-
 -- exit terminal mode
 keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- open explore
-keymap.set("n", "<leader>pv", "Ex", { desc = "Exit terminal mode" })
+keymap.set("n", "<leader>ee", ":Ex<CR>", { desc = "Open explore" })
 
 -- go to end/start of line
-keymap.set({ "n", "v" }, "gs", "0", { desc = "Goto start of the line" })
-keymap.set({ "n", "v" }, "ge", "$", { desc = "Goto end of the line" })
+keymap.set({ "n", "v" }, "gh", "0", { desc = "Goto start of the line" })
+keymap.set({ "n", "v" }, "gl", "$", { desc = "Goto end of the line" })
 
 -- buffer navigation
 keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Goto next buffer" })

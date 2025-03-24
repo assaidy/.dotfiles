@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define the menu command. You can switch between dmenu, rofi, and wofi by uncommenting the desired line.
-# DMENU="dmenu -i"
-DMENU="rofi -dmenu -i"
+DMENU="dmenu -i"
+# DMENU="rofi -dmenu -i"
 # DMENU="wofi --dmenu -i"
 
 # Get the link from the clipboard.

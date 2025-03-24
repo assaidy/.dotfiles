@@ -1,13 +1,15 @@
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-export PATH="$PATH":~/.local/bin
-export PATH="$PATH":~/.local/bin/scripts
+export ZSH=$HOME/.oh-my-zsh
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.local/bin/scripts
 export HYPRSHOT_DIR=$HOME/Pictures/Screenshots
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 export PATH=$PATH:/path/to/java/bin
 export PATH=$PATH:/usr/local/go/bin
-export PATH="$PATH":~/go/bin
+export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/.cargo/bin
+export MANPAGER='nvim +Man!'
 
 ZSH_THEME="af-magic"
 # PROMPT="%F{cyan}%~ >%f "
@@ -119,9 +121,9 @@ ex ()
 }
 
 ### Aliases
-alias zshconfig="nvim ~/.zshrc"
 alias cls='clear'
 alias e='exit'
+alias zshconf='nvim ~/.zshrc'
 
 # arch->pacman 
 alias pI='sudo pacman -S' 
@@ -136,13 +138,6 @@ alias yU='yay -Syu --aur'
 alias yS='yay -Ss'
 alias yR='yay -R'
 alias yQ='yay -Qm'
-
-# ubuntu->nala 
-# alias pI='sudo nala install' 
-# alias pU='sudo nala sudo nala upgrade'
-# alias pS='sudo nala search'
-# alias pR='sudo nala remove'
-# alias pQ='nala list'
 
 # exa 
 alias ls='exa -a --icons --group-directories-first'
@@ -160,13 +155,13 @@ alias kittyicat='kitty +kitten icat'
 alias kittythemes='kitty +kitten themes'
 
 # making/editing files and direcotries
-# alias j='cd $(fd -t d | fzf --preview="tree -C {}")'
-alias j='selected_dir=$(fd -t d | fzf --preview="tree -C {}"); [ -n "$selected_dir" ] && cd "$selected_dir"'
+alias j='selected_dir=$(fd --no-ignore --hidden --exclude=.git -t d | fzf --preview="tree -C {}"); [ -n "$selected_dir" ] && cd "$selected_dir"'
 alias md='mkdir -p'
 alias mf='touch'
 alias mx='chmod +x'
 alias v='nvim'
-alias vf='fd -t f | fzf --preview="bat --color always {}" | xargs -r nvim'
+alias vf='fd --no-ignore --hidden --exclude=.git -t f | fzf --preview="bat --color always {}" | xargs -r nvim'
+alias hx='helix'
 alias code='code --profile main'
 alias rm='trash'
 alias cp='cp -i'
@@ -180,7 +175,6 @@ alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 
 # nmcli
 alias wifi='nmcli device wifi'
-
 
 # vim mode
 set -o vi

@@ -1,14 +1,13 @@
 * {
     font-family: JetBrains Mono;
     font-size: 20px;
-    color: #e5e9f0;
+    color: #abb2bf; /* OneDark Pro white foreground */
 }
 
 window {
-    /* background-color: #2e3440; */
-    background-color: black;
-    border: 2px solid #88c0d0;
-    border-radius: 15px;
+    background-color: #000000; /* Black background */
+    border: 2px solid #abb2bf; /* OneDark Pro white border */
+    border-radius: 0;
 }
 
 #outer-box {
@@ -17,15 +16,13 @@ window {
 
 #input {
     border: none;
-    /* background-color: #2e3440; */
-    background-color: black;
+    background-color: #000000; /* Black background */
     margin: 7px;
-    box-shadow: none; /* Remove blue "border" */
+    box-shadow: none; /* Remove shadow */
 }
 
 #inner-box {
-    /* background-color: #2e3440; */
-    background-color: black;
+    background-color: #000000; /* Black background */
     margin: 7px;
     margin-top: 0;
 }
@@ -39,8 +36,8 @@ window {
 }
 
 #entry:selected {
-    /* background-color: #44475a; */
-    background-color: #88c0d0;
+    background-color: #abb2bf; /* OneDark Pro white selected background */
+    color: #000000; /* Black text */
     font-weight: 700;
     border-radius: 0;
 }
@@ -50,10 +47,12 @@ window {
 }
 
 #text:selected {
-    color: black;
+    background-color: #abb2bf; /* OneDark Pro white selected background */
+    color: #000000; /* Black text */
 }
 
 /* Hide backspace icon */
 .right {
     color: transparent;
 }
+

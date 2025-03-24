@@ -1,9 +1,9 @@
 #!/bin/bash
 
 BROWSER=brave
-# DMENU="dmenu -i -l 20"
-DMENU="rofi -dmenu -i"
-# DMENU="wofi --dmenu -i"
+DMENU="dmenu -i"
+# DMENU="rofi -dmenu -i"
+DMENU="wofi --dmenu -i"
 
 
 declare -a options=(
@@ -31,4 +31,5 @@ while [ -z "$query" ]; do
 done
 
 # display search result
-$BROWSER "$engineurl""$query"
+# $BROWSER "$engineurl""$query"
+xdg-open "$engineurl""$query"

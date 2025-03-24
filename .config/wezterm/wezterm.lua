@@ -5,7 +5,9 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- font
-config.font = wezterm.font("Iosevka Nerd Font")
+-- config.font = wezterm.font("Iosevka Nerd Font")
+-- config.font = wezterm.font("Ubuntu Mono Nerd Font")
+config.font = wezterm.font("JetBrains Mono")
 config.font_size = 16
 config.cell_width = 1.0
 config.line_height = 1.0
@@ -14,16 +16,19 @@ config.line_height = 1.0
 config.enable_tab_bar = false
 config.enable_scroll_bar = false
 config.window_decorations = "TITLE"
+-- config.color_scheme = "OneDark (base16)"
 -- config.color_scheme = "Gruvbox dark, hard (base16)"
+-- config.color_scheme = "GruvboxDarkHard"
+-- config.color_scheme = "Tango"
 config.colors = {
 	background = "#181818",
 	foreground = "#ffffff",
-    cursor_bg = "#FFD700",
+	cursor_bg = "#FFD700",
 }
 config.window_padding = {
-	left = "5px",
+	left = "0px",
 	right = "0px",
-	top = "5px",
+	top = "0px",
 	bottom = "0px",
 }
 
