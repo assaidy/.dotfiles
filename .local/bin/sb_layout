@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# Print the current keyboard layout
-xkblayout-state print "%s"
-
-echo

@@ -1,4 +1,4 @@
-set ratios 1:2:3
+set ratios 1:2:2
 set previewer ~/.config/lf/lf_kitty_preview
 set cleaner ~/.config/lf/lf_kitty_clean
 
@@ -32,17 +32,13 @@ cmd mkfile ${{
 cmd unarchive ${{
   case "$f" in
       *.zip) unzip "$f" ;;
+      *.gz) gzip -d "$f" ;;
       *.tar.gz) tar -xzvf "$f" ;;
       *.tar.bz2) tar -xjvf "$f" ;;
       *.tar) tar -xvf "$f" ;;
       *.tar.xz) tar -xf "$f" ;;
       *) echo "Unsupported format" ;;
   esac
-}}
-
-# Drag & Drop
-cmd drop ${{
-    ripdrag "$fx"
 }}
 
 # Trash bindings
@@ -68,7 +64,7 @@ cmd restore_trash ${{
 map d
 map m
 
-map c $nvim "$f"
+map c $$EDITOR "$f"
 
 map au unarchive
 map ae $wine "$f"
@@ -90,11 +86,10 @@ map C clear
 
 # Movement
 map gh cd /home/ahmad
-map gD cd ~/Documents
-map gd cd ~/Downloads
+map gd cd ~/Documents
+map gD cd ~/Downloads
 map gp cd ~/Pictures
 map gc cd ~/.config
-map gr cd ~/repos
 map gv cd ~/Videos
-map gs cd ~/.local/bin
+map gb cd ~/.local/bin
 map gt cd ~/.local/share/Trash/files

@@ -1,64 +1,81 @@
-#
-# ~/.bashrc
-#
-
-# If not running interactively, don't do anything
+# if not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Make colorcoding available for everyone
+# prompt
+PS1="[\u@\h \033[31m\w\033[37m]\$ "
 
-Black='\[\e[0;30m\]'	# Black
-Red='\[\e[0;31m\]'		# Red
-Green='\[\e[0;32m\]'	# Green
-Yellow='\[\e[0;33m\]'	# Yellow
-Blue='\[\e[0;34m\]'		# Blue
-Purple='\[\e[0;35m\]'	# Purple
-Cyan='\[\e[0;36m\]'		# Cyan
-White='\[\e[0;37m\]'	# White
+alias grep="grep --color=always"
+alias cls="clear"
+alias e="exit"
+alias vf="fd --no-ignore --hidden --exclude=.git -t f | fzf --preview='bat --color always {}' | xargs -r nvim"
+alias hx="helix"
+alias code="code --profile main"
+alias rm="trash"
+alias cp="cp -i"
+alias lg="lazygit"
 
-# Bold
-BBlack='\[\e[1;30m\]'	# Black
-BRed='\[\e[1;31m\]'		# Red
-BGreen='\[\e[1;32m\]'	# Green
-BYellow='\[\e[1;33m\]'	# Yellow
-BBlue='\[\e[1;34m\]'	# Blue
-BPurple='\[\e[1;35m\]'	# Purple
-BCyan='\[\e[1;36m\]'	# Cyan
-BWhite='\[\e[1;37m\]'	# White
+alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
+alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 
-# Background
-On_Black='\[\e[40m\]'	# Black
-On_Red='\[\e[41m\]'		# Red
-On_Green='\[\e[42m\]'	# Green
-On_Yellow='\[\e[43m\]'	# Yellow
-On_Blue='\[\e[44m\]'	# Blue
-On_Purple='\[\e[45m\]'	# Purple
-On_Cyan='\[\e[46m\]'	# Cyan
-On_White='\[\e[47m\]'	# White
+alias pI="sudo pacman -S" 
+alias pS="sudo pacman -Ss"
+alias pR="sudo pacman -Rn"
+alias pQ="pacman -Q"
+alias pU="sudo pacman -S archlinux-keyring; sudo pacman -Syu"
 
-NC='\[\e[m\]'			# Color Reset
+alias yI="yay -S" 
+alias yS="yay -Ss"
+alias yR="yay -Rn"
+alias yQ="yay -Qm"
+alias yU="yay -Syu --aur"
 
-ALERT="${BWhite}${On_Red}" # Bold White on red background
+alias ls="exa -a --icons --group-directories-first"
+alias ll="exa -al --icons --group-directories-first"
+alias lt="exa -aT --icons --group-directories-first"
+alias l.="exa -a --icons | grep '^\.'"
 
-# Useful aliases
-alias c='clear'
-alias ..='cd ..'
-alias ls='ls -CF --color=auto'
-alias ll='ls -lisa --color=auto'
-alias mkdir='mkdir -pv'
-alias free='free -mt'
-alias ps='ps auxf'
-alias psgrep='ps aux | grep -v grep | grep -i -e VSZ -e'
-alias wget='wget -c'
-alias histg='history | grep'
-alias myip='curl ipv4.icanhazip.com'
-alias grep='grep --color=auto'
+alias kittyicat="kitty +kitten icat"
+alias kittythemes="kitty +kitten themes"
 
-# Set PATH so it includes user's private bin directories
-PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
+# vim mode
+set -o vi
 
-# Set prompt
-PS1="${Yellow}\u@\h${NC}: ${Blue}\w${NC} \\$ "
+# setup fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
+
+# functions
+function yz() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        builtin cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
+}
+
+# usage: ex <file>
+function ex () {
+  if [ -f "$1" ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   unzstd $1    ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
 
 
-eval "$(starship init bash)"

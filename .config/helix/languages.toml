@@ -5,3 +5,10 @@ vscode-html-language-server = { command = "vscode-html-languageserver", args = [
 [language-server.golangci-lint-lsp.config]
 command = ["golangci-lint-langserver", "run", "--out-format", "json", "--issues-exit-code=1"]
 
+[[language]]
+name = "c"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "cpp"
+indent = { tab-width = 4, unit = "    " }

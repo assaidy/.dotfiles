@@ -1,3 +1,9 @@
+super + Return
+	$TERMINAL
+
+super + space
+	rofi -show run -matching fuzzy -sorting-method normal -sort
+
 super + b
     zen-browser
 
@@ -7,7 +13,9 @@ super + n
 super + m
 	dm-search
 
-# Volume Control
+super + Escape
+	dm-power
+
 XF86AudioLowerVolume
 	amixer set Master 5%-
 XF86AudioRaiseVolume
@@ -15,31 +23,21 @@ XF86AudioRaiseVolume
 XF86AudioMute
     amixer set Master toggle
 
-# Backlight
 XF86MonBrightnessDown
 	light -U 10%
 XF86MonBrightnessUp
 	light -A 10%
 
-# Screenshot
 super + p
     maim --select | xclip -selection clipboard -t image/png && xclip -selection clipboard -o >> ~/Pictures/Screenshots/$(date +%s).png 
-#	maim --select >> ~/Pictures/Screenshots/$(date +%s).png 
 super + shift + p
 	maim | xclip -selection clipboard -t image/png && xclip -selection clipboard -o >> ~/Pictures/Screenshots/$(date +%s).png 
-#ctrl + Print
-#   maim >> ~/Pictures/Screenshots/$(date +%s).png 
-#shift + ctrl + Print
-#	maim >> ~/Pictures/Screenshots/$(date +%s).png 
 
 # Switch Keyboard languages
 #Shift_L + Alt_L
 #    setxkbmap -layout us,ara -option "grp:alt_shift_toggle"
 #Shift_R + Alt_R
 #    setxkbmap -layout us,ara -option "grp:alt_shift_toggle"
-
-super + Escape
-	dm-power
 
 super + c
     xcolor | xclip -selection clipboard

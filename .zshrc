@@ -9,7 +9,7 @@ export PATH=$PATH:/path/to/java/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.cargo/bin
-export MANPAGER='nvim +Man!'
+# export MANPAGER='nvim +Man!'
 
 ZSH_THEME="af-magic"
 # PROMPT="%F{cyan}%~ >%f "
@@ -87,8 +87,10 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='nvim'
+  export EDITOR='helix'
 fi
+
+export TERMINAL=ghostty
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -123,21 +125,21 @@ ex ()
 ### Aliases
 alias cls='clear'
 alias e='exit'
-alias zshconf='nvim ~/.zshrc'
+alias zshconf='hx ~/.zshrc'
 
 # arch->pacman 
 alias pI='sudo pacman -S' 
-alias pU='sudo pacman -Sy archlinux-keyring;sudo pacman -Syu'
 alias pS='sudo pacman -Ss'
 alias pR='sudo pacman -Rn'
 alias pQ='pacman -Q'
+alias pU='sudo pacman -S archlinux-keyring; sudo pacman -Syu'
 
 # yay
 alias yI='yay -S' 
-alias yU='yay -Syu --aur'
 alias yS='yay -Ss'
-alias yR='yay -R'
+alias yR='yay -Rn'
 alias yQ='yay -Qm'
+alias yU='yay -Syu --aur'
 
 # exa 
 alias ls='exa -a --icons --group-directories-first'
@@ -155,26 +157,17 @@ alias kittyicat='kitty +kitten icat'
 alias kittythemes='kitty +kitten themes'
 
 # making/editing files and direcotries
-alias j='selected_dir=$(fd --no-ignore --hidden --exclude=.git -t d | fzf --preview="tree -C {}"); [ -n "$selected_dir" ] && cd "$selected_dir"'
-alias md='mkdir -p'
-alias mf='touch'
-alias mx='chmod +x'
 alias v='nvim'
 alias vf='fd --no-ignore --hidden --exclude=.git -t f | fzf --preview="bat --color always {}" | xargs -r nvim'
 alias hx='helix'
 alias code='code --profile main'
 alias rm='trash'
 alias cp='cp -i'
-alias build='./build.sh'
 alias lg='lazygit'
-alias todo='nvim ~/.todo'
 
 # switch between shells
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
-
-# nmcli
-alias wifi='nmcli device wifi'
 
 # vim mode
 set -o vi
@@ -193,3 +186,12 @@ eval "$(fzf --zsh)"
 # starship prompt
 # export STARSHIP_CONFIG=~/.config/starship/starship.toml
 # eval "$(starship init zsh)"
+
+function yz() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        builtin cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
+}

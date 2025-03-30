@@ -71,7 +71,7 @@ tiling_drag modifier titlebar
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Start & Kill
 
 # start a terminal
-bindsym $mod+Return exec $TERMINAL
+# bindsym $mod+Return exec $TERMINAL
 
 # start a terminal scratchpad
 bindsym $mod+u  [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
@@ -81,7 +81,7 @@ bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+space exec --no-startup-id dmenu_run
-bindsym $mod+space exec --no-startup-id rofi -show run -matching fuzzy -sorting-method normal -sort
+# bindsym $mod+space exec --no-startup-id rofi -show run -matching fuzzy -sorting-method normal -sort
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -359,5 +359,6 @@ exec_always --no-startup-id sxhkd
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet
 exec_always --no-startup-id newlook
-exec_always --no-startup-id sct 5000 
+exec_always --no-startup-id sct 5000
+exec_always --no-startup-id dunst
 exec_always --no-startup-id "setxkbmap -option grp:alt_shift_toggle us,ara"

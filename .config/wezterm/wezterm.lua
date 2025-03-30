@@ -1,18 +1,15 @@
--- Pull in the wezterm API
 local wezterm = require("wezterm")
 
--- This will hold the configuration.
 local config = wezterm.config_builder()
 
--- font
--- config.font = wezterm.font("Iosevka Nerd Font")
+-- config.font = wezterm.font("IosevkaTerm Nerd Font")
+-- config.font_size = 18
 -- config.font = wezterm.font("Ubuntu Mono Nerd Font")
 config.font = wezterm.font("JetBrains Mono")
 config.font_size = 16
 config.cell_width = 1.0
 config.line_height = 1.0
 
--- appearence
 config.enable_tab_bar = false
 config.enable_scroll_bar = false
 config.window_decorations = "TITLE"
@@ -32,7 +29,6 @@ config.window_padding = {
 	bottom = "0px",
 }
 
--- key bindings
 config.keys = {
 	{ key = "K", mods = "CTRL", action = wezterm.action.IncreaseFontSize },
 	{ key = "J", mods = "CTRL", action = wezterm.action.DecreaseFontSize },
@@ -40,5 +36,4 @@ config.keys = {
 	{ key = "c", mods = "ALT", action = wezterm.action.CopyTo("ClipboardAndPrimarySelection") },
 }
 
--- and finally, return the configuration to wezterm
 return config
