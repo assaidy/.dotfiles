@@ -1,8 +1,18 @@
 # if not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# prompt
-PS1="[\u@\h \033[31m\w\033[37m]\$ "
+update_prompt() {
+  bold="\033[1m"
+  italic="\033[3m"
+  red="\033[31m"
+  gold="\033[33m" 
+  reset="\033[0m"
+
+  branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+  [[ -n $branch ]] && branch="($branch)"
+  PS1="[\u@\h $red\w$reset]$italic$bold$gold$branch$reset "
+}
+PROMPT_COMMAND=update_prompt
 
 alias grep="grep --color=always"
 alias cls="clear"

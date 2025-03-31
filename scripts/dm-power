@@ -5,7 +5,7 @@ DMENU="rofi -dmenu -i"
 DMENU="wofi --dmenu -i"
 
 options="logout suspend lockscreen poweroff reboot"
-chosen=$(echo ${options} | tr ' ' '\n' | ${DMENU} -p "Power Menu")
+chosen=$(echo $options | tr ' ' '\n' | $DMENU -p "Power Menu")
 
 case ${chosen} in
     logout) kill -9 -1 ;;

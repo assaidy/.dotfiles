@@ -1,13 +1,10 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-if [[ -n "$SSH_CONNECTION" ]]; then
-  export EDITOR="vim"
-else
-  export EDITOR="helix"
-fi
+# geeks
+[[ -n $SSH_CONNECTION ]] && export EDITOR="vim" || export EDITOR="helix"
 
 export TERMINAL="ghostty"
-# export MANPAGER="nvim +Man!"
+export MANPAGER="nvim +Man!"
 
 export HYPRSHOT_DIR="$HOME/Pictures/Screenshots"
 export DOTNET_ROOT="$HOME/.dotnet"

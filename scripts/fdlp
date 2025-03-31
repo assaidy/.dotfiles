@@ -7,10 +7,10 @@ LINK=$(wl-paste)
 
 # Ask the user if they want to download a single video or a playlist.
 OPTIONS="Single\nPlaylist"
-CHOICE=$(printf "$OPTIONS" | fzf --prompt "What do you want to download? -> ")
+CHOICE=$(printf $OPTIONS | fzf --prompt "What do you want to download? -> ")
 
 # Check if a choice was made.
-if [ -z "$CHOICE" ]; then
+if [[ -z $CHOICE ]]; then
     exit 1
 fi
 
@@ -18,20 +18,20 @@ fi
 RESOLUTIONS="1080\n720\n480\n360\n240\n144\nAudio-only"
 
 # Use fzf to let the user select a resolution.
-RESOLUTION=$(printf "$RESOLUTIONS" | fzf --prompt "Select resolution for: $LINK -> ")
+RESOLUTION=$(printf $RESOLUTIONS | fzf --prompt "Select resolution for: $LINK -> ")
 
 # Check if a resolution was selected.
-if [ -z "$RESOLUTION" ]; then
+if [[ -z $RESOLUTION ]]; then
     exit 1
 fi
 
 # If the user selected "Audio-only", use "bestaudio/best". 
 # Otherwise, use "bestvideo[height<=?$RESOLUTION]+bestaudio/best"
-if [ "$RESOLUTION" = "Audio-only" ]; then
+if [ $RESOLUTION = "Audio-only" ]; then
     COMMAND="yt-dlp -x -o '%(title)s.%(ext)s' $LINK"
 else
     FORMAT="bestvideo[height<=?$RESOLUTION]+bestaudio/best"
-    if [ "$CHOICE" = "Single" ]; then
+    if [[ $CHOICE = "Single" ]]; then
         COMMAND="yt-dlp --format '$FORMAT' -o '%(title)s.%(ext)s' $LINK"
     else
         COMMAND="yt-dlp --format '$FORMAT' -o '%(playlist_index)s-%(title)s.%(ext)s' $LINK"
