@@ -3,6 +3,9 @@
 # geeks
 [[ -n $SSH_CONNECTION ]] && export EDITOR="vim" || export EDITOR="helix"
 
+export HISTSIZE=1000000 # max number of command history in memory
+export HISTFILESIZE=1000000 # max number of command history in history file
+
 export TERMINAL="ghostty"
 export MANPAGER="nvim +Man!"
 

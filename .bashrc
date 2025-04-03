@@ -1,16 +1,20 @@
 # if not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# PS1="[\u@\h \w]\$ "
 update_prompt() {
-  bold="\033[1m"
-  italic="\033[3m"
-  red="\033[31m"
-  gold="\033[33m" 
-  reset="\033[0m"
-
-  branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-  [[ -n $branch ]] && branch="($branch)"
-  PS1="[\u@\h $red\w$reset]$italic$bold$gold$branch$reset "
+  GREEN="\[$(tput setaf 2)\]"
+  BLUE="\[$(tput setaf 4)\]"
+  RED="\[$(tput setaf 1)\]"
+  YELLOW="\[$(tput setaf 3)\]"
+  RESET="\[$(tput sgr0)\]"
+  BOLD="\[$(tput bold)\]"
+  git_status=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+  [[ -n $git_status ]] && {
+    changes=$(git status --porcelain 2>/dev/null | wc -l)
+    [[ $changes != 0 ]] && git_status=" ($git_status $changes)" || git_status=" ($git_status)"
+  }
+  PS1="$GREEN[$RESET\u$GREEN@$BLUE\h $RED\w$GREEN]$RESET$BOLD$YELLOW$git_status$RESET$BLUE\$$RESET "
 }
 PROMPT_COMMAND=update_prompt
 
@@ -28,7 +32,7 @@ alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 
 alias pI="sudo pacman -S" 
-alias pS="sudo pacman -Ss"
+alias pS="pacman -Ss"
 alias pR="sudo pacman -Rn"
 alias pQ="pacman -Q"
 alias pU="sudo pacman -S archlinux-keyring; sudo pacman -Syu"
@@ -47,8 +51,6 @@ alias l.="exa -a --icons | grep '^\.'"
 alias kittyicat="kitty +kitten icat"
 alias kittythemes="kitty +kitten themes"
 
-# vim mode
-set -o vi
 
 # setup fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
@@ -88,4 +90,6 @@ function ex () {
   fi
 }
 
-
+# vim mode
+set -o vi
+bind -m vi-insert "Control-l: clear-screen"

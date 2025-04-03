@@ -9,7 +9,7 @@ export PATH=$PATH:/path/to/java/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.cargo/bin
-# export MANPAGER='nvim +Man!'
+# export MANPAGER='helix +Man!'
 
 ZSH_THEME="af-magic"
 # PROMPT="%F{cyan}%~ >%f "

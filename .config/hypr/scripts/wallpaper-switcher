@@ -1,6 +1,7 @@
 #!/bin/bash
 
-wall=$(find ~/Pictures/walls/ -type f \( -name "*.jpeg" -o -name "*.jpg" -o -name "*.png" \) | shuf -n 1)
-
-swww img $wall --transition-type any
-# wal -i $wall
+while true; do
+    wall=$(find ~/Pictures/walls -type f | shuf -n 1)
+    swww img $wall --transition-type any
+    sleep 600 # seconds
+done

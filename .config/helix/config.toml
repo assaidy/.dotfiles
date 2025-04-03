@@ -1,4 +1,4 @@
-theme = "gruber-darker-transparent"
+theme = "gruvbox_dark_hard"
 
 [editor]
 line-number = "relative"
