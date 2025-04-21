@@ -4,13 +4,12 @@
     "output": "",
     // "spacing": 4, // Gaps between modules (px)
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window",
-        "hyprland/mode",
-        "hyprland/scratchpad"
+        "niri/workspaces",
+        "niri/window",
+        "niri/mode",
+        "niri/scratchpad"
     ],
     "modules-center": [
-        "custom/window-count",
         "clock",
         "idle_inhibitor"
     ],
@@ -21,23 +20,19 @@
         "temperature",
         "pulseaudio",
         "backlight",
-        "hyprland/language",
+        "niri/language",
         "custom/notifications",
         "tray"
     ],
-    "hyprland/workspaces": {
-        "all-outputs": false,
-        "disable-scroll": false,
-        "warp-on-scroll": false,
-        "format": "{name}",
-        "active": "",
+    "niri/workspaces": {
+        "format": "{}",
         "default": "",
     },
-    "hyprland/window": {  
+    "niri/window": {  
         "format": "{}",
         "separate-outputs": true,
     },
-    "hyprland/language": {  
+    "niri/language": {  
         "format": "{short}",
     },
     "tray": {
@@ -121,12 +116,6 @@
     },
     "battery#bat2": {
         "bat": "BAT2"
-    },
-    "custom/window-count": {
-        "format": " {}",
-        "interval": 1,
-        "escape": true,
-        "exec": "hyprctl activeworkspace | grep 'windows:' | awk '{print $2}' | head -n 1 | tr -d '\n' | xargs echo"
     },
     "custom/notifications": {
         "format": "🔔",

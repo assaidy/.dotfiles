@@ -17,6 +17,7 @@ map alt+v        paste_from_clipboard
 #: families that have many weight variants like Book, Medium, Thick,
 #: etc. For example::
 
+# font_family      CaskaydiaCoveNerdFont
 # font_family      Ubuntu Mono Nerd Font
 # font_family      IosevkaTerm Nerd Font
 font_family      JetBrains Mono
@@ -29,7 +30,7 @@ font_size 16.0
 #: Font size (in pts)
 
 adjust_line_height  110%
-adjust_column_width 110%
+adjust_column_width 100%
 
 #: Change the size of each character cell kitty renders. You can use
 #: either numbers, which are interpreted as pixels or percentages
@@ -75,7 +76,7 @@ adjust_column_width 110%
 
 #: Cursor customization {{{
 
-# cursor #ffd17f
+cursor #FFDD33
 
 #: Default cursor color
 
@@ -335,11 +336,11 @@ shell_integration no-cursor
 #: that setting a non-zero window margin overrides this and causes all
 #: borders to be drawn.
 
-# window_margin_width 0.0
+window_margin_width 0.0
 
 #: The window margin (in pts) (blank area outside the border)
 
-# single_window_margin_width -1000.0
+single_window_margin_width -1000.0
 
 #: The window margin (in pts) to use when only a single window is
 #: visible. Negative values will cause the value of
@@ -474,12 +475,12 @@ window_padding_width 0.0
 #: }}}
 
 #: Color scheme {{{
-# foreground #ffffff
-# background #181818
+foreground #ffffff
+background #181818
 
 #: The foreground and background colors
 
-# background_opacity 0.90
+# background_opacity 0.80
 
 #: The opacity of the background. A number between 0 and 1, where 1 is
 #: opaque and 0 is fully transparent.  This will only work if
@@ -1104,14 +1105,6 @@ macos_thicken_font 0.3
 #: }}}
 
 # }}}
-
-
-
-
-# BEGIN_KITTY_THEME
-# Gruvbox Dark Hard
-include current-theme.conf
-# END_KITTY_THEME
 
 # BEGIN_PYWAL
 # include ~/.cache/wal/colors-kitty.conf

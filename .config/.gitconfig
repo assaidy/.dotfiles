@@ -1,0 +1,9 @@
+[user]
+    name = Ahmad Assaidy
+    email = alsaidy.contact@gmail.com
+[core]
+    editor = helix
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true

@@ -1,7 +1,7 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: "JetBrains Mono";
+  font-family: "Maple Mono NF";
   font-weight: bold;
   font-size: 14px;
   min-height: 0;
@@ -27,17 +27,21 @@ tooltip label {
   /* Light foreground (gruvbox-light0) */
 }
 
+#workspaces {
+  background: #3C3836;
+  border-radius: 8px;
+  margin: 0 2px;
+}
+
 #workspaces button {
-  padding: 5px 8px;
+  padding: 2px 2px;
   color: #a89984;
-  /* Grayed out text (gruvbox-gray) */
   background: transparent;
 }
 
 #workspaces button.active {
-  color: #fabd2f;
-  /* Gruvbox yellow */
-  background: #3c3836;
+  color: #1D2021;
+  background: #ADB024;
   /* Darker background (gruvbox-bg3) */
   border-radius: 8px;
 }
@@ -48,7 +52,7 @@ tooltip label {
 }
 
 #workspaces button:hover {
-  background: #3c3836;
+  /* background: #8ec07c; */
   /* Darker background (gruvbox-bg3) */
   color: #fe8019;
   /* Gruvbox orange */
@@ -63,21 +67,25 @@ tooltip label {
   /* Darker background (gruvbox-bg3) */
   border-radius: 8px;
   padding: 0 12px;
-  margin-left: 8px;
+  /* margin-left: 8px; */
+  margin: 0 2px;
 }
 
 /* Center modules */
-#clock {
+#custom-window-count,
+#clock,
+#idle_inhibitor {
   color: #d3869b;
   /* Gruvbox purple */
   background: #3c3836;
   /* Darker background (gruvbox-bg3) */
   border-radius: 8px;
   padding: 0 12px;
+  margin: 0 2px;
 }
 
 /* Right modules */
-#custom-window-count,
+#custom-notifications,
 #cpu,
 #memory,
 #disk,
@@ -87,8 +95,7 @@ tooltip label {
 #backlight,
 #battery,
 #tray,
-#language,
-#idle_inhibitor {
+#language {
   padding: 0 10px;
   margin: 0 2px;
   border-radius: 8px;

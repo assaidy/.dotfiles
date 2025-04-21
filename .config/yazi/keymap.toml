@@ -82,9 +82,9 @@ keymap = [
 	{ on = "s",         run = "search --via=fd",             desc = "Search files by name via fd" },
 	{ on = "S",         run = "search --via=rg",             desc = "Search files by content via ripgrep" },
 	{ on = "<C-s>",     run = "escape --search",             desc = "Cancel the ongoing search" },
-	{ on = "z",         run = "plugin zoxide",               desc = "Jump to a directory via zoxide" },
-	# { on = "Z",         run = "plugin fzf",                  desc = "Jump to a file/directory via fzf" },
 	{ on = "f",         run = "plugin fzf",                  desc = "Jump to a file/directory via fzf" },
+	# { on = "z",         run = "plugin zoxide",               desc = "Jump to a directory via zoxide" },
+	# { on = "Z",         run = "plugin fzf",                  desc = "Jump to a file/directory via fzf" },
 
 	# Linemode
 	{ on = [ "m", "s" ], run = "linemode size",        desc = "Linemode: size" },
@@ -125,15 +125,15 @@ keymap = [
 	{ on = [ ",", "r" ], run = "sort random --reverse=no",                      desc = "Sort randomly" },
 
 	# Goto
-	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Go home" },
-	{ on = [ "g", "c" ],       run = "cd ~/.config",     desc = "Go ~/.config" },
-	{ on = [ "g", "d" ],       run = "cd ~/Documents",   desc = "Go ~/Documents" },
-	{ on = [ "g", "D" ],       run = "cd ~/Downloads",   desc = "Go ~/Downloads" },
-	{ on = [ "g", "p" ],       run = "cd ~/Pictures",    desc = "Go ~/Pictures" },
-	{ on = [ "g", "v" ],       run = "cd ~/Videos",      desc = "Go ~/Videos" },
-	{ on = [ "g", "." ],       run = "cd ~/.dotfiles",   desc = "Go ~/.dotfiles" },
-	{ on = [ "g", "<Space>" ], run = "cd --interactive", desc = "Jump interactively" },
-	{ on = [ "g", "f" ],       run = "follow",           desc = "Follow hovered symlink" },
+	{ on = [ "g", "h" ],       run = "cd ~",                    desc = "Go home" },
+	{ on = [ "g", "c" ],       run = "cd ~/.config",            desc = "Go ~/.config" },
+	{ on = [ "g", "d" ],       run = "cd ~/Documents",          desc = "Go ~/Documents" },
+	{ on = [ "g", "D" ],       run = "cd ~/Downloads",          desc = "Go ~/Downloads" },
+	{ on = [ "g", "p" ],       run = "cd ~/Pictures",           desc = "Go ~/Pictures" },
+	{ on = [ "g", "v" ],       run = "cd ~/Videos",             desc = "Go ~/Videos" },
+	{ on = [ "g", "." ],       run = "cd ~/.dotfiles",          desc = "Go ~/.dotfiles" },
+	{ on = [ "g", "<Space>" ], run = "cd --interactive",        desc = "Jump interactively" },
+	{ on = [ "g", "f" ],       run = "follow",                  desc = "Follow hovered symlink" },
 
 	# Tabs
 	{ on = "t", run = "tab_create --current", desc = "Create a new tab with CWD" },

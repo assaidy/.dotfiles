@@ -10,11 +10,8 @@ super + b
 super + n
 	thunar
 
-super + m
-	dm-search
-
 super + Escape
-	dm-power
+	$HOME/.dotfiles/scripts/dm-power
 
 XF86AudioLowerVolume
 	amixer set Master 5%-
@@ -23,21 +20,15 @@ XF86AudioRaiseVolume
 XF86AudioMute
     amixer set Master toggle
 
-XF86MonBrightnessDown
-	light -U 10%
 XF86MonBrightnessUp
 	light -A 10%
+XF86MonBrightnessDown
+	light -U 10%
 
 super + p
-    maim --select | xclip -selection clipboard -t image/png && xclip -selection clipboard -o >> ~/Pictures/Screenshots/$(date +%s).png 
+    maim --select | xclip -selection clipboard -t image/png && xclip -selection clipboard -o >> ~/Pictures/Screenshots/$(date +%Y-%m-%d-%s).png 
 super + shift + p
 	maim | xclip -selection clipboard -t image/png && xclip -selection clipboard -o >> ~/Pictures/Screenshots/$(date +%s).png 
-
-# Switch Keyboard languages
-#Shift_L + Alt_L
-#    setxkbmap -layout us,ara -option "grp:alt_shift_toggle"
-#Shift_R + Alt_R
-#    setxkbmap -layout us,ara -option "grp:alt_shift_toggle"
 
 super + c
     xcolor | xclip -selection clipboard

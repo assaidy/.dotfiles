@@ -22,6 +22,7 @@ alias grep="grep --color=always"
 alias cls="clear"
 alias e="exit"
 alias vf="fd --no-ignore --hidden --exclude=.git -t f | fzf --preview='bat --color always {}' | xargs -r nvim"
+alias v="nvim"
 alias hx="helix"
 alias code="code --profile main"
 alias rm="trash"
@@ -48,14 +49,7 @@ alias ll="exa -al --icons --group-directories-first"
 alias lt="exa -aT --icons --group-directories-first"
 alias l.="exa -a --icons | grep '^\.'"
 
-alias kittyicat="kitty +kitten icat"
-alias kittythemes="kitty +kitten themes"
-
-
-# setup fzf key bindings and fuzzy completion
-eval "$(fzf --bash)"
-
-# functions
+# function to chang directory to yazi directory
 function yz() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
     yazi "$@" --cwd-file="$tmp"
@@ -65,6 +59,7 @@ function yz() {
     rm -f -- "$tmp"
 }
 
+# functio to extract files
 # usage: ex <file>
 function ex () {
   if [ -f "$1" ] ; then
@@ -90,6 +85,16 @@ function ex () {
   fi
 }
 
-# vim mode
+# function to convert a github repository file link to its raw content link
+function gr() {
+  github_raw_link=$(echo "$1" | sed 's/github.com/raw.githubusercontent.com/; s/\/blob\//\//')
+	echo "$github_raw_link"
+}
+
+bind "set completion-ignore-case on"
+
 set -o vi
 bind -m vi-insert "Control-l: clear-screen"
+
+# setup fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
