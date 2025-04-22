@@ -343,8 +343,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="fuzzel"
-    open-floating true
+    open-maximized true
 }
 
 binds {
@@ -362,10 +361,6 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    // Suggested binds for running programs: terminal, app launcher, screen locker.
-    // Mod+T { spawn "alacritty"; }
-    // Super+Alt+L { spawn "swaylock"; }
-    
     Mod+Return  { spawn "footclient"; }
     Mod+Space   { spawn "fuzzel"; }
     Mod+Escape  { spawn "sh" "-c" "$HOME/.dotfiles/scripts/dm-power"; }
@@ -408,44 +403,6 @@ binds {
     Mod+Shift+K     { move-window-up; }
     Mod+Shift+L     { move-column-right; }
 
-    // Alternative commands that move across workspaces when reaching
-    // the first or last window in a column.
-    // Mod+J     { focus-window-or-workspace-down; }
-    // Mod+K     { focus-window-or-workspace-up; }
-    // Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
-    // Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
-
-    // Mod+Home { focus-column-first; }
-    // Mod+End  { focus-column-last; }
-    // Mod+Ctrl+Home { move-column-to-first; }
-    // Mod+Ctrl+End  { move-column-to-last; }
-
-    // ShiftShift+Left  { focus-monitor-left; }
-    // Shiftod+Shift+Down  { focus-monitor-down; }
-    // Shiftod+Shift+Up    { focus-monitor-up; }
-    // Shiftod+Shift+Right { focus-monitor-right; }
-    // Shiftod+Shift+H     { focus-monitor-left; }
-    // Shiftod+Shift+J     { focus-monitor-down; }
-    // Shiftod+Shift+K     { focus-monitor-up; }
-    // Shiftod+Shift+L     { focus-monitor-right; }
-
-    // Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
-    // Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
-    // Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
-    // Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
-    // Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
-    // Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
-    // Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
-    // Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
-
-    // Alternatively, there are commands to move just a single window:
-    // Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
-    // ...
-
-    // And you can also move a whole workspace to another monitor:
-    // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
-    // ...
-
     Mod+Page_Down      { focus-workspace-down; }
     Mod+Page_Up        { focus-workspace-up; }
     Mod+U              { focus-workspace-down; }
@@ -454,10 +411,6 @@ binds {
     Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
     Mod+Ctrl+U         { move-column-to-workspace-down; }
     Mod+Ctrl+I         { move-column-to-workspace-up; }
-
-    // Alternatively, there are commands to move just a single window:
-    // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
-    // ...
 
     Mod+Shift+Page_Down { move-workspace-down; }
     Mod+Shift+Page_Up   { move-workspace-up; }
@@ -599,7 +552,6 @@ binds {
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+Q { quit; }
-    // Ctrl+Alt+Delete { quit; }
 
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.

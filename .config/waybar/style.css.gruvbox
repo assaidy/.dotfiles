@@ -1,84 +1,88 @@
 * {
-  border: none;
-  border-radius: 0;
-  font-family: "Maple Mono NF";
-  font-weight: bold;
-  font-size: 14px;
-  min-height: 0;
+    border: none;
+    border-radius: 0;
+    font-family: "Maple Mono NF";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
 }
 
 window#waybar {
-  background: #1d2021;
-  /* Dark background (gruvbox-bg0-h) */
-  color: #d5c4a1;
-  /* Light foreground (gruvbox-light1) */
+    background: #1d2021;
+    /* Dark background (gruvbox-bg0-h) */
+    color: #d5c4a1;
+    /* Light foreground (gruvbox-light1) */
 }
 
 tooltip {
-  background: #282828;
-  /* Dark background (gruvbox-bg0) */
-  border-radius: 8px;
-  border: 2px solid #3c3836;
-  /* Dark border (gruvbox-bg3) */
+    background: #282828;
+    /* Dark background (gruvbox-bg0) */
+    border-radius: 8px;
+    border: 2px solid #3c3836;
+    /* Dark border (gruvbox-bg3) */
 }
 
 tooltip label {
-  color: #ebdbb2;
-  /* Light foreground (gruvbox-light0) */
+    color: #ebdbb2;
+    /* Light foreground (gruvbox-light0) */
 }
 
 #workspaces {
-  background: #3C3836;
-  border-radius: 8px;
+    background: #3C3836;
+    border-radius: 8px;
+    margin: 2px;
+    margin: 4px 2px;
 }
 
 #workspaces button {
-  padding: 2px 2px;
-  color: #a89984;
-  background: transparent;
+    padding: 2px 0;
+    color: #a89984;
+    background: transparent;
 }
 
 #workspaces button.active {
-  color: #1D2021;
-  background: #ADB024;
-  /* Darker background (gruvbox-bg3) */
-  border-radius: 8px;
+    color: #1D2021;
+    background: #ADB024;
+    /* Darker background (gruvbox-bg3) */
+    border-radius: 8px;
 }
 
 #workspaces button.urgent {
-  color: #fb4934;
-  /* Gruvbox red */
+    color: #fb4934;
+    /* Gruvbox red */
 }
 
 #workspaces button:hover {
-  /* background: #8ec07c; */
-  /* Darker background (gruvbox-bg3) */
-  color: #fe8019;
-  /* Gruvbox orange */
-  border-radius: 8px;
+    background: #83A598;
+    /* Darker background (gruvbox-bg3) */
+    color: #1d2021;
+    /* Gruvbox orange */
+    border-radius: 8px;
 }
 
 /* Left modules */
 #window {
-  color: #83a598;
-  /* Gruvbox blue */
-  background: #3c3836;
-  /* Darker background (gruvbox-bg3) */
-  border-radius: 8px;
-  padding: 0 12px;
-  margin-left: 8px;
+    color: #83a598;
+    /* Gruvbox blue */
+    background: #3c3836;
+    /* Darker background (gruvbox-bg3) */
+    border-radius: 8px;
+    padding: 0 12px;
+    margin: 2px;
+    margin: 4px 2px;
 }
 
 /* Center modules */
 #custom-window-count,
 #clock,
 #idle_inhibitor {
-  color: #d3869b;
-  /* Gruvbox purple */
-  background: #3c3836;
-  /* Darker background (gruvbox-bg3) */
-  border-radius: 8px;
-  padding: 0 12px;
+    color: #d3869b;
+    /* Gruvbox purple */
+    background: #3c3836;
+    /* Darker background (gruvbox-bg3) */
+    border-radius: 8px;
+    padding: 0 12px;
+    margin: 4px 2px;
 }
 
 /* Right modules */
@@ -93,99 +97,100 @@ tooltip label {
 #battery,
 #tray,
 #language {
-  padding: 0 10px;
-  margin: 0 2px;
-  border-radius: 8px;
-  background: #3c3836;
-  /* Darker background (gruvbox-bg3) */
+    padding: 0 10px;
+    margin: 2px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    background: #3c3836;
+    /* Darker background (gruvbox-bg3) */
 }
 
 #language {
-  color: #8ec07c;
-  /* Gruvbox aqua */
+    color: #8ec07c;
+    /* Gruvbox aqua */
 }
 
 #cpu {
-  color: #8ec07c;
-  /* Gruvbox aqua */
+    color: #8ec07c;
+    /* Gruvbox aqua */
 }
 
 #memory {
-  color: #b8bb26;
-  /* Gruvbox green */
+    color: #b8bb26;
+    /* Gruvbox green */
 }
 
 #disk {
-  color: #d79921;
-  /* Gruvbox yellow */
+    color: #d79921;
+    /* Gruvbox yellow */
 }
 
 #temperature {
-  color: #fe8019;
-  /* Gruvbox orange */
+    color: #fe8019;
+    /* Gruvbox orange */
 }
 
 #temperature.critical {
-  color: #fb4934;
-  /* Gruvbox red */
-  animation: blink 1s linear infinite;
+    color: #fb4934;
+    /* Gruvbox red */
+    animation: blink 1s linear infinite;
 }
 
 #network {
-  color: #83a598;
-  /* Gruvbox blue */
+    color: #83a598;
+    /* Gruvbox blue */
 }
 
 #pulseaudio {
-  color: #b8bb26;
-  /* Gruvbox green */
+    color: #b8bb26;
+    /* Gruvbox green */
 }
 
 #pulseaudio.muted {
-  color: #fb4934;
-  /* Gruvbox red */
+    color: #fb4934;
+    /* Gruvbox red */
 }
 
 #backlight {
-  color: #fabd2f;
-  /* Gruvbox yellow */
+    color: #fabd2f;
+    /* Gruvbox yellow */
 }
 
 #battery {
-  color: #8ec07c;
-  /* Gruvbox aqua */
+    color: #8ec07c;
+    /* Gruvbox aqua */
 }
 
 #battery.warning {
-  color: #d79921;
-  /* Gruvbox yellow */
+    color: #d79921;
+    /* Gruvbox yellow */
 }
 
 #battery.critical {
-  color: #fb4934;
-  /* Gruvbox red */
+    color: #fb4934;
+    /* Gruvbox red */
 }
 
 #tray {
-  color: #d5c4a1;
-  /* Light foreground */
+    color: #d5c4a1;
+    /* Light foreground */
 }
 
 #idle_inhibitor {
-  color: #a89984;
-  /* Grayed out text */
+    color: #a89984;
+    /* Grayed out text */
 }
 
 #idle_inhibitor.activated {
-  color: #b8bb26;
-  /* Gruvbox green */
-  background: #3c3836;
-  /* Darker background */
+    color: #b8bb26;
+    /* Gruvbox green */
+    background: #3c3836;
+    /* Darker background */
 }
 
 @keyframes blink {
-  to {
-    background-color: #fb4934;
-    color: #1d2021;
-  }
+    to {
+        background-color: #fb4934;
+        color: #1d2021;
+    }
 }
