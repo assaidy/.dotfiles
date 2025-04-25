@@ -1,6 +1,5 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-# geeks
 [[ -n $SSH_CONNECTION ]] && export EDITOR="vim" || export EDITOR="nvim"
 
 export HISTSIZE=1000000 # max number of command history in memory

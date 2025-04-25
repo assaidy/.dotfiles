@@ -4,14 +4,14 @@
     "output": "",
     // "spacing": 4, // Gaps between modules (px)
     "modules-left": [
-        "niri/workspaces",
-        "niri/window",
-        "niri/mode",
-        "niri/scratchpad"
-    ],
-    "modules-center": [
         "clock",
         "idle_inhibitor"
+    ],
+    "modules-center": [
+        "niri/workspaces",
+        // "niri/window",
+        "niri/mode",
+        "niri/scratchpad"
     ],
     "modules-right": [
         "battery",
@@ -25,7 +25,7 @@
         "tray"
     ],
     "niri/workspaces": {
-        "format": "{}",
+        "format": "",
     },
     "niri/window": {  
         "format": "{}",

@@ -17,7 +17,6 @@ keymap.set({ "n", "v" }, "gl", "$", { desc = "Goto end of the line" })
 keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Goto next buffer" })
 keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Goto previous buffer" })
 keymap.set("n", "<leader>bk", ":bd<CR>", { desc = "Kill current buffer" })
-keymap.set("n", "<leader>bl", ":Telescope buffers<CR>", { desc = "List open buffers inside telescope" })
 
 -- move selected up and down
 keymap.set("v", "J", ":m '>+1<CR>gv=gv")

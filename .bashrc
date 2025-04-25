@@ -14,7 +14,7 @@ update_prompt() {
     changes=$(git status --porcelain 2>/dev/null | wc -l)
     [[ $changes != 0 ]] && git_status=" ($git_status $changes)" || git_status=" ($git_status)"
   }
-  PS1="$GREEN[$RESET\u$GREEN@$BLUE\h $RED\w$GREEN]$RESET$BOLD$YELLOW$git_status$RESET$BLUE\$$RESET "
+  PS1="$GREEN[$RED\w$BOLD$YELLOW$git_status$RESET$GREEN]$BLUE\$$RESET "
 }
 PROMPT_COMMAND=update_prompt
 

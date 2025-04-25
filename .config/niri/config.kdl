@@ -240,7 +240,7 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
-spawn-at-startup "sh" "-c" "$HOME/.dotfiles/.config/waybar/restart_niri.sh"
+spawn-at-startup "sh" "-c" "$HOME/.dotfiles/.config/niri/waybar/restart.sh"
 spawn-at-startup "swayidle" "-w" "timeout" "600" "'hyprctl dispatch dpms off'" "resume" "'hyprctl dispatch dpms on'"
 spawn-at-startup "nm-applet"
 spawn-at-startup "nm-applet"
@@ -342,7 +342,7 @@ window-rule {
     clip-to-geometry true
 }
 
-window-rule {
+/-window-rule {
     open-maximized true
 }
 
@@ -364,7 +364,7 @@ binds {
     Mod+Return  { spawn "footclient"; }
     Mod+Space   { spawn "fuzzel"; }
     Mod+Escape  { spawn "sh" "-c" "$HOME/.dotfiles/scripts/dm-power"; }
-    Mod+Shift+w { spawn "sh" "-c" "$HOME/.dotfiles/.config/waybar/restart_niri.sh"; }
+    Mod+Shift+w { spawn "sh" "-c" "$HOME/.dotfiles/.config/niri/waybar/restart.sh"; }
     Mod+b       { spawn "zen-browser"; }
     Mod+S       { spawn "sh" "-c" "wl-paste | swappy -f -"; }
     Mod+C       { spawn "sh" "-c" "hyprpicker | xargs -r wl-copy"; }

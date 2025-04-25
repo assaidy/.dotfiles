@@ -21,7 +21,19 @@ return {
                         ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
                     },
                 },
-            }
+            },
+            pickers = {
+                find_files = {
+                    find_command = {
+                        "fd",
+                        "--no-ignore",
+                        "--hidden",
+                        "--exclude=.git",
+                        "-t", "f",
+                    },
+                    -- disable_devicons = true,
+                },
+            },
         })
 
         telescope.load_extension("fzf")
@@ -29,14 +41,16 @@ return {
         -- set keymaps
         local keymap = vim.keymap -- for conciseness
 
-        keymap.set("n", "<leader>ff", "<cmd>Telescope find_files find_command=fd,--no-ignore,--hidden,--exclude=.git,-t,f<cr>", { desc = "Fuzzy find files in cwd" })
-        keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
-        keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Fuzzy find open buffers" })
-        keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Fuzzy find string in cwd" })
-        keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Fuzzy find string under cursor in cwd" })
-        keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Fuzzy find help" })
-        keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Fuzzy find todos" })
-        keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", { desc = "Fuzzy find worksapce diagnostic" })
-        keymap.set("n", "<leader>fs", "<cmd>Telescope lsp_document_symbols query=<cr>", { desc = "Fuzzy find document symbols" })
+        keymap.set("n", "<leader>ff", "<cmd>Telescope find_files theme=ivy<cr>", { desc = "Fuzzy find files in cwd" })
+        keymap.set("n", "<leader>fb", "<cmd>Telescope buffers theme=ivy<cr>", { desc = "Fuzzy find open buffers" })
+        keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep theme=ivy<cr>", { desc = "Fuzzy find string in cwd" })
+        keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string theme=ivy<cr>",
+            { desc = "Fuzzy find string under cursor in cwd" })
+        keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags theme=ivy<cr>", { desc = "Fuzzy find help" })
+        keymap.set("n", "<leader>ft", "<cmd>TodoTelescope theme=ivy<cr>", { desc = "Fuzzy find todos" })
+        keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics theme=ivy<cr>",
+            { desc = "Fuzzy find worksapce diagnostic" })
+        keymap.set("n", "<leader>fs", "<cmd>Telescope lsp_document_symbols theme=ivy query=<cr>",
+            { desc = "Fuzzy find document symbols" })
     end,
 }
