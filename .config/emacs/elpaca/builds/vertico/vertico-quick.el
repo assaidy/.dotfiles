@@ -1,0 +1,1 @@
+/home/ahmad/.config/emacs/elpaca/repos/vertico/extensions/vertico-quick.el

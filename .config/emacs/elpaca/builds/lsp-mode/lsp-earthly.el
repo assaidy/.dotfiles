@@ -1,0 +1,1 @@
+/home/ahmad/.config/emacs/elpaca/repos/lsp-mode/clients/lsp-earthly.el

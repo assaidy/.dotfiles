@@ -240,7 +240,7 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
-spawn-at-startup "sh" "-c" "$HOME/.dotfiles/.config/niri/waybar/restart.sh"
+spawn-at-startup "sh" "-c" "$HOME/.config/niri/waybar/restart.sh"
 spawn-at-startup "swayidle" "-w" "timeout" "600" "'hyprctl dispatch dpms off'" "resume" "'hyprctl dispatch dpms on'"
 spawn-at-startup "nm-applet"
 spawn-at-startup "nm-applet"
@@ -248,8 +248,9 @@ spawn-at-startup "blueman-applet"
 spawn-at-startup "swaync"
 spawn-at-startup "wlsunset" "-T" "5000"
 spawn-at-startup "swww-daemon"
-spawn-at-startup "sh" "-c" "$HOME/.dotfiles/.config/hypr/scripts/wallpaper-switcher $HOME/Pictures/gruvbox"
+spawn-at-startup "sh" "-c" "$HOME/.config/hypr/scripts/wallpaper-switcher $HOME/Pictures/gruvbox"
 spawn-at-startup "foot" "--server"
+spawn-at-startup "emacs" "--daemon"
 
 spawn-at-startup "xwayland-satellite"
 // Or, if you built it by hand:
@@ -363,8 +364,8 @@ binds {
 
     Mod+Return  { spawn "footclient"; }
     Mod+Space   { spawn "fuzzel"; }
-    Mod+Escape  { spawn "sh" "-c" "$HOME/.dotfiles/scripts/dm-power"; }
-    Mod+Shift+w { spawn "sh" "-c" "$HOME/.dotfiles/.config/niri/waybar/restart.sh"; }
+    Mod+Escape  { spawn "sh" "-c" "$HOME/.local/bin/dm-power"; }
+    Mod+Shift+w { spawn "sh" "-c" "$HOME/.config/niri/waybar/restart.sh"; }
     Mod+b       { spawn "zen-browser"; }
     Mod+S       { spawn "sh" "-c" "wl-paste | swappy -f -"; }
     Mod+C       { spawn "sh" "-c" "hyprpicker | xargs -r wl-copy"; }

@@ -1,0 +1,12 @@
+ls
+grep -rin evaluate
+cd 
+ll
+ls
+cd 
+cd Documents/coding/go/word-counter/
+ll
+cat t8.shakespeare.txt 
+cat t8.shakespeare.txt 
+eixt
+exit
