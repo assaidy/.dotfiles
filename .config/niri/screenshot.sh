@@ -7,7 +7,9 @@ full)
     grim $OUTPUT_DIR
     ;;
 area)
-    grim -g "$(slurp)" $OUTPUT_DIR
+    geometry=$(slurp)
+    [[ $? -ne 0 ]] && exit 1
+    grim -g "$geometry" $OUTPUT_DIR
     ;;
 *)
     echo "Usage: $0 {full|area}"

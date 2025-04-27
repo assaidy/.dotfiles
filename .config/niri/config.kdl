@@ -368,7 +368,7 @@ binds {
     Mod+Shift+w { spawn "bash" "-c" "$HOME/.config/niri/waybar/restart.sh"; }
     Mod+b       { spawn "zen-browser"; }
     Mod+S       { spawn "bash" "-c" "wl-paste | swappy -f -"; }
-    Mod+C       { spawn "bash" "-c" "hyprpicker | xargs -r wl-copy"; }
+    Mod+C       { spawn "bash" "-c" "$HOME/.config/niri/color_picker.sh"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
