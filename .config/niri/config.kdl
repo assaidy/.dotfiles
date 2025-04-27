@@ -240,7 +240,7 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
-spawn-at-startup "sh" "-c" "$HOME/.config/niri/waybar/restart.sh"
+spawn-at-startup "bash" "-c" "$HOME/.config/niri/waybar/restart.sh"
 spawn-at-startup "swayidle" "-w" "timeout" "600" "'hyprctl dispatch dpms off'" "resume" "'hyprctl dispatch dpms on'"
 spawn-at-startup "nm-applet"
 spawn-at-startup "nm-applet"
@@ -248,7 +248,7 @@ spawn-at-startup "blueman-applet"
 spawn-at-startup "swaync"
 spawn-at-startup "wlsunset" "-T" "5000"
 spawn-at-startup "swww-daemon"
-spawn-at-startup "sh" "-c" "$HOME/.config/hypr/scripts/wallpaper-switcher $HOME/Pictures/gruvbox"
+spawn-at-startup "bash" "-c" "$HOME/.config/niri/wallpaper_switcher.sh $HOME/Pictures/gruvbox"
 spawn-at-startup "foot" "--server"
 spawn-at-startup "emacs" "--daemon"
 
@@ -364,11 +364,11 @@ binds {
 
     Mod+Return  { spawn "footclient"; }
     Mod+Space   { spawn "fuzzel"; }
-    Mod+Escape  { spawn "sh" "-c" "$HOME/.local/bin/dm-power"; }
-    Mod+Shift+w { spawn "sh" "-c" "$HOME/.config/niri/waybar/restart.sh"; }
+    Mod+Escape  { spawn "bash" "-c" "$HOME/.local/bin/dm-power"; }
+    Mod+Shift+w { spawn "bash" "-c" "$HOME/.config/niri/waybar/restart.sh"; }
     Mod+b       { spawn "zen-browser"; }
-    Mod+S       { spawn "sh" "-c" "wl-paste | swappy -f -"; }
-    Mod+C       { spawn "sh" "-c" "hyprpicker | xargs -r wl-copy"; }
+    Mod+S       { spawn "bash" "-c" "wl-paste | swappy -f -"; }
+    Mod+C       { spawn "bash" "-c" "hyprpicker | xargs -r wl-copy"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -537,8 +537,8 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Mod+P { screenshot; }
-    Mod+Shift+P { screenshot-screen; }
+    Mod+P { spawn "bash" "-c" "$HOME/.config/niri/screenshot.sh area"; }
+    Mod+Shift+P { spawn "bash" "-c" "$HOME/.config/niri/screenshot.sh full"; }
     // Mod+Ctrl+P { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may

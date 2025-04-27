@@ -137,6 +137,9 @@
   (setq lsp-ui-sideline-enable t)
   (setq lsp-ui-sideline-show-diagnostics t))
 
+(with-eval-after-load 'lsp-mode
+  (setq lsp-headerline-breadcrumb-enable nil))
+
 ;; Completion framework
 (use-package company
   :hook (prog-mode . company-mode)
@@ -147,9 +150,6 @@
 ;; Optional: Install lsp-treemacs for better UI integration
 (use-package lsp-treemacs
   :commands lsp-treemacs-errors-list)
-
-(with-eval-after-load 'lsp-mode
-  (setq lsp-headerline-breadcrumb-enable nil))
 
 ;; Language-specific configurations
 ;; Python (requires pyright or python-language-server installed on your system)

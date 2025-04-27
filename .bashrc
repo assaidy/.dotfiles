@@ -96,5 +96,9 @@ bind "set completion-ignore-case on"
 set -o vi
 bind -m vi-insert "Control-l: clear-screen"
 
+if [[ -z $TMUX ]]; then
+    tmux new -A -s home
+fi
+
 # setup fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
