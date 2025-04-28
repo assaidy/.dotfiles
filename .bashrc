@@ -88,7 +88,7 @@ function ex () {
 # function to convert a github repository file link to its raw content link
 function gr() {
   github_raw_link=$(echo "$1" | sed 's/github.com/raw.githubusercontent.com/; s/\/blob\//\//')
-	echo "$github_raw_link"
+  echo "$github_raw_link"
 }
 
 bind "set completion-ignore-case on"
@@ -96,8 +96,8 @@ bind "set completion-ignore-case on"
 set -o vi
 bind -m vi-insert "Control-l: clear-screen"
 
-if [[ -z $TMUX ]]; then
-    tmux new -A -s home
+if [[ -z $TMUX && ( -n $DISPLAY || -n $WAYLAND_DISPLAY ) ]]; then
+    exec tmux new -A -s home
 fi
 
 # setup fzf key bindings and fuzzy completion

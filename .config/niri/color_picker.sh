@@ -1,9 +1,15 @@
-#!/bin/bash
+#!/bin/sh
+
+set -e
 
 geometry=$(slurp -p)
 
-[[ $? -ne 0 ]] && exit 1
+if [[ -z "$geometry" ]]; then
+    exit 1
+fi
 
-grim -g "$geometry" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | awk '{print $3}' | wl-copy
+color=$(grim -g "$geometry" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | awk '{print $3}')
+
+echo "$color" | wl-copy
 
 notify-send "Color picked" "$(wl-paste)"
