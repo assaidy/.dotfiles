@@ -343,7 +343,7 @@ window-rule {
     clip-to-geometry true
 }
 
-/-window-rule {
+window-rule {
     open-maximized true
 }
 
@@ -364,11 +364,12 @@ binds {
 
     Mod+Return  { spawn "footclient"; }
     Mod+Space   { spawn "fuzzel"; }
-    Mod+Escape  { spawn "bash" "-c" "$HOME/.local/bin/dm-power"; }
+    Mod+Escape  { spawn "bash" "-c" "$HOME/.config/niri/power_menu.sh"; }
     Mod+Shift+w { spawn "bash" "-c" "$HOME/.config/niri/waybar/restart.sh"; }
-    Mod+b       { spawn "zen-browser"; }
+    Mod+B       { spawn "zen-browser"; }
     Mod+S       { spawn "bash" "-c" "wl-paste | swappy -f -"; }
     Mod+C       { spawn "bash" "-c" "$HOME/.config/niri/color_picker.sh"; }
+    Mod+M       { spawn "footclient" "-e" "btop"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.

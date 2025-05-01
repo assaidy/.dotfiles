@@ -10,7 +10,7 @@ return {
                 underline = true,
                 bold = false,
                 italic = {
-                    strings = true,
+                    strings = false,
                     emphasis = false,
                     comments = true,
                     operators = false,

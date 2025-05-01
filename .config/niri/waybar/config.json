@@ -55,7 +55,7 @@
         "tooltip": false
     },
     "memory": {
-        "format": "{percentage}% "
+        "format": "{percentage}% "
     },
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
