@@ -39,7 +39,7 @@ alias pQ="pacman -Q"
 alias pU="sudo pacman -S archlinux-keyring; sudo pacman -Syu"
 
 alias yI="yay -S" 
-alias yS="yay -Ss"
+alias yS="yay -Ss --aur"
 alias yR="yay -Rn"
 alias yQ="yay -Qm"
 alias yU="yay -Syu --aur"

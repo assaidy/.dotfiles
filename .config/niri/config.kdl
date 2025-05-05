@@ -250,7 +250,6 @@ spawn-at-startup "wlsunset" "-T" "5000"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "bash" "-c" "$HOME/.config/niri/wallpaper_switcher.sh $HOME/Pictures/gruvbox"
 spawn-at-startup "foot" "--server"
-spawn-at-startup "emacs" "--daemon"
 
 spawn-at-startup "xwayland-satellite"
 // Or, if you built it by hand:
@@ -343,8 +342,13 @@ window-rule {
     clip-to-geometry true
 }
 
-window-rule {
+/-window-rule {
     open-maximized true
+}
+
+window-rule {
+    match app-id="foot_menu"
+    open-floating true
 }
 
 binds {
@@ -363,8 +367,10 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return  { spawn "footclient"; }
-    Mod+Space   { spawn "fuzzel"; }
-    Mod+Escape  { spawn "bash" "-c" "$HOME/.config/niri/power_menu.sh"; }
+    // Mod+Space   { spawn "fuzzel"; }
+    Mod+Space   { spawn "foot" "-a" "foot_menu" "-e" "bash" "-c" "fzf_run && sleep 0.010"; } // sleep a while till process starts
+    // Mod+Escape  { spawn "bash" "-c" "$HOME/.config/niri/power_menu.sh"; }
+    Mod+Escape  { spawn "foot" "-a" "foot_menu" "-e" "bash" "-c" "fzf_power"; }
     Mod+Shift+w { spawn "bash" "-c" "$HOME/.config/niri/waybar/restart.sh"; }
     Mod+B       { spawn "zen-browser"; }
     Mod+S       { spawn "bash" "-c" "wl-paste | swappy -f -"; }
