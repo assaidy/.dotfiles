@@ -98,3 +98,10 @@ bind -m vi-insert "Control-l: clear-screen"
 
 # setup fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
+
+if [[ -z $TMUX ]]; then
+    if ! tmux ls -F '#{session_name}' | grep -q "^home$"; then
+        tmux new -s home
+    fi
+    tmux a -t home
+fi
