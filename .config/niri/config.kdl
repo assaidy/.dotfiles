@@ -368,7 +368,7 @@ binds {
 
     Mod+Return  { spawn "footclient"; }
     // Mod+Space   { spawn "fuzzel"; }
-    Mod+Space   { spawn "foot" "-a" "foot_menu" "-e" "bash" "-c" "fzf_run && sleep 0.010"; } // sleep a while till process starts
+    Mod+Space   { spawn "foot" "-a" "foot_menu" "-e" "bash" "-c" "fzf_run"; }
     // Mod+Escape  { spawn "bash" "-c" "$HOME/.config/niri/power_menu.sh"; }
     Mod+Escape  { spawn "foot" "-a" "foot_menu" "-e" "bash" "-c" "fzf_power"; }
     Mod+Shift+w { spawn "bash" "-c" "$HOME/.config/niri/waybar/restart.sh"; }
