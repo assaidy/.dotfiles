@@ -15,6 +15,14 @@ return {
             -- },
         })
 
+        vim.api.nvim_create_user_command("Fmt", function()
+            conform.format({
+                lsp_fallback = true,
+                async = false,
+                timeout_ms = 1000,
+            })
+        end, { desc = "Format current buffer" })
+
         vim.keymap.set({ "n" }, "<leader>fm", function()
             conform.format({
                 lsp_fallback = true,

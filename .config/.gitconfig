@@ -1,8 +1,8 @@
 [user]
     name = Ahmad Assaidy
-    email = alsaidy.contact@gmail.com
+    email = someone@somewhere.something
 [core]
-    editor = helix
+    editor = nvim
 [init]
 	defaultBranch = main
 [pull]

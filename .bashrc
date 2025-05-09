@@ -3,18 +3,18 @@
 
 # PS1="[\u@\h \w]\$ "
 update_prompt() {
-  GREEN="\[$(tput setaf 2)\]"
-  BLUE="\[$(tput setaf 4)\]"
-  RED="\[$(tput setaf 1)\]"
-  YELLOW="\[$(tput setaf 3)\]"
-  RESET="\[$(tput sgr0)\]"
-  BOLD="\[$(tput bold)\]"
-  git_status=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-  [[ -n $git_status ]] && {
-    changes=$(git status --porcelain 2>/dev/null | wc -l)
-    [[ $changes != 0 ]] && git_status=" ($git_status $changes)" || git_status=" ($git_status)"
-  }
-  PS1="$GREEN[$RED\w$BOLD$YELLOW$git_status$RESET$GREEN]$BLUE\$$RESET "
+    GREEN="\[$(tput setaf 2)\]"
+    BLUE="\[$(tput setaf 4)\]"
+    RED="\[$(tput setaf 1)\]"
+    YELLOW="\[$(tput setaf 3)\]"
+    RESET="\[$(tput sgr0)\]"
+    BOLD="\[$(tput bold)\]"
+    git_status=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    [[ -n $git_status ]] && {
+        changes=$(git status --porcelain 2>/dev/null | wc -l)
+            [[ $changes != 0 ]] && git_status=" ($git_status $changes)" || git_status=" ($git_status)"
+        }
+    PS1="$GREEN[$RED\w$BOLD$YELLOW$git_status$RESET$GREEN]$BLUE\$$RESET "
 }
 PROMPT_COMMAND=update_prompt
 
@@ -62,33 +62,32 @@ function yz() {
 # functio to extract files
 # usage: ex <file>
 function ex () {
-  if [ -f "$1" ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *.deb)       ar x $1      ;;
-      *.tar.xz)    tar xf $1    ;;
-      *.tar.zst)   unzstd $1    ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
+    if [ -f "$1" ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1   ;;
+            *.tar.gz)    tar xzf $1   ;;
+            *.bz2)       bunzip2 $1   ;;
+            *.rar)       unrar x $1   ;;
+            *.gz)        gunzip $1    ;;
+            *.tar)       tar xf $1    ;;
+            *.tbz2)      tar xjf $1   ;;
+            *.tgz)       tar xzf $1   ;;
+            *.zip)       unzip $1     ;;
+            *.Z)         uncompress $1;;
+            *.7z)        7z x $1      ;;
+            *.deb)       ar x $1      ;;
+            *.tar.xz)    tar xf $1    ;;
+            *.tar.zst)   unzstd $1    ;;
+            *)           echo "'$1' cannot be extracted via ex()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
 }
 
 # function to convert a github repository file link to its raw content link
 function gr() {
-  github_raw_link=$(echo "$1" | sed 's/github.com/raw.githubusercontent.com/; s/\/blob\//\//')
-  echo "$github_raw_link"
+    echo "$(echo "$1" | sed 's/github.com/raw.githubusercontent.com/; s/\/blob\//\//')"
 }
 
 bind "set completion-ignore-case on"
@@ -99,8 +98,8 @@ bind -m vi-insert "Control-l: clear-screen"
 # setup fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
 
-if [[ -z $TMUX ]]; then
-    if ! tmux ls -F '#{session_name}' | grep -q "^home$"; then
+if [[ "$XDG_SESSION_TYPE" != "tty" && -z "$TMUX" ]]; then
+    if ! tmux ls -F '#{session_name}' 2>/dev/null | grep -q "^home$"; then
         tmux new -s home
     fi
     tmux a -t home
