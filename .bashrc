@@ -50,7 +50,7 @@ alias lt="exa -aT --icons --group-directories-first"
 alias l.="exa -a --icons | grep '^\.'"
 
 # function to chang directory to yazi directory
-function yz() {
+yz() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
     yazi "$@" --cwd-file="$tmp"
     if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
@@ -61,7 +61,7 @@ function yz() {
 
 # functio to extract files
 # usage: ex <file>
-function ex () {
+ex() {
     if [ -f "$1" ] ; then
         case $1 in
             *.tar.bz2)   tar xjf $1   ;;
@@ -86,7 +86,7 @@ function ex () {
 }
 
 # function to convert a github repository file link to its raw content link
-function gr() {
+gr() {
     echo "$(echo "$1" | sed 's/github.com/raw.githubusercontent.com/; s/\/blob\//\//')"
 }
 

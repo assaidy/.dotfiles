@@ -1,5 +1,5 @@
 super + Return
-	$TERMINAL
+    wezterm
 
 super + space
 	rofi -show run -matching fuzzy -sorting-method normal -sort
@@ -11,7 +11,7 @@ super + n
 	thunar
 
 super + Escape
-	$HOME/.dotfiles/scripts/dm-power
+	
 
 XF86AudioLowerVolume
 	amixer set Master 5%-

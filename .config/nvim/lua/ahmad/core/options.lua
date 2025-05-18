@@ -1,13 +1,20 @@
 vim.cmd("let g:netrw_liststyle = 1")
 vim.cmd("let g:netrw_sort_by = 'exten'")
 
+-- hide statusline
+-- vim.opt.laststatus = 0
+-- vim.api.nvim_set_hl(0 , 'Statusline', {link = 'Normal'})
+-- vim.api.nvim_set_hl(0 , 'StatuslineNC', {link = 'Normal'})
+-- local str = string.repeat('-', vim.api.nvim_win_get_width(0))
+-- vim.opt.statusline = str
+
 local opt = vim.opt -- for conciseness
 
 opt.mousemodel = "extend"
 
 -- line numbers
-opt.relativenumber = false -- show relative line numbers
-opt.number = false         -- shows absolute line number on cursor line (when relative number is on)
+opt.relativenumber = true -- show relative line numbers
+opt.number = true         -- shows absolute line number on cursor line (when relative number is on)
 
 -- tabs & indentation
 opt.tabstop = 4       -- 4 spaces for tabs

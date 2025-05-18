@@ -7,7 +7,7 @@ local config = wezterm.config_builder()
 -- config.font = wezterm.font("Ubuntu Mono Nerd Font")
 -- config.font = wezterm.font("JetBrains Mono")
 config.font = wezterm.font("Maple Mono NF")
-config.font_size = 16
+config.font_size = 15
 config.cell_width = 1.0
 config.line_height = 1.0
 
@@ -31,8 +31,8 @@ config.window_padding = {
 }
 
 config.keys = {
-	{ key = "K", mods = "CTRL", action = wezterm.action.IncreaseFontSize },
-	{ key = "J", mods = "CTRL", action = wezterm.action.DecreaseFontSize },
+	-- { key = "K", mods = "CTRL", action = wezterm.action.IncreaseFontSize },
+	-- { key = "J", mods = "CTRL", action = wezterm.action.DecreaseFontSize },
 	{ key = "v", mods = "ALT", action = wezterm.action.PasteFrom("Clipboard") },
 	{ key = "c", mods = "ALT", action = wezterm.action.CopyTo("ClipboardAndPrimarySelection") },
 }
