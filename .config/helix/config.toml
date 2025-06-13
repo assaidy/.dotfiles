@@ -22,3 +22,6 @@ git-ignore = false
 esc = ["collapse_selection", "keep_primary_selection"]
 A-j = "copy_selection_on_next_line"
 A-k = "copy_selection_on_prev_line"
+
+[keys.normal.space]
+t = "@<space>/TODO"

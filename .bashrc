@@ -18,7 +18,7 @@ update_prompt() {
 }
 PROMPT_COMMAND=update_prompt
 
-alias grep="grep --color=always"
+alias grep="grep --color=auto"
 alias cls="clear"
 alias e="exit"
 alias vf="fd --no-ignore --hidden --exclude=.git -t f | fzf --preview='bat --color always {}' | xargs -r nvim"

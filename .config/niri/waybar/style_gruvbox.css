@@ -1,0 +1,173 @@
+/* gruvbox */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Maple Mono NF";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: #1d2021;
+    color: #d5c4a1;
+}
+
+tooltip {
+    background: #282828;
+    border-radius: 8px;
+    border: 2px solid #3c3836;
+}
+
+tooltip label {
+    color: #ebdbb2;
+}
+
+#workspaces {
+    background: #3C3836;
+    border-radius: 8px;
+    margin: 4px 2px;
+    padding: 2px;
+}
+
+#workspaces button {
+    padding: 0;
+    margin: 2px;
+    background: #83A598;
+    color: #a89984;
+    border-radius: 8px;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+#workspaces button.active {
+    color: #1D2021;
+    background: #ADB024;
+    border-radius: 8px;
+    min-width: 40px;
+}
+
+#workspaces button.urgent {
+    color: #fb4934;
+}
+
+#workspaces button:hover {
+    /* background: #83A598; */
+    color: #1d2021;
+    border-radius: 8px;
+    min-width: 40px;
+}
+
+/* Left modules */
+#window {
+    color: #83a598;
+    background: #3c3836;
+    border-radius: 8px;
+    padding: 0 12px;
+    margin: 2px;
+    margin: 4px 2px;
+}
+
+/* Center modules */
+#custom-window-count,
+#clock,
+#idle_inhibitor {
+    color: #d3869b;
+    background: #3c3836;
+    border-radius: 8px;
+    padding: 0 12px;
+    margin: 4px 2px;
+}
+
+/* Right modules */
+#custom-notifications,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#network,
+#pulseaudio,
+#backlight,
+#battery,
+#tray,
+#language {
+    padding: 0 10px;
+    margin: 2px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    background: #3c3836;
+}
+
+#language {
+    color: #8ec07c;
+}
+
+#cpu {
+    color: #8ec07c;
+}
+
+#memory {
+    color: #b8bb26;
+}
+
+#disk {
+    color: #d79921;
+}
+
+#temperature {
+    color: #fe8019;
+}
+
+#temperature.critical {
+    color: #fb4934;
+    animation: blink 1s linear infinite;
+}
+
+#network {
+    color: #83a598;
+}
+
+#pulseaudio {
+    color: #b8bb26;
+}
+
+#pulseaudio.muted {
+    color: #fb4934;
+}
+
+#backlight {
+    color: #fabd2f;
+}
+
+#battery {
+    color: #8ec07c;
+}
+
+#battery.warning {
+    color: #d79921;
+}
+
+#battery.critical {
+    color: #fb4934;
+}
+
+#tray {
+    color: #d5c4a1;
+}
+
+#idle_inhibitor {
+    color: #a89984;
+}
+
+#idle_inhibitor.activated {
+    color: #b8bb26;
+    background: #3c3836;
+}
+
+@keyframes blink {
+    to {
+        background-color: #fb4934;
+        color: #1d2021;
+    }
+}

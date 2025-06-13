@@ -1,3 +1,5 @@
+/* black */
+
 * {
     border: none;
     border-radius: 0;
@@ -8,22 +10,24 @@
 }
 
 window#waybar {
-    background: #1d2021;
-    color: #d5c4a1;
+    background: #000000;
+    color: #e0e0e0;
+    /* background-color: transparent; */
 }
 
 tooltip {
-    background: #282828;
-    border-radius: 8px;
-    border: 2px solid #3c3836;
+    background-color: transparent;
 }
 
 tooltip label {
-    color: #ebdbb2;
+    color: #ffffff;
+    background: #121212;
+    border-radius: 8px;
+    border: 2px solid #333333;
 }
 
 #workspaces {
-    background: #3C3836;
+    background: #1a1a1a;
     border-radius: 8px;
     margin: 4px 2px;
     padding: 2px;
@@ -32,35 +36,36 @@ tooltip label {
 #workspaces button {
     padding: 0;
     margin: 2px;
-    background: #83A598;
-    color: #a89984;
+    background: #333333;
+    color: #808080;
     border-radius: 8px;
     min-width: 20px;
     min-height: 20px;
 }
 
 #workspaces button.active {
-    color: #1D2021;
-    background: #ADB024;
+    color: #000000;
+    background: #4d4d4d;
     border-radius: 8px;
     min-width: 40px;
 }
 
 #workspaces button.urgent {
-    color: #fb4934;
+    color: #ff3333;
 }
 
 #workspaces button:hover {
-    /* background: #83A598; */
-    color: #1d2021;
+    color: #000000;
+    background: #666666;
     border-radius: 8px;
     min-width: 40px;
+    transition-duration: 200ms;
 }
 
 /* Left modules */
 #window {
-    color: #83a598;
-    background: #3c3836;
+    color: #66b3ff;
+    background: #1a1a1a;
     border-radius: 8px;
     padding: 0 12px;
     margin: 2px;
@@ -71,8 +76,8 @@ tooltip label {
 #custom-window-count,
 #clock,
 #idle_inhibitor {
-    color: #d3869b;
-    background: #3c3836;
+    color: #cc99ff;
+    background: #1a1a1a;
     border-radius: 8px;
     padding: 0 12px;
     margin: 4px 2px;
@@ -94,78 +99,78 @@ tooltip label {
     margin: 2px;
     margin: 4px 2px;
     border-radius: 8px;
-    background: #3c3836;
+    background: #1a1a1a;
 }
 
 #language {
-    color: #8ec07c;
+    color: #66ff99;
 }
 
 #cpu {
-    color: #8ec07c;
+    color: #66ff99;
 }
 
 #memory {
-    color: #b8bb26;
+    color: #ffff66;
 }
 
 #disk {
-    color: #d79921;
+    color: #ffcc66;
 }
 
 #temperature {
-    color: #fe8019;
+    color: #ff9933;
 }
 
 #temperature.critical {
-    color: #fb4934;
+    color: #ff3333;
     animation: blink 1s linear infinite;
 }
 
 #network {
-    color: #83a598;
+    color: #66b3ff;
 }
 
 #pulseaudio {
-    color: #b8bb26;
+    color: #ffff66;
 }
 
 #pulseaudio.muted {
-    color: #fb4934;
+    color: #ff3333;
 }
 
 #backlight {
-    color: #fabd2f;
+    color: #ffcc00;
 }
 
 #battery {
-    color: #8ec07c;
+    color: #66ff99;
 }
 
 #battery.warning {
-    color: #d79921;
+    color: #ffcc66;
 }
 
 #battery.critical {
-    color: #fb4934;
+    color: #ff3333;
 }
 
 #tray {
-    color: #d5c4a1;
+    color: #e0e0e0;
 }
 
 #idle_inhibitor {
-    color: #a89984;
+    color: #808080;
 }
 
 #idle_inhibitor.activated {
-    color: #b8bb26;
-    background: #3c3836;
+    color: #ffff66;
+    background: #1a1a1a;
 }
 
 @keyframes blink {
     to {
-        background-color: #fb4934;
-        color: #1d2021;
+        background-color: #ff3333;
+        color: #000000;
     }
 }

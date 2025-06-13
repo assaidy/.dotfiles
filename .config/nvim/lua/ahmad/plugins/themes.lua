@@ -33,7 +33,7 @@ return {
                 dim_inactive = false,
                 transparent_mode = false,
             })
-            vim.cmd("colorscheme gruvbox")
+            -- vim.cmd("colorscheme gruvbox")
         end,
     },
     {
@@ -81,7 +81,7 @@ return {
                     background = true, -- use background color for virtual text
                 },
             })
-            -- vim.cmd("color onedark")
+            vim.cmd("color onedark")
         end,
     },
 }
