@@ -1,22 +1,38 @@
 # if not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# PS1="[\u@\h \w]\$ "
 update_prompt() {
-    GREEN="\[$(tput setaf 2)\]"
-    BLUE="\[$(tput setaf 4)\]"
-    RED="\[$(tput setaf 1)\]"
-    YELLOW="\[$(tput setaf 3)\]"
-    RESET="\[$(tput sgr0)\]"
-    BOLD="\[$(tput bold)\]"
-    git_status=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    # Set colors
+    local GREEN="\[$(tput setaf 2)\]"
+    local BLUE="\[$(tput setaf 4)\]"
+    local RED="\[$(tput setaf 1)\]"
+    local YELLOW="\[$(tput setaf 3)\]"
+    local RESET="\[$(tput sgr0)\]"
+    local BOLD="\[$(tput bold)\]"
+    # local DIM="\[$(tput dim)\]"
+    DIM="\[\033[38;5;240m\]"  # Best balance
+    # DIM="\[\033[38;5;238m\]"   # Slightly darker
+
+    # Get terminal width
+    local width=$(tput cols)
+    
+    # Horizontal rule that spans the terminal width
+    local HRULE="$(printf '%*s' $((width)))"
+    
+    # Git status logic
+    local git_status=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
     [[ -n $git_status ]] && {
-        changes=$(git status --porcelain 2>/dev/null | wc -l)
-            [[ $changes != 0 ]] && git_status=" ($git_status $changes)" || git_status=" ($git_status)"
-        }
-    PS1="$GREEN[$RED\w$BOLD$YELLOW$git_status$RESET$GREEN]$BLUE\$$RESET "
+        local changes=$(git status --porcelain 2>/dev/null | wc -l)
+        [[ $changes != 0 ]] && git_status=" ($git_status $changes)" || git_status=" ($git_status)"
+    }
+    
+    # Set PS1 with horizontal rule
+    PS1="${DIM}${HRULE// /─}\n${RESET}${GREEN}[${RED}\w${BOLD}${YELLOW}${git_status}${RESET}${GREEN}]${BLUE}\$${RESET} "
 }
 PROMPT_COMMAND=update_prompt
+
+alias tlist="nvim $HOME/.todo_list.md"
+alias rlist="nvim $HOME/.reading_list.md"
 
 alias grep="grep --color=auto"
 alias cls="clear"

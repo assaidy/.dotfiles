@@ -1,13 +1,14 @@
 return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    disabled = true,
 
     config = function()
         local lualine = require("lualine")
 
         lualine.setup({
             options = {
-                -- theme = "codedark", -- lualine theme
+                theme = "codedark", -- lualine theme
                 component_separators = { left = "|", right = "|" },
                 section_separators = { left = "", right = "" },
                 disabled_filetypes = { -- Filetypes to disable lualine for.

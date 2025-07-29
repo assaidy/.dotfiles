@@ -41,16 +41,13 @@ return {
         -- set keymaps
         local keymap = vim.keymap -- for conciseness
 
-        keymap.set("n", "<leader>ff", "<cmd>Telescope find_files theme=ivy<cr>", { desc = "Fuzzy find files in cwd" })
-        keymap.set("n", "<leader>fb", "<cmd>Telescope buffers theme=ivy<cr>", { desc = "Fuzzy find open buffers" })
-        keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep theme=ivy<cr>", { desc = "Fuzzy find string in cwd" })
-        keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string theme=ivy<cr>",
-            { desc = "Fuzzy find string under cursor in cwd" })
-        keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags theme=ivy<cr>", { desc = "Fuzzy find help" })
-        keymap.set("n", "<leader>ft", "<cmd>TodoTelescope theme=ivy<cr>", { desc = "Fuzzy find todos" })
-        keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics theme=ivy<cr>",
-            { desc = "Fuzzy find worksapce diagnostic" })
-        keymap.set("n", "<leader>fs", "<cmd>Telescope lsp_document_symbols theme=ivy query=<cr>",
-            { desc = "Fuzzy find document symbols" })
+        keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Fuzzy find files in cwd" })
+        keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Fuzzy find open buffers" })
+        keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Fuzzy find string in cwd" })
+        keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<CR>", { desc = "Fuzzy find string under cursor in cwd" })
+        keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Fuzzy find help" })
+        keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "Fuzzy find todos" })
+        keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics<CR>", { desc = "Fuzzy find worksapce diagnostic" })
+        keymap.set("n", "<leader>fs", "<cmd>Telescope lsp_document_symbols<CR>", { desc = "Fuzzy find document symbols" })
     end,
 }

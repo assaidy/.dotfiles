@@ -180,7 +180,7 @@ layout {
         width 2
         
         // active-color "#FFAF00" // gruvbox
-        active-color "#AE5FD4" // onedark
+        // active-color "#AE5FD4" // onedark
         inactive-color "#505050"
 
         // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
@@ -243,15 +243,16 @@ layout {
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
 spawn-at-startup "bash" "-c" "$HOME/.config/niri/waybar/restart.sh"
-spawn-at-startup "swayidle" "-w" "timeout" "600" "'hyprctl dispatch dpms off'" "resume" "'hyprctl dispatch dpms on'"
+spawn-at-startup "swayidle" "-w" "timeout" "600" "'niri msg output eDP-1 off'" "resume" "'niri msg output eDP-1 on'" // "before-sleep" "hyprlock"
+// spawn-at-startup "swayidle" "-w" "timeout" "600" "'systemctl suspend'"
 spawn-at-startup "nm-applet"
 spawn-at-startup "nm-applet"
 spawn-at-startup "blueman-applet"
 spawn-at-startup "swaync"
-spawn-at-startup "light" "-N" "10%"
+spawn-at-startup "light" "-N" "10%" // set min to 10%
 spawn-at-startup "wlsunset" "-T" "5000"
 spawn-at-startup "swww-daemon"
-spawn-at-startup "bash" "-c" "$HOME/.config/niri/wallpaper_switcher.sh $HOME/Pictures/lotfi_walls/"
+spawn-at-startup "bash" "-c" "$HOME/.config/niri/wallpaper_switcher.sh $HOME/Pictures/walls/lotfi_walls"
 spawn-at-startup "foot" "--server"
 
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
@@ -377,7 +378,6 @@ binds {
     Mod+Escape  { spawn "bash" "-c" "$HOME/.config/niri/power_menu.sh"; }
     // Mod+Escape  { spawn "foot" "-a" "foot_menu" "-e" "bash" "-c" "fzf_power"; }
     Mod+Shift+w { spawn "bash" "-c" "$HOME/.config/niri/waybar/restart.sh"; }
-    Mod+B       { spawn "zen-browser"; }
     Mod+S       { spawn "bash" "-c" "wl-paste | swappy -f -"; }
     Mod+C       { spawn "bash" "-c" "$HOME/.config/niri/color_picker.sh"; }
     Mod+M       { spawn "footclient" "-e" "btop"; }
@@ -388,8 +388,8 @@ binds {
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 

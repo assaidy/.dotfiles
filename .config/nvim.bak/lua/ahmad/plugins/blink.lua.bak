@@ -16,7 +16,9 @@ return {
         -- C-k: Toggle signature help (if signature.enabled = true)
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
-        keymap = { preset = 'enter' },
+        keymap = {
+            preset = 'enter',
+        },
 
         appearance = {
             -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -25,7 +27,16 @@ return {
         },
 
         -- (false) Only show the documentation popup when manually triggered
-        completion = { documentation = { auto_show = true } },
+        completion = {
+            menu          = { auto_show = true }, -- only show menu on manual <C-space>
+            documentation = { auto_show = true },
+            ghost_text    = {
+                enabled = false,
+                show_with_menu = false -- only show when menu is closed
+            },
+        },
+
+        cmdline = { enabled = false },
 
         signature = { enabled = true },
 

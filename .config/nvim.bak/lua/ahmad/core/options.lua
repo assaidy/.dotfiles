@@ -1,20 +1,18 @@
 vim.cmd("let g:netrw_liststyle = 1")
 vim.cmd("let g:netrw_sort_by = 'exten'")
 
--- hide statusline
--- vim.opt.laststatus = 0
--- vim.api.nvim_set_hl(0 , 'Statusline', {link = 'Normal'})
--- vim.api.nvim_set_hl(0 , 'StatuslineNC', {link = 'Normal'})
--- local str = string.repeat('-', vim.api.nvim_win_get_width(0))
--- vim.opt.statusline = str
-
 local opt = vim.opt -- for conciseness
 
 opt.mousemodel = "extend"
 
+-- statusline
+opt.laststatus = 3 -- global statusline
+-- opt.cmdheight = 1  -- or 0 (0 makes it dynamically adjust)
+-- opt.laststatus = 0 -- no statusline (vim-like)
+
 -- line numbers
-opt.relativenumber = true -- show relative line numbers
-opt.number = true         -- shows absolute line number on cursor line (when relative number is on)
+opt.relativenumber = false -- show relative line numbers
+opt.number = false         -- shows absolute line number on cursor line (when relative number is on)
 
 -- tabs & indentation
 opt.tabstop = 4       -- 4 spaces for tabs
@@ -32,8 +30,8 @@ opt.smartcase = true  -- if you include mixed case in your search, assumes you w
 -- cursor line
 opt.cursorline = false -- highlight the current cursor line
 
--- original vim cursor shape (blink cursor)
--- opt.guicursor = block
+-- original vim cursor shape
+opt.guicursor = "i:block"
 
 -- turn on termguicolors for nightfly colorscheme to work
 -- (have to use iterm2 or any other true color terminal)

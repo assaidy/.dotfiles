@@ -7,7 +7,7 @@ local keymap = vim.keymap -- for conciseness
 keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- open explore
-keymap.set("n", "<leader>ee", ":Ex<CR>", { desc = "Open explore" })
+-- keymap.set("n", "<leader>ee", ":Ex<CR>", { desc = "Open explore" })
 
 -- go to end/start of line
 keymap.set({ "n", "v" }, "gh", "0", { desc = "Goto start of the line" })
