@@ -1,0 +1,46 @@
+#!/bin/bash
+
+set -e
+
+yt_url="$1"
+
+if [ -z "$yt_url" ]; then
+    echo "Usage: $0 <YouTube-URL>"
+    exit 1
+fi
+
+download_modes="video audio-only" 
+chosen_mode=$(echo "$download_modes" | tr " " "\n" | fzf --prompt "download mode for '$yt_url': ")
+
+case "$chosen_mode" in
+    "audio-only")
+        yt-dlp -x \
+            --audio-format best \
+            --audio-quality 0 \
+            --embed-thumbnail \
+            --embed-metadata \
+            --convert-thumbnails jpg \
+            -o "%(title)s.%(ext)s" \
+            "$yt_url"
+        echo -e "\n✅ Downloaded best audio quality available"
+        ;;
+    "video")
+        resolutions=$(yt-dlp -F "$yt_url" | grep "video only" | grep -oE "[0-9]+p" | sort -un)
+        selected_resolution=$(echo "$resolutions" | fzf --prompt="Select resolution > ")
+
+        if [ -z "$selected_resolution" ]; then
+            echo "No resolution selected. Exiting."
+            exit 1
+        fi
+
+        yt-dlp \
+            -f "bestvideo[height<=${selected_resolution%p}]+bestaudio" \
+            --merge-output-format mp4 \
+            --embed-thumbnail \
+            --embed-metadata \
+            --convert-thumbnails jpg \
+            -o "%(title)s.%(ext)s" \
+            "$yt_url"
+        echo -e "\n✅ Downloaded best video quality available up to $selected_resolution"
+        ;;
+esac

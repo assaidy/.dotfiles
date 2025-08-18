@@ -6,7 +6,7 @@
     "modules-left": [
         "niri/workspaces",
         "clock",
-        "idle_inhibitor"
+        "idle_inhibitor",
     ],
     "modules-center": [
         // "niri/window",
@@ -51,10 +51,10 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        // "tooltip": false
     },
     "memory": {
-        "format": "{percentage}% "
+        "format": "{percentage}% "
     },
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
@@ -114,5 +114,5 @@
     "custom/notifications": {
         "format": "🔔",
         "on-click": "swaync-client -t"
-    }
+    },
 }

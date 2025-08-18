@@ -2,37 +2,30 @@
 [[ $- != *i* ]] && return
 
 update_prompt() {
-    # Set colors
     local GREEN="\[$(tput setaf 2)\]"
     local BLUE="\[$(tput setaf 4)\]"
     local RED="\[$(tput setaf 1)\]"
     local YELLOW="\[$(tput setaf 3)\]"
     local RESET="\[$(tput sgr0)\]"
     local BOLD="\[$(tput bold)\]"
-    # local DIM="\[$(tput dim)\]"
-    DIM="\[\033[38;5;240m\]"  # Best balance
-    # DIM="\[\033[38;5;238m\]"   # Slightly darker
+    local DIM="\[\033[38;5;240m\]"
 
-    # Get terminal width
-    local width=$(tput cols)
+    local term_width=$(tput cols)
+    local HRULE="$(printf '%*s' $((term_width)))"
     
-    # Horizontal rule that spans the terminal width
-    local HRULE="$(printf '%*s' $((width)))"
-    
-    # Git status logic
     local git_status=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
     [[ -n $git_status ]] && {
         local changes=$(git status --porcelain 2>/dev/null | wc -l)
         [[ $changes != 0 ]] && git_status=" ($git_status $changes)" || git_status=" ($git_status)"
     }
     
-    # Set PS1 with horizontal rule
     PS1="${DIM}${HRULE// /─}\n${RESET}${GREEN}[${RED}\w${BOLD}${YELLOW}${git_status}${RESET}${GREEN}]${BLUE}\$${RESET} "
 }
 PROMPT_COMMAND=update_prompt
 
 alias tlist="nvim $HOME/.todo_list.md"
 alias rlist="nvim $HOME/.reading_list.md"
+alias blist="nvim $HOME/.bookmark_list.md"
 
 alias grep="grep --color=auto"
 alias cls="clear"
@@ -65,7 +58,7 @@ alias ll="exa -al --icons --group-directories-first"
 alias lt="exa -aT --icons --group-directories-first"
 alias l.="exa -a --icons | grep '^\.'"
 
-# function to chang directory to yazi directory
+# function to chang cwd to yazi's cwd after exit
 yz() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
     yazi "$@" --cwd-file="$tmp"
@@ -102,6 +95,7 @@ ex() {
 }
 
 # function to convert a github repository file link to its raw content link
+# usage: wget $(gr <LINK>)
 gr() {
     echo "$(echo "$1" | sed 's/github.com/raw.githubusercontent.com/; s/\/blob\//\//')"
 }
@@ -114,6 +108,7 @@ bind -m vi-insert "Control-l: clear-screen"
 # setup fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
 
+# open bash sessions to a tmux session called home, only if we're outside tty or tmux
 if [[ "$XDG_SESSION_TYPE" != "tty" && -z "$TMUX" ]]; then
     if ! tmux ls -F '#{session_name}' 2>/dev/null | grep -q "^home$"; then
         tmux new -s home

@@ -1,5 +1,6 @@
 local g = vim.g
 g.netrw_liststyle = 1
+g.netrw_banner = 0
 g.netrw_sort_by = 'exten'
 g.mapleader = " "
 g.maplocalleader = "\\"
@@ -8,8 +9,8 @@ local opt = vim.opt
 opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 opt.mousemodel = "extend"
 opt.laststatus = 3                  -- global statusline
-opt.relativenumber = false
-opt.number = false
+opt.relativenumber = true
+opt.number = true
 opt.tabstop = 4        -- 4 spaces for tabs
 opt.shiftwidth = 4     -- 4 spaces for indent width
 opt.expandtab = true   -- expand tab to spaces
@@ -60,6 +61,7 @@ keymap.set("n", "<leader>tn", ":tabn<CR>", { desc = "Goto next tab" })
 keymap.set("n", "<leader>tp", ":tabp<CR>", { desc = "Goto previous tab" })
 keymap.set("n", "<leader>tf", ":tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
+--[[
 local groups = {
     ["Normal"] = { fg = "#D1D1D1" },
     ["statusLine"] = { fg = "#D1D1D1", bg = "#282828" },
@@ -110,5 +112,6 @@ end
 for key, value in pairs(groups) do
     highlight(key, value)
 end
+]]
 
 require("config.lazy")

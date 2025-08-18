@@ -1,0 +1,14 @@
+#!/bin/bash
+
+options="logout suspend lockscreen poweroff reboot"
+chosen_option=$(echo $options | tr ' ' '\n' | fzf)
+
+[ -z "$chosen_option" ] && exit 1
+
+case "$chosen_option" in
+    lockscreen) hyprlock ;;
+    logout) kill -9 -1 ;;
+    suspend) systemctl suspend ;;
+    poweroff) systemctl poweroff ;;
+    reboot) systemctl reboot ;;
+esac

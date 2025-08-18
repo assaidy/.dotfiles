@@ -179,7 +179,7 @@ layout {
 
         width 2
         
-        // active-color "#FFAF00" // gruvbox
+        active-color "#FFAF00" // gruvbox
         // active-color "#AE5FD4" // onedark
         inactive-color "#505050"
 
@@ -242,7 +242,7 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
-spawn-at-startup "bash" "-c" "$HOME/.config/niri/waybar/restart.sh"
+spawn-at-startup "bash" "-c" "$HOME/.config/niri/waybar/toggle.sh"
 spawn-at-startup "swayidle" "-w" "timeout" "600" "'niri msg output eDP-1 off'" "resume" "'niri msg output eDP-1 on'" // "before-sleep" "hyprlock"
 // spawn-at-startup "swayidle" "-w" "timeout" "600" "'systemctl suspend'"
 spawn-at-startup "nm-applet"
@@ -252,7 +252,7 @@ spawn-at-startup "swaync"
 spawn-at-startup "light" "-N" "10%" // set min to 10%
 spawn-at-startup "wlsunset" "-T" "5000"
 spawn-at-startup "swww-daemon"
-spawn-at-startup "bash" "-c" "$HOME/.config/niri/wallpaper_switcher.sh $HOME/Pictures/walls/lotfi_walls"
+spawn-at-startup "bash" "-c" "$HOME/.config/niri/wallpaper_switcher.sh $HOME/Pictures/walls/gruvbox/"
 spawn-at-startup "foot" "--server"
 
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
@@ -343,7 +343,7 @@ animations {
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
-window-rule {
+/-window-rule {
     geometry-corner-radius 8
     clip-to-geometry true
 }
@@ -373,11 +373,11 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return  { spawn "footclient"; }
-    Mod+Space   { spawn "bash" "-c" "fuzzel --config $HOME/.config/niri/fuzzel/fuzzel.ini"; }
-    // Mod+Space   { spawn "foot" "-a" "foot_menu" "-e" "bash" "-c" "fzf_run"; }
-    Mod+Escape  { spawn "bash" "-c" "$HOME/.config/niri/power_menu.sh"; }
-    // Mod+Escape  { spawn "foot" "-a" "foot_menu" "-e" "bash" "-c" "fzf_power"; }
-    Mod+Shift+w { spawn "bash" "-c" "$HOME/.config/niri/waybar/restart.sh"; }
+    // Mod+Space   { spawn "bash" "-c" "fuzzel --config $HOME/.config/niri/fuzzel/fuzzel.ini"; }
+    Mod+Space   { spawn "foot" "-a" "foot_menu" "-e" "bash" "-c" "fzf_drun"; }
+    // Mod+Escape  { spawn "bash" "-c" "$HOME/.config/niri/power_menu.sh"; }
+    Mod+Escape  { spawn "foot" "-a" "foot_menu" "-e" "bash" "-c" "fzf_power"; }
+    Mod+Shift+w { spawn "bash" "-c" "$HOME/.config/niri/waybar/toggle.sh"; }
     Mod+S       { spawn "bash" "-c" "wl-paste | swappy -f -"; }
     Mod+C       { spawn "bash" "-c" "$HOME/.config/niri/color_picker.sh"; }
     Mod+M       { spawn "footclient" "-e" "btop"; }

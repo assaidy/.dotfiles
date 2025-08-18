@@ -21,6 +21,7 @@ return {
 
         mason_tool_installer.setup({
             ensure_installed = {
+                "templ",
                 "gopls",
                 "zls",
                 "ols",

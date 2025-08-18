@@ -7,7 +7,7 @@ map R reload
 map r rotate
 map c recolor
 map p print
-set recolor-keephue true # keep original color
+set recolor-keephue true                  # keep original color
 set recolor-lightcolor          "#181818" # bg
 set recolor-darkcolor           "#D1D1D1" # fg
 set recolor                     "true"
@@ -15,37 +15,36 @@ set recolor                     "true"
 # #############
 # ## gruvbox ##
 # #############
-# # Colors -> gruvbox-hard
-# set notification-error-bg       "#1d2021" # bg
-# set notification-error-fg       "#fb4934" # bright:red
-# set notification-warning-bg     "#1d2021" # bg
-# set notification-warning-fg     "#fabd2f" # bright:yellow
-# set notification-bg             "#1d2021" # bg
-# set notification-fg             "#b8bb26" # bright:green
-# set completion-bg               "#504945" # bg2
-# set completion-fg               "#d5c4a1" # fg
-# set completion-group-bg         "#3c3836" # bg1
-# set completion-group-fg         "#928374" # gray
-# set completion-highlight-bg     "#83a598" # bright:blue
-# set completion-highlight-fg     "#504945" # bg2
-# # Define the color in index mode
-# set index-bg                    "#504945" # bg2
-# set index-fg                    "#d5c4a1" # fg
-# set index-active-bg             "#83a598" # bright:blue
-# set index-active-fg             "#504945" # bg2
-# set inputbar-bg                 "#1d2021" # bg
-# set inputbar-fg                 "#d5c4a1" # fg
-# set statusbar-bg                "#504945" # bg2
-# set statusbar-fg                "#d5c4a1" # fg
-# set default-bg                  "#1d2021" # bg
-# set default-fg                  "#d5c4a1" # fg
-# set render-loading              true
-# set render-loading-bg           "#1d2021" # bg
-# set render-loading-fg           "#d5c4a1" # fg
-# # Recolor book content's color
-# set recolor-lightcolor          "#1d2021" # bg
-# set recolor-darkcolor           "#d5c4a1" # fg
-# set recolor                     "true"
+# Colors -> gruvbox-hard
+set notification-error-bg       "#1d2021" # bg
+set notification-error-fg       "#fb4934" # bright:red
+set notification-warning-bg     "#1d2021" # bg
+set notification-warning-fg     "#fabd2f" # bright:yellow
+set notification-bg             "#1d2021" # bg
+set notification-fg             "#b8bb26" # bright:green
+set completion-bg               "#504945" # bg2
+set completion-fg               "#d5c4a1" # fg
+set completion-group-bg         "#3c3836" # bg1
+set completion-group-fg         "#928374" # gray
+set completion-highlight-bg     "#83a598" # bright:blue
+set completion-highlight-fg     "#504945" # bg2
+# Define the color in index mode
+set index-bg                    "#504945" # bg2
+set index-fg                    "#d5c4a1" # fg
+set index-active-bg             "#83a598" # bright:blue
+set index-active-fg             "#504945" # bg2
+set inputbar-bg                 "#1d2021" # bg
+set inputbar-fg                 "#d5c4a1" # fg
+set statusbar-bg                "#504945" # bg2
+set statusbar-fg                "#d5c4a1" # fg
+set default-bg                  "#1d2021" # bg
+set default-fg                  "#d5c4a1" # fg
+set render-loading              true
+set render-loading-bg           "#1d2021" # bg
+set render-loading-fg           "#d5c4a1" # fg
+# Recolor book content's color
+set recolor-lightcolor          "#1d2021" # bg
+set recolor-darkcolor           "#d5c4a1" # fg
 
 ######################
 ## OneDark Pro Dark ##
@@ -78,4 +77,3 @@ set recolor                     "true"
 # # Recolor book content's color
 # set recolor-lightcolor          "#282c34" # bg
 # set recolor-darkcolor           "#abb2bf" # fg
-# set recolor                     "true"

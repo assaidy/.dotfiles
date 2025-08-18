@@ -14,16 +14,16 @@ return {
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup("UserLspConfig", {}),
             callback = function(ev)
-                keymap.set("n", "gr", ":Telescope lsp_references<CR>", { desc = "LSP show references" })
-                keymap.set("n", "gd", ":Telescope lsp_definitions<CR>", { desc = "LSP show definitions" })
-                keymap.set("n", "gi", ":Telescope lsp_implementations<CR>", { desc = "LSP show implementations" })
-                keymap.set("n", "gt", ":Telescope lsp_type_definitions<CR>", { desc = "LSP show type definitions" })
+                keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", { desc = "LSP show references" })
+                keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", { desc = "LSP show definitions" })
+                keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", { desc = "LSP show implementations" })
+                keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", { desc = "LSP show type definitions" })
                 keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP hover" })
                 keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP show code actions" })
                 keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP rename" })
                 keymap.set("n", "<leader>wd", "<cmd>Telescope diagnostics<CR>",
                     { desc = "Fuzzy find worksapce diagnostic" })
-                keymap.set("n", "<leader>bd", ":Telescope diagnostics bufnr=0<CR>",
+                keymap.set("n", "<leader>bd", "<cmd>Telescope diagnostics bufnr=0<CR>",
                     { desc = "LSP show buffer diagnostics" })
                 keymap.set("n", "<leader>ld", vim.diagnostic.open_float, { desc = "LSP show line diagnostics" })
                 keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "LSP previous diagnostic" })

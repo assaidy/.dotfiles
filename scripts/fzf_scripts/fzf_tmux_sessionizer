@@ -1,0 +1,15 @@
+#!/bin/bash
+
+sessions=$(tmux ls -F "#{session_name}") 
+session=$(echo "$sessions" | fzf --prompt "session: " --print-query | tail -n 1)
+[[ -z "$session" ]] && exit 1
+
+if ! echo "$sessions" | grep -q "^$session$"; then
+    echo -n "Session deosn't exist. Create it? [y/n] "
+    read -r option
+    [[ "${option,,}" != "y"* ]] && exit 1 # Convert to lowercase and check first character
+
+    tmux new -d -s "$session" -c "$PWD"
+fi
+
+tmux switchc -t "$session"

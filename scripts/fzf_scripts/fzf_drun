@@ -1,0 +1,38 @@
+#!/bin/bash
+
+set -e
+
+CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}"
+CACHE_FILE="$CACHE_DIR/fzf_drun"
+
+# Create cache directory if it doesn't exist
+mkdir -p "$CACHE_DIR"
+
+if [[ ! -f "$CACHE_FILE" || -n "$(find /usr/share/applications/ ~/.local/share/applications/ -name "*.desktop" -newer "$CACHE_FILE")" ]]; then
+    echo "Building app cache..."
+    # Clear existing cache
+    rm -f "$CACHE_FILE"
+    # Find all .desktop files
+    find /usr/share/applications/ ~/.local/share/applications/ -name "*.desktop" | while read -r file; do
+        # Extract the Name from the .desktop file
+        name=$(grep -m 1 '^Name=' "$file" | cut -d'=' -f2-)
+        # Only write to cache if a name is found
+        if [[ -n "$name" ]]; then
+            # Format: "App Name:path/to/app.desktop"
+            echo "$name:$file" >> "$CACHE_FILE"
+        fi
+    done
+fi
+
+# Use fzf to select an app, with the app name as the display text.
+# --with-nth 1 tells fzf to display the first column (the app name).
+# --delimiter ':' separates the name from the path.
+selection=$(cat "$CACHE_FILE" | awk -F ':' '{print $1}' | fzf --prompt "run app: ")
+[[ -z "$selection" ]] && exit 1
+
+# Extract the file path from the selected line
+desktop_file_path=$(echo "$selection" | cut -d':' -f2-)
+
+# Launch the selected application
+gio launch "$desktop_file_path" >/dev/null 2>&1 &
+sleep 0.5
