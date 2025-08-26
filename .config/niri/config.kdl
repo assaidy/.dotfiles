@@ -373,10 +373,10 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return  { spawn "footclient"; }
-    // Mod+Space   { spawn "bash" "-c" "fuzzel --config $HOME/.config/niri/fuzzel/fuzzel.ini"; }
-    Mod+Space   { spawn "foot" "-a" "foot_menu" "-e" "bash" "-c" "fzf_drun"; }
-    // Mod+Escape  { spawn "bash" "-c" "$HOME/.config/niri/power_menu.sh"; }
-    Mod+Escape  { spawn "foot" "-a" "foot_menu" "-e" "bash" "-c" "fzf_power"; }
+    Mod+Space   { spawn "bash" "-c" "fuzzel --config $HOME/.config/niri/fuzzel/fuzzel.ini"; }
+    // Mod+Space   { spawn "foot" "-a" "foot_menu" "-e" "bash" "-c" "$HOME/.config/niri/once.sh fzf_run"; }
+    Mod+Escape  { spawn "bash" "-c" "$HOME/.config/niri/power_menu.sh"; }
+    // Mod+Escape  { spawn "foot" "-a" "foot_menu" "-e" "bash" "-c" "$HOME/.config/niri/once.sh fzf_power"; }
     Mod+Shift+w { spawn "bash" "-c" "$HOME/.config/niri/waybar/toggle.sh"; }
     Mod+S       { spawn "bash" "-c" "wl-paste | swappy -f -"; }
     Mod+C       { spawn "bash" "-c" "$HOME/.config/niri/color_picker.sh"; }
@@ -508,8 +508,8 @@ binds {
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
-    Mod+F { maximize-column; }
-    Mod+Shift+F { fullscreen-window; }
+    Mod+F { fullscreen-window; }
+    Mod+Shift+F { maximize-column; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".

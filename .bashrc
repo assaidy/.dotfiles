@@ -12,13 +12,13 @@ update_prompt() {
 
     local term_width=$(tput cols)
     local HRULE="$(printf '%*s' $((term_width)))"
-    
+
     local git_status=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
     [[ -n $git_status ]] && {
         local changes=$(git status --porcelain 2>/dev/null | wc -l)
         [[ $changes != 0 ]] && git_status=" ($git_status $changes)" || git_status=" ($git_status)"
     }
-    
+
     PS1="${DIM}${HRULE// /─}\n${RESET}${GREEN}[${RED}\w${BOLD}${YELLOW}${git_status}${RESET}${GREEN}]${BLUE}\$${RESET} "
 }
 PROMPT_COMMAND=update_prompt
@@ -41,13 +41,13 @@ alias lg="lazygit"
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 
-alias pI="sudo pacman -S" 
+alias pI="sudo pacman -S"
 alias pS="pacman -Ss"
 alias pR="sudo pacman -Rn"
 alias pQ="pacman -Q"
 alias pU="sudo pacman -S archlinux-keyring; sudo pacman -Syu"
 
-alias yI="yay -S" 
+alias yI="yay -S"
 alias yS="yay -Ss --aur"
 alias yR="yay -Rn"
 alias yQ="yay -Qm"

@@ -2,7 +2,8 @@
 
 set -e
 
-to_run=$(echo "$PATH" | tr ':' '\n' | sort -u | xargs -I{} find {} -type f -executable -printf '%f\n' | sort -u | fzf --prompt "run: ")
+to_run=$(echo "$PATH" | tr ':' '\n' | sort -u | xargs -I{} find {}/ -type f -executable -maxdepth 1 -printf '%f\n' | sort -u | fzf --prompt "run: ")
+# to_run=$(echo "$PATH" | tr ':' '\n' | sort -u | xargs -I{} fd -tx . --base-directory {} --max-depth 1 | sort -u | fzf --prompt "run: ")
 [[ -z "$to_run" ]] && exit 1
 setsid "$to_run" >/dev/null 2>&1 &
 sleep 0.5

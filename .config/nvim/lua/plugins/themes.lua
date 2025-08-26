@@ -33,7 +33,7 @@ return {
                 dim_inactive = false,
                 transparent_mode = false,
             })
-            vim.cmd("color gruvbox")
+            -- vim.cmd("color gruvbox")
         end,
     },
     {

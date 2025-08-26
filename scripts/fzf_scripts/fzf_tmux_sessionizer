@@ -12,4 +12,4 @@ if ! echo "$sessions" | grep -q "^$session$"; then
     tmux new -d -s "$session" -c "$PWD"
 fi
 
-tmux switchc -t "$session"
+[ -n "$TMUX" ] && tmux switch-client -t "$session" || tmux attach -t "$session"

@@ -9,6 +9,8 @@ return {
 				lua = { "stylua" },
 				html = { "prettier" },
 				javascript = { "prettier" },
+				css = { "prettier" },
+				scss = { "prettier" },
 			},
 
 			-- format_on_save = {
@@ -25,7 +27,5 @@ return {
 				timeout_ms = 1000,
 			})
 		end, { desc = "Format current buffer" })
-
-		vim.keymap.set({ "n" }, "<leader>fm", ":Fmt<CR>", { desc = "Format current buffer" })
 	end,
 }
