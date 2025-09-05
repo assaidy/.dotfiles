@@ -257,10 +257,10 @@ spawn-at-startup "foot" "--server"
 
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
+// TODO: remove this block for verisons >= 25.08
 spawn-at-startup "xwayland-satellite"
 // Or, if you built it by hand:
 // spawn-at-startup "~/path/to/code/target/release/xwayland-satellite"
-
 environment {
     DISPLAY ":0"
 }

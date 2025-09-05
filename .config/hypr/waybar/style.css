@@ -1,6 +1,6 @@
 * {
     border: none;
-    border-radius: 0;
+    border-radius: 5;
     font-family: "Maple Mono NF";
     font-weight: bold;
     font-size: 14px;
@@ -9,83 +9,68 @@
 
 window#waybar {
     background: #1d2021;
-    /* Dark background (gruvbox-bg0-h) */
     color: #d5c4a1;
-    /* Light foreground (gruvbox-light1) */
 }
 
 tooltip {
-    background: #282828;
-    /* Dark background (gruvbox-bg0) */
-    border-radius: 8px;
-    border: 2px solid #3c3836;
-    /* Dark border (gruvbox-bg3) */
+    background-color: transparent;
 }
 
 tooltip label {
+    padding: 5px;
     color: #ebdbb2;
-    /* Light foreground (gruvbox-light0) */
+    background: #1d2021;
+    border: 2px solid #3c3836;
 }
 
 #workspaces {
-    background: #3C3836;
-    border-radius: 8px;
-    margin: 2px;
+    background: #3c3836;
     margin: 4px 2px;
+    padding: 2px;
 }
 
 #workspaces button {
-    padding: 2px 0;
-    color: #a89984;
-    background: transparent;
+    padding: 0;
+    margin: 2px;
+    background: #83a598;
+    color: #3c3836;
+    min-width: 20px;
+    min-height: 20px;
 }
 
 #workspaces button.active {
-    color: #1D2021;
-    background: #ADB024;
-    /* Darker background (gruvbox-bg3) */
-    border-radius: 8px;
+    color: #1d2021;
+    background: #adb024;
+    min-width: 40px;
 }
 
 #workspaces button.urgent {
     color: #fb4934;
-    /* Gruvbox red */
 }
 
 #workspaces button:hover {
-    background: #83A598;
-    /* Darker background (gruvbox-bg3) */
     color: #1d2021;
-    /* Gruvbox orange */
-    border-radius: 8px;
+    min-width: 40px;
+    transition-duration: 200ms;
 }
 
-/* Left modules */
 #window {
     color: #83a598;
-    /* Gruvbox blue */
     background: #3c3836;
-    /* Darker background (gruvbox-bg3) */
-    border-radius: 8px;
     padding: 0 12px;
     margin: 2px;
     margin: 4px 2px;
 }
 
-/* Center modules */
 #custom-window-count,
 #clock,
 #idle_inhibitor {
     color: #d3869b;
-    /* Gruvbox purple */
     background: #3c3836;
-    /* Darker background (gruvbox-bg3) */
-    border-radius: 8px;
     padding: 0 12px;
     margin: 4px 2px;
 }
 
-/* Right modules */
 #custom-notifications,
 #cpu,
 #memory,
@@ -100,92 +85,68 @@ tooltip label {
     padding: 0 10px;
     margin: 2px;
     margin: 4px 2px;
-    border-radius: 8px;
     background: #3c3836;
-    /* Darker background (gruvbox-bg3) */
 }
 
 #language {
     color: #8ec07c;
-    /* Gruvbox aqua */
 }
 
 #cpu {
     color: #8ec07c;
-    /* Gruvbox aqua */
 }
 
 #memory {
-    color: #b8bb26;
-    /* Gruvbox green */
+    color: #8ec07c;
+    /* color: #b8bb26; */
 }
 
 #disk {
-    color: #d79921;
-    /* Gruvbox yellow */
+    color: #8ec07c;
+    /* color: #d79921; */
 }
 
 #temperature {
     color: #fe8019;
-    /* Gruvbox orange */
 }
 
 #temperature.critical {
     color: #fb4934;
-    /* Gruvbox red */
     animation: blink 1s linear infinite;
 }
 
 #network {
     color: #83a598;
-    /* Gruvbox blue */
 }
 
 #pulseaudio {
-    color: #b8bb26;
-    /* Gruvbox green */
+    color: #8ec07c;
+    /* color: #b8bb26; */
 }
 
 #pulseaudio.muted {
     color: #fb4934;
-    /* Gruvbox red */
 }
 
 #backlight {
-    color: #fabd2f;
-    /* Gruvbox yellow */
+    color: #8ec07c;
+    /* color: #fabd2f; */
 }
 
 #battery {
     color: #8ec07c;
-    /* Gruvbox aqua */
 }
 
 #battery.warning {
     color: #d79921;
-    /* Gruvbox yellow */
 }
 
 #battery.critical {
     color: #fb4934;
-    /* Gruvbox red */
-}
-
-#tray {
-    color: #d5c4a1;
-    /* Light foreground */
-}
-
-#idle_inhibitor {
-    color: #a89984;
-    /* Grayed out text */
 }
 
 #idle_inhibitor.activated {
-    color: #b8bb26;
-    /* Gruvbox green */
-    background: #3c3836;
-    /* Darker background */
+    background: #8ec07c;
 }
 
 @keyframes blink {
