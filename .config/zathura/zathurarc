@@ -8,8 +8,6 @@ map r rotate
 map c recolor
 map p print
 set recolor-keephue true                  # keep original color
-set recolor-lightcolor          "#181818" # bg
-set recolor-darkcolor           "#D1D1D1" # fg
 set recolor                     "true"
 
 # #############
@@ -37,7 +35,7 @@ set inputbar-bg                 "#1d2021" # bg
 set inputbar-fg                 "#d5c4a1" # fg
 set statusbar-bg                "#504945" # bg2
 set statusbar-fg                "#d5c4a1" # fg
-set default-bg                  "#1d2021" # bg
+set default-bg                  "#3C3836" # bg
 set default-fg                  "#d5c4a1" # fg
 set render-loading              true
 set render-loading-bg           "#1d2021" # bg

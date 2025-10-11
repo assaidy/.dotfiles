@@ -4,10 +4,8 @@
     "output": "",
     // "spacing": 4, // Gaps between modules (px)
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window",
-        "hyprland/mode",
-        "hyprland/scratchpad"
+        "hyprland/workspaces"
+        // "hyprland/window",
     ],
     "modules-center": [
         "custom/window-count",
@@ -58,7 +56,7 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        "tooltip": true
     },
     "memory": {
         "format": "{used} ({percentage}%) "
@@ -87,7 +85,7 @@
         "format": "{volume}% {icon}  {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-muted": "  {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
@@ -114,7 +112,7 @@
         "format": "{capacity}% {icon} ",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format-alt": "{time} {icon} ",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -124,12 +122,14 @@
     },
     "custom/window-count": {
         "format": " {}",
-        "interval": 1,
-        "escape": true,
-        "exec": "hyprctl activeworkspace | grep 'windows:' | awk '{print $2}' | head -n 1 | tr -d '\n' | xargs echo"
+        "tooltip-format": "workspace windows: {}",
+        "interval": "once",
+        "signal": 1,
+        "exec": "~/.config/hypr/scripts/workspace_windows.sh"
     },
     "custom/notifications": {
         "format": "🔔",
+        "tooltip-format": "notifications",
         "on-click": "swaync-client -t"
     }
 }

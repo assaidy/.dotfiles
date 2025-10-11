@@ -31,11 +31,12 @@ alias grep="grep --color=auto"
 alias cls="clear"
 alias e="exit"
 alias vf="fd --no-ignore --hidden --exclude=.git -t f | fzf --preview='bat --color always {}' | xargs -r nvim"
-alias v="nvim"
+alias nv="nvim"
 alias hx="helix"
 alias code="code --profile main"
 alias rm="trash"
 alias cp="cp -i"
+alias mkdir="mkdir -p"
 alias lg="lazygit"
 
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
@@ -98,6 +99,13 @@ ex() {
 # usage: wget $(gr <LINK>)
 gr() {
     echo "$(echo "$1" | sed 's/github.com/raw.githubusercontent.com/; s/\/blob\//\//')"
+}
+
+# function to generate a crypto random hexadecimal secret token
+# usage: gen_secret [NUM_BYTES]
+gen_secret() {
+    num_bytes="${1:-32}"
+    python3 -c "import secrets; print(secrets.token_hex($num_bytes))"
 }
 
 bind "set completion-ignore-case on"

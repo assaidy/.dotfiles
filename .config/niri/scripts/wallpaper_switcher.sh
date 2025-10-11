@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 
 # search processes with this script's name,
 # and exculed (grep -v) the current process ID, so it doesn't match itself.
@@ -21,5 +21,5 @@ while true; do
     else
         echo "No wallpapers found in $WALL_DIR."
     fi
-    sleep 600 # in seconds
+    sleep 60 # in seconds
 done

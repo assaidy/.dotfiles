@@ -105,7 +105,7 @@ input {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 10
+    gaps 5
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -179,7 +179,7 @@ layout {
 
         width 2
         
-        active-color "#FFAF00" // gruvbox
+        active-color "#00AFFF" // gruvbox
         // active-color "#AE5FD4" // onedark
         inactive-color "#505050"
 
@@ -242,28 +242,18 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 // spawn-at-startup "alacritty" "-e" "fish"
-spawn-at-startup "bash" "-c" "$HOME/.config/niri/waybar/toggle.sh"
-spawn-at-startup "swayidle" "-w" "timeout" "600" "'niri msg output eDP-1 off'" "resume" "'niri msg output eDP-1 on'" // "before-sleep" "hyprlock"
+spawn-at-startup "bash" "-c" "waybar -c $HOME/.config/waybar/config-niri.json"
+spawn-at-startup "swayidle" "-w" "timeout" "600" "niri msg output eDP-1 off" "resume" "niri msg output eDP-1 on" // "before-sleep" "hyprlock"
 // spawn-at-startup "swayidle" "-w" "timeout" "600" "'systemctl suspend'"
-spawn-at-startup "nm-applet"
 spawn-at-startup "nm-applet"
 spawn-at-startup "blueman-applet"
 spawn-at-startup "swaync"
 spawn-at-startup "light" "-N" "10%" // set min to 10%
 spawn-at-startup "wlsunset" "-T" "5000"
 spawn-at-startup "swww-daemon"
-spawn-at-startup "bash" "-c" "$HOME/.config/niri/wallpaper_switcher.sh $HOME/Pictures/walls/gruvbox/"
+spawn-at-startup "bash" "-c" "$HOME/.config/niri/scripts/wallpaper_switcher.sh $HOME/Pictures/walls/black"
 spawn-at-startup "foot" "--server"
-
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-
-// TODO: remove this block for verisons >= 25.08
-spawn-at-startup "xwayland-satellite"
-// Or, if you built it by hand:
-// spawn-at-startup "~/path/to/code/target/release/xwayland-satellite"
-environment {
-    DISPLAY ":0"
-}
 
 // By default focus ring and border are rendered as a solid background rectangle
 // behind windows. That is, they will show up through semitransparent windows.
@@ -284,9 +274,9 @@ environment {
 prefer-no-csd
 
 // You can change the path where screenshots are saved.
-// A ~ at the front will be expanded to the home directory.
+// A $HOME at the front will be expanded to the home directory.
 // The path is formatted with strftime(3) to give you the screenshot date and time.
-screenshot-path "~/Pictures/Screenshots/%Y-%m-%d-%s_niri.png"
+screenshot-path "$HOME/Pictures/Screenshots/%Y-%m-%d-%s_niri.png"
 
 // You can also set this to null to disable saving screenshots to disk.
 // screenshot-path null
@@ -343,8 +333,8 @@ animations {
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    geometry-corner-radius 8
+window-rule {
+    geometry-corner-radius 5
     clip-to-geometry true
 }
 
@@ -352,9 +342,11 @@ window-rule {
     open-maximized true
 }
 
-window-rule {
-    match app-id="foot_menu"
+/-window-rule {
+    match app-id="menu"
     open-floating true
+    default-column-width { fixed 500; }
+    default-window-height { fixed 432; }
 }
 
 binds {
@@ -372,19 +364,20 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return  { spawn "footclient"; }
-    Mod+Space   { spawn "bash" "-c" "fuzzel --config $HOME/.config/niri/fuzzel/fuzzel.ini"; }
-    // Mod+Space   { spawn "foot" "-a" "foot_menu" "-e" "bash" "-c" "$HOME/.config/niri/once.sh fzf_run"; }
-    Mod+Escape  { spawn "bash" "-c" "$HOME/.config/niri/power_menu.sh"; }
-    // Mod+Escape  { spawn "foot" "-a" "foot_menu" "-e" "bash" "-c" "$HOME/.config/niri/once.sh fzf_power"; }
-    Mod+Shift+w { spawn "bash" "-c" "$HOME/.config/niri/waybar/toggle.sh"; }
-    Mod+S       { spawn "bash" "-c" "wl-paste | swappy -f -"; }
-    Mod+C       { spawn "bash" "-c" "$HOME/.config/niri/color_picker.sh"; }
-    Mod+M       { spawn "footclient" "-e" "btop"; }
+    Mod+Return    { spawn "footclient"; }
+    Mod+Space     { spawn "bash" "-c" "fuzzel"; }
+    // Mod+Space     { spawn "bash" "-c" "foot -a menu -e tal"; }
+    Mod+Escape    { spawn "bash" "-c" "$HOME/.dotfiles/scripts/menus/power.sh"; }
+    Mod+E         { spawn "bash" "-c" "$HOME/.dotfiles/scripts/menus/emojies.sh"; }
+    Mod+Shift+w   { spawn "bash" "-c" "killall waybar; waybar -c $HOME/.config/waybar/config-niri.json"; }
+    Mod+S         { spawn "bash" "-c" "wl-paste | swappy -f -"; }
+    // Mod+C         { spawn "bash" "-c" "$HOME/.config/niri/scripts/color_picker.sh"; }
+    Mod+C         { spawn "bash" "-c" "hyprpicker --autocopy"; }
+    Mod+M         { spawn "bash" "-c" "footclient -e btop"; }
+    Mod+P         { spawn "bash" "-c" "$HOME/.config/niri/scripts/screenshot.sh area"; }
+    Mod+Shift+P   { spawn "bash" "-c" "$HOME/.config/niri/scripts/screenshot.sh full"; }
+    // Mod+Control+P {screenshot-window;}
 
-    // You can also use a shell. Do this if you need pipes, multiple commands, etc.
-    // Note: the entire command goes as a single argument in the end.
-    // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
@@ -548,10 +541,6 @@ binds {
     // since it will switch twice upon pressing the hotkey (once by xkb, once by niri).
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
-
-    Mod+P { spawn "bash" "-c" "$HOME/.config/niri/screenshot.sh area"; }
-    Mod+Shift+P { spawn "bash" "-c" "$HOME/.config/niri/screenshot.sh full"; }
-    // Mod+Ctrl+P { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here

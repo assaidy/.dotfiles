@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 
 # search processes with this script's name,
 # and exculed (grep -v) the current process ID, so it doesn't match itself.
@@ -7,19 +7,16 @@ if pgrep -f "$0" | grep -v "$$" >/dev/null; then
     exit 1
 fi
 
-WALL_DIR="$1"
-
-if [[ -z "$WALL_DIR" ]]; then
-    echo "Missing arg for wallpapers dir."
-    exit 1
-fi
+WALL_DIR=$1
+[[ -z "$WALL_DIR" ]] && echo "Missing arg for wallpapers dir." && exit 1
+[[ ! -d "$WALL_DIR" ]] && echo "Direcotry doesn't exist." && exit 1
 
 while true; do
-    wall=$(find "$WALL_DIR" -type f | shuf -n 1)
+    wall=$(fd --type=f . $WALL_DIR | shuf -n 1)
     if [[ -n "$wall" ]]; then
-        swww img "$wall" --transition-type any
+        swww img --resize=crop --transition-type=any "$wall"
     else
         echo "No wallpapers found in $WALL_DIR."
     fi
-    sleep 600 # in seconds
+    sleep 60 # in seconds
 done

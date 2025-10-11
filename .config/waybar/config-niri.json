@@ -5,13 +5,12 @@
     // "spacing": 4, // Gaps between modules (px)
     "modules-left": [
         "niri/workspaces",
-        "niri/window",
-        "niri/mode",
-        "niri/scratchpad"
+        "clock",
+        "idle_inhibitor",
     ],
     "modules-center": [
-        "clock",
-        "idle_inhibitor"
+        // "niri/window",
+        "niri/mode",
     ],
     "modules-right": [
         "battery",
@@ -25,7 +24,7 @@
         "tray"
     ],
     "niri/workspaces": {
-        "format": "{}",
+        "format": "",
     },
     "niri/window": {  
         "format": "{}",
@@ -52,7 +51,7 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        // "tooltip": false
     },
     "memory": {
         "format": "{percentage}% "
@@ -115,5 +114,5 @@
     "custom/notifications": {
         "format": "🔔",
         "on-click": "swaync-client -t"
-    }
+    },
 }
