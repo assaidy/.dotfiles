@@ -3,11 +3,14 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
-		"hrsh7th/cmp-nvim-lsp",
+		-- "hrsh7th/cmp-nvim-lsp",
+		"saghen/blink.cmp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
+		vim.o.winborder = "rounded" -- give a border hover window
+
 		local lspconfig = require("lspconfig")
 
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -24,7 +27,8 @@ return {
 		end
 
 		local mason_lspconfig = require("mason-lspconfig")
-		local capabilities = require("cmp_nvim_lsp").default_capabilities()
+		-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 		mason_lspconfig.setup({
 			-- default handler for installed servers

@@ -1,4 +1,4 @@
-@import "palettes/black.css";
+@import "palettes/gruvbox.css";
 
 * {
     border: none;
@@ -41,7 +41,8 @@ tooltip label {
     min-height: 20px;
 }
 
-#workspaces button.active {
+#workspaces button.active,
+#workspaces button.focused {
     color: @bg_dark;
     background: @olive;
     min-width: 40px;

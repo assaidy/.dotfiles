@@ -7,8 +7,10 @@ map R reload
 map r rotate
 map c recolor
 map p print
-set recolor-keephue true                  # keep original color
+set recolor-keephue true  # keep original color
 set recolor                     "true"
+set guioptions vs
+set smooth-scroll true
 
 # #############
 # ## gruvbox ##

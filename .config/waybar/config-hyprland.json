@@ -4,15 +4,12 @@
     "output": "",
     // "spacing": 4, // Gaps between modules (px)
     "modules-left": [
-        "hyprland/workspaces"
-        // "hyprland/window",
+        "hyprland/workspaces",
+        "hyprland/window",
     ],
-    "modules-center": [
-        "custom/window-count",
-        "clock",
-        "idle_inhibitor"
-    ],
+    "modules-center": [],
     "modules-right": [
+        "tray",
         "battery",
         "memory",
         "cpu",
@@ -20,8 +17,10 @@
         "pulseaudio",
         "backlight",
         "hyprland/language",
+        "custom/window-count",
+        "idle_inhibitor",
         "custom/notifications",
-        "tray"
+        "clock",
     ],
     "hyprland/workspaces": {
         "all-outputs": false,
@@ -51,7 +50,7 @@
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": " {:%a-%d-%m   %I:%M}",
+        "format": " {:%a-%d-%m  %I:%M}",
         //"format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {

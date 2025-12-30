@@ -51,4 +51,4 @@ for key, value in pairs(groups) do
 end
 ]]
 
-vim.cmd("colorscheme onedark")
+vim.cmd("colorscheme gruvbox")

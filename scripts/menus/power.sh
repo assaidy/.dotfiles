@@ -5,7 +5,7 @@ options=$(cat <<EOF
 💤 suspend
 🔒 lockscreen
 🔌 poweroff
-🔄 reboot"
+🔄 reboot
 EOF)
 
 # options=" logout

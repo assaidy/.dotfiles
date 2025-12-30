@@ -1,35 +1,31 @@
 {
-    "layer": "top", // Waybar at top layer
+    // "layer": "top", // Waybar at top layer
     "position": "bottom",
     "output": "",
-    "spacing": 4, // Gaps between modules (px)
+    // "spacing": 4, // Gaps between modules (px)
     "modules-left": ["sway/workspaces", "sway/window", "sway/mode", "sway/scratchpad"],
-    "modules-center": ["clock", "idle_inhibitor"],
-    "modules-right": [ "battery", "memory", "cpu", "temperature", "pulseaudio", "backlight", "sway/language", "tray"],
+    "modules-center": [],
+    // "modules-right": [ "battery", "memory", "cpu", "temperature", "pulseaudio", "backlight", "sway/language", "tray"],
+    "modules-right": [
+        "tray",
+        "battery",
+        "memory",
+        "cpu",
+        "temperature",
+        "pulseaudio",
+        "backlight",
+        "sway/language",
+        "idle_inhibitor",
+        "custom/notifications",
+        "clock",
+    ],
     "sway/workspaces": {
         "all-outputs": false,
         "disable-scroll": false,
         "warp-on-scroll": false,
         "format": "{name}",
-        "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "6": "",
-            "urgent": "",
-            "focused": "",
-            "default": ""
-        },
-        "persistent-workspaces": {
-//            "1": [],
-//            "2": [],
-//            "3": [],
-//            "4": [],
-//            "5": [],
-//            "6": [],
-        }
+        "active": "",
+        "default": "",
     },
     "sway/window": {  
         "format": "{}",
@@ -45,13 +41,13 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": "🙉",
+            "deactivated": "🙈"
         }
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": " {:%a-%d-%m   %I:%M}",
+        "format": " {:%a-%d-%m  %I:%M}",
         //"format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
@@ -109,10 +105,10 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
+        "format": "{capacity}% {icon} ",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format-alt": "{time} {icon} ",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -120,4 +116,9 @@
     "battery#bat2": {
         "bat": "BAT2"
     },
+    "custom/notifications": {
+        "format": "🔔",
+        "tooltip-format": "notifications",
+        "on-click": "swaync-client -t"
+    }
 }

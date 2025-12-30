@@ -5,11 +5,9 @@
     // "spacing": 4, // Gaps between modules (px)
     "modules-left": [
         "niri/workspaces",
-        "clock",
-        "idle_inhibitor",
+        "niri/window",
     ],
     "modules-center": [
-        // "niri/window",
         "niri/mode",
     ],
     "modules-right": [
@@ -20,6 +18,8 @@
         "pulseaudio",
         "backlight",
         "niri/language",
+        "clock",
+        "idle_inhibitor",
         "custom/notifications",
         "tray"
     ],

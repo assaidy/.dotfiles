@@ -2,24 +2,26 @@
 [[ $- != *i* ]] && return
 
 update_prompt() {
-    local GREEN="\[$(tput setaf 2)\]"
-    local BLUE="\[$(tput setaf 4)\]"
-    local RED="\[$(tput setaf 1)\]"
-    local YELLOW="\[$(tput setaf 3)\]"
-    local RESET="\[$(tput sgr0)\]"
-    local BOLD="\[$(tput bold)\]"
-    local DIM="\[\033[38;5;240m\]"
+  local last_exit_code="$?"
 
-    local term_width=$(tput cols)
-    local HRULE="$(printf '%*s' $((term_width)))"
+  local GREEN="\[$(tput setaf 2)\]"
+  local BLUE="\[$(tput setaf 4)\]"
+  local RED="\[$(tput setaf 1)\]"
+  local YELLOW="\[$(tput setaf 3)\]"
+  local RESET="\[$(tput sgr0)\]"
+  local BOLD="\[$(tput bold)\]"
+  local DIM="\[\033[38;5;240m\]"
 
-    local git_status=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-    [[ -n $git_status ]] && {
-        local changes=$(git status --porcelain 2>/dev/null | wc -l)
-        [[ $changes != 0 ]] && git_status=" ($git_status $changes)" || git_status=" ($git_status)"
+  local term_width=$(tput cols)
+  local HRULE="$(printf '%*s' $((term_width)))"
+
+  local git_status=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+  [[ -n $git_status ]] && {
+    local changes=$(git status --porcelain 2>/dev/null | wc -l)
+      [[ $changes != 0 ]] && git_status=" ($git_status $changes)" || git_status=" ($git_status)"
     }
 
-    PS1="${DIM}${HRULE// /─}\n${RESET}${GREEN}[${RED}\w${BOLD}${YELLOW}${git_status}${RESET}${GREEN}]${BLUE}\$${RESET} "
+  PS1="${DIM}${HRULE// /─}\n${RESET}${GREEN}[${RED}\w${BOLD}${YELLOW}${git_status}${RESET}${GREEN} ?${last_exit_code}]${BLUE}\$${RESET} "
 }
 PROMPT_COMMAND=update_prompt
 
@@ -61,51 +63,51 @@ alias l.="exa -a --icons | grep '^\.'"
 
 # function to chang cwd to yazi's cwd after exit
 yz() {
-    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-    yazi "$@" --cwd-file="$tmp"
-    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-        builtin cd -- "$cwd"
-    fi
-    rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
 }
 
 # functio to extract files
 # usage: ex <file>
 ex() {
-    if [ -f "$1" ] ; then
-        case $1 in
-            *.tar.bz2)   tar xjf $1   ;;
-            *.tar.gz)    tar xzf $1   ;;
-            *.bz2)       bunzip2 $1   ;;
-            *.rar)       unrar x $1   ;;
-            *.gz)        gunzip $1    ;;
-            *.tar)       tar xf $1    ;;
-            *.tbz2)      tar xjf $1   ;;
-            *.tgz)       tar xzf $1   ;;
-            *.zip)       unzip $1     ;;
-            *.Z)         uncompress $1;;
-            *.7z)        7z x $1      ;;
-            *.deb)       ar x $1      ;;
-            *.tar.xz)    tar xf $1    ;;
-            *.tar.zst)   unzstd $1    ;;
-            *)           echo "'$1' cannot be extracted via ex()" ;;
-        esac
-    else
-        echo "'$1' is not a valid file"
-    fi
+  if [ -f "$1" ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   unzstd $1    ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
 }
 
 # function to convert a github repository file link to its raw content link
 # usage: wget $(gr <LINK>)
 gr() {
-    echo "$(echo "$1" | sed 's/github.com/raw.githubusercontent.com/; s/\/blob\//\//')"
+  echo "$(echo "$1" | sed 's/github.com/raw.githubusercontent.com/; s/\/blob\//\//')"
 }
 
 # function to generate a crypto random hexadecimal secret token
 # usage: gen_secret [NUM_BYTES]
 gen_secret() {
-    num_bytes="${1:-32}"
-    python3 -c "import secrets; print(secrets.token_hex($num_bytes))"
+  num_bytes="${1:-32}"
+  python3 -c "import secrets; print(secrets.token_hex($num_bytes))"
 }
 
 bind "set completion-ignore-case on"
@@ -118,8 +120,8 @@ eval "$(fzf --bash)"
 
 # open bash sessions to a tmux session called home, only if we're outside tty or tmux
 if [[ "$XDG_SESSION_TYPE" != "tty" && -z "$TMUX" ]]; then
-    if ! tmux ls -F '#{session_name}' 2>/dev/null | grep -q "^home$"; then
-        tmux new -s home
-    fi
-    tmux a -t home
+  if ! tmux ls -F '#{session_name}' 2>/dev/null | grep -q "^home$"; then
+    tmux new -s home
+  fi
+  tmux a -t home
 fi

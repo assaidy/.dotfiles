@@ -179,7 +179,7 @@ layout {
 
         width 2
         
-        active-color "#00AFFF" // gruvbox
+        active-color "#AEB125" // gruvbox
         // active-color "#AE5FD4" // onedark
         inactive-color "#505050"
 
@@ -251,7 +251,7 @@ spawn-at-startup "swaync"
 spawn-at-startup "light" "-N" "10%" // set min to 10%
 spawn-at-startup "wlsunset" "-T" "5000"
 spawn-at-startup "swww-daemon"
-spawn-at-startup "bash" "-c" "$HOME/.config/niri/scripts/wallpaper_switcher.sh $HOME/Pictures/walls/black"
+spawn-at-startup "bash" "-c" "$HOME/.config/niri/scripts/wallpaper_switcher.sh $HOME/Pictures/walls/gruvbox"
 spawn-at-startup "foot" "--server"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 

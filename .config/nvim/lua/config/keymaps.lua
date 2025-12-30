@@ -8,8 +8,8 @@ keymap.set("n", "<leader>ee", "<cmd>Ex<CR>", { desc = "Open explore" })
 keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste without changing clipboard" })
 keymap.set("n", "<leader>nh", "<cmd>nohl<CR>", { desc = "Clear search highlights" })
 
-keymap.set({ "n", "v" }, "gh", "0", { desc = "Goto start of the line" })
-keymap.set({ "n", "v" }, "gl", "$", { desc = "Goto end of the line" })
+keymap.set({ "n", "v" }, "H", "0", { desc = "Goto start of the line" })
+keymap.set({ "n", "v" }, "L", "$", { desc = "Goto end of the line" })
 
 keymap.set("v", "J", "<cmd>m '>+1<CR>gv=gv", { desc = "Move selection down" })
 keymap.set("v", "K", "<cmd>m '<-2<CR>gv=gv", { desc = "Move selection up" })
@@ -45,7 +45,7 @@ keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<CR>", { desc = "Fuzzy 
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Fuzzy find help" })
 
 -- Conform Formatting
--- keymap.set({ "n" }, "<leader>fm", "<cmd>Fmt<CR>", { desc = "Conform Format current buffer" })
+keymap.set({ "n" }, "<leader>fm", "<cmd>Fmt<CR>", { desc = "Conform Format current buffer" })
 
 -- LSP
 keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", { desc = "LSP show references" })
@@ -67,4 +67,4 @@ keymap.set("n", "<leader>rs", "<cmd>LspRestart<CR>", { desc = "LSP restart" })
 local todo_comments = require("todo-comments")
 keymap.set("n", "]t", todo_comments.jump_next, { desc = "Next todo comment" })
 keymap.set("n", "[t", todo_comments.jump_prev, { desc = "Previous todo comment" })
-keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "Fuzzy find todos" })
+keymap.set("n", "<leader>ft", "<cmd>Telescope todo-comments<CR>", { desc = "Fuzzy find todos" })

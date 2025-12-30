@@ -10,7 +10,7 @@ return {
 			sign_priority = 8, -- sign priority
 			-- keywords recognized as todo comments
 			keywords = {
-				FIX = { icon = " ", color = "error", alt = { "FIXME", "BUG", "FIXIT", "ISSUE" } },
+				FIX = { icon = " ", color = "error", alt = { "FIXME", "BUG", "ERROR", "FIXIT", "ISSUE" } },
 				TODO = { icon = " ", color = "warning" },
 				HACK = { icon = " ", color = "warning" },
 				WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
@@ -35,7 +35,7 @@ return {
 				before = "", -- "fg" or "bg" or empty
 				keyword = "fg", -- "fg", "bg", "wide", "wide_bg", "wide_fg" or empty. (wide and wide_bg is the same as bg, but will also highlight surrounding characters, wide_fg acts accordingly but with fg)
 				after = "", -- "fg" or "bg" or empty
-				pattern = [[.*<(KEYWORDS)\s*:]], -- pattern or table of patterns, used for highlighting (vim regex)
+				pattern = [[.*<(KEYWORDS)\s*]], -- pattern or table of patterns, used for highlighting (vim regex)
 				comments_only = true, -- uses treesitter to match keywords in comments only
 				max_line_len = 400, -- ignore lines longer than this
 				exclude = {}, -- list of file types to exclude highlighting
