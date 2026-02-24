@@ -1,7 +1,7 @@
 return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    disabled = true,
+    -- enabled = false,
 
     config = function()
         local lualine = require("lualine")
@@ -41,26 +41,26 @@ return {
         --     -- like require('lualine').refresh()
         -- },
       },
-      sections = {
-        --     lualine_c = {
-        --         "filename",
-        --         function()
-        --             return require("nvim-treesitter").statusline({
-        --                 indicator_size = 70,
-        --                 type_patterns = { "class", "function", "method" },
-        --                 separator = " -> ",
-        --             })
-        --         end,
-        --     }
-        -- }
-        lualine_x = {
-          {
-            require("noice").api.status.mode.get,
-            cond = require("noice").api.status.mode.has,
-            color = { fg = "#ff9e64" },
-          }
-        }
-      }
+      -- sections = {
+      --   --     lualine_c = {
+      --   --         "filename",
+      --   --         function()
+      --   --             return require("nvim-treesitter").statusline({
+      --   --                 indicator_size = 70,
+      --   --                 type_patterns = { "class", "function", "method" },
+      --   --                 separator = " -> ",
+      --   --             })
+      --   --         end,
+      --   --     }
+      --   -- }
+      --   -- lualine_x = {
+      --   --   {
+      --   --     require("noice").api.status.mode.get,
+      --   --     cond = require("noice").api.status.mode.has,
+      --   --     color = { fg = "#ff9e64" },
+      --   --   }
+      --   -- }
+      -- }
     })
   end,
 }

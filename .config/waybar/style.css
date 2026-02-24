@@ -1,74 +1,75 @@
-@import "palettes/gruvbox.css";
+@import "themes/gruvbox.css";
 
 * {
-    border: none;
-    border-radius: 5;
-    font-family: "Maple Mono NF";
-    font-weight: bold;
-    font-size: 14px;
-    min-height: 0;
+  border: none;
+  border-radius: 5;
+  font-family: "Maple Mono NF";
+  font-weight: bold;
+  font-size: 14px;
+  min-height: 0;
 }
 
 window#waybar {
-    background: @bg_dark;
-    color: @fg_light;
-    border-radius: 0;
+  background: @bg_dark;
+  color: @fg_light;
+  border-radius: 0;
 }
 
 tooltip {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 tooltip label {
-    padding: 5px;
-    color: @fg_light;
-    background: @bg_dark;
-    border: 2px solid @bg_medium;
+  padding: 5px;
+  color: @fg_light;
+  background: @bg_dark;
+  border: 2px solid @bg_medium;
 }
 
 #workspaces {
-    background: @bg_medium;
-    margin: 4px 2px;
-    padding: 2px;
+  background: @bg_medium;
+  margin: 4px 2px;
+  padding: 2px;
 }
 
 #workspaces button {
-    padding: 0;
-    margin: 2px;
-    background: @blue;
-    color: @bg_medium;
-    min-width: 20px;
-    min-height: 20px;
+  padding: 0;
+  margin: 2px;
+  background: @blue;
+  color: @bg_medium;
+  min-width: 20px;
+  min-height: 20px;
 }
 
 #workspaces button.active,
 #workspaces button.focused {
-    color: @bg_dark;
-    background: @olive;
-    min-width: 40px;
+  color: @bg_dark;
+  background: @olive;
+  min-width: 40px;
 }
 
 #workspaces button.urgent {
-    color: @red;
+  color: @red;
 }
 
 #workspaces button:hover {
-    color: @bg_dark;
-    min-width: 40px;
-    transition-duration: 200ms;
+  color: @bg_dark;
+  min-width: 40px;
+  transition-duration: 200ms;
 }
 
 #window {
-    color: @blue;
-    background: @bg_medium;
-    padding: 0 10px;
-    margin: 4px 2px;
+  color: @blue;
+  background: @bg_medium;
+  padding: 0 10px;
+  margin: 4px 2px;
 }
 
 #custom-window-count,
 #clock,
 #idle_inhibitor,
 #custom-notifications,
+#custom-hardware-group-arrow,
 #cpu,
 #memory,
 #disk,
@@ -79,35 +80,35 @@ tooltip label {
 #battery,
 #tray,
 #language {
-    padding: 0 10px;
-    margin: 4px 2px;
-    background: @bg_medium;
+  padding: 0 10px;
+  margin: 4px 2px;
+  background: @bg_medium;
 }
 
 #pulseaudio.muted {
-    color: @red;
+  color: @red;
 }
 
 #battery.warning {
-    color: @yellow;
+  color: @yellow;
 }
 
 #battery.critical {
-    color: @red;
+  color: @red;
 }
 
 #idle_inhibitor.activated {
-    border: 2px solid @yellow;
+  border: 2px solid @yellow;
 }
 
 #temperature.critical {
-    color: @red;
-    animation: blink 1s linear infinite;
+  color: @red;
+  animation: blink 1s linear infinite;
 }
 
 @keyframes blink {
-    to {
-        background-color: @red;
-        color: @bg_dark;
-    }
+  to {
+    background-color: @red;
+    color: @bg_dark;
+  }
 }

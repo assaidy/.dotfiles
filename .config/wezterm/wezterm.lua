@@ -1,6 +1,8 @@
 local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
+config.enable_wayland = true
+config.front_end = "OpenGL"
 
 -- config.font = wezterm.font("IosevkaTerm Nerd Font")
 -- config.font_size = 18

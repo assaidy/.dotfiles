@@ -25,9 +25,9 @@ update_prompt() {
 }
 PROMPT_COMMAND=update_prompt
 
+alias goals="nvim $HOME/.goals_list.md"
 alias tlist="nvim $HOME/.todo_list.md"
 alias rlist="nvim $HOME/.reading_list.md"
-alias blist="nvim $HOME/.bookmark_list.md"
 
 alias grep="grep --color=auto"
 alias cls="clear"
@@ -62,14 +62,14 @@ alias lt="exa -aT --icons --group-directories-first"
 alias l.="exa -a --icons | grep '^\.'"
 
 # function to chang cwd to yazi's cwd after exit
-yz() {
-  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-  yazi "$@" --cwd-file="$tmp"
-  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-    builtin cd -- "$cwd"
-  fi
-  rm -f -- "$tmp"
-}
+# yz() {
+#   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+#   yazi "$@" --cwd-file="$tmp"
+#   if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+#     builtin cd -- "$cwd"
+#   fi
+#   rm -f -- "$tmp"
+# }
 
 # functio to extract files
 # usage: ex <file>

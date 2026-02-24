@@ -8,12 +8,6 @@ options=$(cat <<EOF
 🔄 reboot
 EOF)
 
-# options=" logout
-#  lockscreen
-#  suspend
-#  poweroff
-#  reboot"
-
 chosen=$(echo "$options" | fuzzel -d --minimal-lines | awk '{print $2}')
 
 case "$chosen" in

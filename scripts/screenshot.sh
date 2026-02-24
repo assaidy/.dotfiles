@@ -1,29 +1,27 @@
 #!/bin/env bash
 
-set -ex
-
 OUTPUT_DIR="$HOME/Pictures/Screenshots"
 mkdir -p "$OUTPUT_DIR"
 
 OUTPUT_PATH="$OUTPUT_DIR/screenshot_$(date +%Y_%m_%d_%s).png"
 
 case "$1" in
-"full")
+  "full")
     grim -l 3 "$OUTPUT_PATH"
     ;;
-"area")
+  "area")
     geometry=$(slurp)
     if [[ -z "$geometry" ]]; then
-        echo "No area is selected"
-        exit 1
+      echo "No area is selected"
+      exit 1
     fi 
     grim -l 3 -g "$geometry" "$OUTPUT_PATH"
     ;;
-*)
+  *)
     echo "Usage: $0 {full|area}"
     exit 1
     ;;
 esac
 
-notify-send -i "$OUTPUT_PATH" "Screenshot Taken" "Saved to $OUTPUT_PATH"
 wl-copy < "$OUTPUT_PATH"
+notify-send -i "$OUTPUT_PATH" "Screenshot captured" "You can paste the image from the clipboard."
