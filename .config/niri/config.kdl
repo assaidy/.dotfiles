@@ -1,3 +1,7 @@
+hotkey-overlay {
+  skip-at-startup
+}
+
 input {
   keyboard {
     xkb {
@@ -28,6 +32,8 @@ layout {
 
 spawn-sh-at-startup "waybar -c $HOME/.config/waybar/config-niri.json"
 spawn-sh-at-startup "$HOME/.dotfiles/scripts/wallpaper_switcher.sh $HOME/Pictures/walls/gruvbox"
+// spawn-sh-at-startup "awww img $HOME/Pictures/walls/gruvbox/solid.png"
+// spawn-sh-at-startup "swaybg -i $HOME/Pictures/walls/gruvbox/solid.png -m fill"
 spawn-at-startup "swayidle" "-w" \
                  "timeout" "600" "niri msg output eDP-1 off" \
                  "resume" "niri msg output eDP-1 on" // "before-sleep" "hyprlock"
@@ -37,24 +43,19 @@ spawn-at-startup "blueman-applet"
 spawn-at-startup "swaync"
 spawn-at-startup "light" "-N" "10%" // set min to 10%
 spawn-at-startup "wlsunset" "-t" "5000"
-spawn-at-startup "swww-daemon"
+spawn-at-startup "awww-daemon"
 spawn-at-startup "foot" "--server"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
 prefer-no-csd
 
 window-rule {
-  geometry-corner-radius 5
+  geometry-corner-radius 0
   clip-to-geometry true
 }
 
 window-rule {
   open-maximized true
-}
-
-window-rule {
-  match app-id="^fuzzel$"
-  open-floating true
 }
 
 layer-rule {

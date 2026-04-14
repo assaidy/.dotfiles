@@ -4,12 +4,12 @@ local config = wezterm.config_builder()
 config.enable_wayland = true
 config.front_end = "OpenGL"
 
--- config.font = wezterm.font("IosevkaTerm Nerd Font")
--- config.font_size = 18
+config.font = wezterm.font("IosevkaTerm Nerd Font")
+config.font_size = 18
 -- config.font = wezterm.font("Ubuntu Mono Nerd Font")
 -- config.font = wezterm.font("JetBrains Mono")
-config.font = wezterm.font("Maple Mono NF")
-config.font_size = 15
+-- config.font = wezterm.font("Maple Mono NF")
+-- config.font_size = 15
 config.cell_width = 1.0
 config.line_height = 1.0
 

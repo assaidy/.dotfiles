@@ -1,135 +1,119 @@
 {
-    // "layer": "top", // Waybar at top layer
-    "position": "top",
-    "output": "",
-    // "spacing": 4, // Gaps between modules (px)
-    "modules-left": [
-        "custom/window-count",
-        "hyprland/workspaces",
-        "hyprland/window",
-    ],
-    "modules-center": [],
-    "modules-right": [
-        "tray",
-        "battery",
-        "memory",
-        "cpu",
-        "temperature",
-        "pulseaudio",
-        "backlight",
-        "hyprland/language",
-        "idle_inhibitor",
-        "custom/notifications",
-        "clock",
-    ],
-    "hyprland/workspaces": {
-        "all-outputs": false,
-        "disable-scroll": false,
-        "warp-on-scroll": false,
-        "format": "{name}",
-        "active": "",
-        "default": "",
-    },
-    "hyprland/window": {  
-        "format": "{}",
-        "max-length": 60,
-        "separate-outputs": true,
-    },
-    "hyprland/language": {  
-        "format": "{short}",
-    },
-    "tray": {
-        "icon-size": 20,
-        "spacing": 2
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "🙉",
-            "deactivated": "🙈"
-        }
-    },
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": " {:%a-%d-%m  %I:%M}",
-        //"format-alt": "{:%Y-%m-%d}"
-    },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": true
-    },
-    "memory": {
-        "format": "{used} ({percentage}%) "
-    },
-    "disk": {
-        "path": "/",
-        "format": "💾 {used} ({percentage_used}%)",
-    },
-    "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "temperature": {
-        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "interval": 5,
-        "critical-threshold": 80,
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": [""]
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}  {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "  {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-    "backlight": {
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon} ",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon} ",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
-    "custom/window-count": {
-        "format": " {}",
-        "tooltip-format": "workspace windows: {}",
-        "interval": "once",
-        "signal": 1,
-        "exec": "~/.config/hypr/scripts/workspace_windows.sh"
-    },
-    "custom/notifications": {
-        "format": "🔔",
-        "tooltip-format": "notifications",
-        "on-click": "swaync-client -t"
+  // "layer": "top", // Waybar at top layer
+  "position": "top",
+  "output": "",
+  // "spacing": 4, // Gaps between modules (px)
+  "modules-left": ["hyprland/workspaces", "custom/window-count", "hyprland/window"],
+  "modules-center": [],
+  "modules-right": ["tray", "battery", "memory", "cpu", "temperature", "pulseaudio", "backlight", "hyprland/language", "idle_inhibitor", "custom/notifications", "clock"],
+  "hyprland/workspaces": {
+    "all-outputs": false,
+    "disable-scroll": false,
+    "warp-on-scroll": false,
+    "format": "{name}",
+    "active": "",
+    "default": ""
+  },
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 60,
+    "separate-outputs": true
+  },
+  "hyprland/language": {
+    "format": "{short}"
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 2
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "🙉",
+      "deactivated": "🙈"
     }
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%a-%d-%m %I:%M}"
+    //"format-alt": "{:%Y-%m-%d}"
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": true
+  },
+  "memory": {
+    "format": "{used} ({percentage}%) "
+  },
+  "disk": {
+    "path": "/",
+    "format": "💾 {used} ({percentage_used}%)"
+  },
+  "network": {
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "interval": 5,
+    "critical-threshold": 80,
+    "format": "{temperatureC}°C {icon}",
+    "format-icons": [""]
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{volume}% {icon}  {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "  {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon} ",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon} ",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "battery#bat2": {
+    "bat": "BAT2"
+  },
+  "custom/window-count": {
+    "format": "🪟 {}",
+    "tooltip-format": "workspace windows: {}",
+    "interval": "once",
+    "signal": 1,
+    "exec": "~/.config/hypr/scripts/workspace_windows.sh"
+  },
+  "custom/notifications": {
+    "format": "🔔",
+    "tooltip-format": "notifications",
+    "on-click": "swaync-client -t"
+  }
 }

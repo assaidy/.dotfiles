@@ -7,3 +7,6 @@
 	defaultBranch = main
 [pull]
 	rebase = true
+[alias]
+	lg = log --graph --oneline --decorate
+	log = log --graph --oneline --decorate

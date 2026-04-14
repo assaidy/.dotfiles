@@ -19,7 +19,7 @@ fi
 while true; do
   WALL=$(find "$WALL_DIR" -type f | shuf -n 1)
   if [[ -n "$WALL" ]]; then
-    swww img "$WALL" --transition-type any
+    awww img "$WALL" --transition-type any
     # a blurred version as a background for lock screen and niri overview
     BLURRED="/tmp/blurred_wallpaper.jpg"
     magick "$WALL" -blur 0x16 "$BLURRED"

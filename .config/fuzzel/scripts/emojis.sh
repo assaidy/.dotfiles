@@ -10,8 +10,8 @@ if [[ -z "$selected" ]]; then
 fi
 
 if ! grep -Fxq "$selected" <<< "$menu"; then
-    notify-send "⚠️ Invalid selection" "Not an emoji from the list"
-    exit 1
+  notify-send "⚠️ Invalid selection" "Not an emoji from the list"
+  exit 1
 fi
 
 emoji=$(awk '{print $1}' <<< "$selected")

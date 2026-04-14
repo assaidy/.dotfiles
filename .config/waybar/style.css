@@ -2,8 +2,8 @@
 
 * {
   border: none;
-  border-radius: 5;
-  font-family: "Maple Mono NF";
+  border-radius: 0;
+  font-family: "Maple Mono NF", "IosevkaTerm NF";
   font-weight: bold;
   font-size: 14px;
   min-height: 0;
@@ -61,6 +61,7 @@ tooltip label {
 #window {
   color: @blue;
   background: @bg_medium;
+  background-color: transparent;
   padding: 0 10px;
   margin: 4px 2px;
 }
@@ -83,6 +84,7 @@ tooltip label {
   padding: 0 10px;
   margin: 4px 2px;
   background: @bg_medium;
+  background-color: transparent;
 }
 
 #pulseaudio.muted {

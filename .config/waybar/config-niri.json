@@ -3,10 +3,9 @@
   "position": "top",
   "output": "",
   // "spacing": 4, // Gaps between modules (px)
-  // "modules-left": ["niri/workspaces", "niri/window"],
-  "modules-left": ["clock", "memory", "cpu", "temperature", "battery"],
-  "modules-center": ["niri/workspaces"],
-  "modules-right": ["pulseaudio", "backlight", "niri/language", "idle_inhibitor", "custom/notifications", "tray"],
+  "modules-left": ["niri/workspaces", "niri/window"],
+  "modules-center": [],
+  "modules-right": ["tray", "battery", "memory", "cpu", "temperature", "pulseaudio", "backlight", "niri/language", "idle_inhibitor", "custom/notifications", "clock"],
   "niri/workspaces": {
     "format": ""
   },
@@ -31,7 +30,7 @@
   },
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": " {:%a-%d-%m   %I:%M}"
+    "format": "{:%a-%d-%m %I:%M}"
     //"format-alt": "{:%Y-%m-%d}"
   },
   "cpu": {
